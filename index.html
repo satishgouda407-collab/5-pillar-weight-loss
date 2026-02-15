@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 5-Pillar Weight Loss Protocol | Your Journey to a Healthier You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-hero: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-hero); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: #b45309; padding: 8px 20px; border-radius: 50px; font-weight: 800; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(245,158,11,0.3); }
+        .hero h1 { font-size: 3.5rem; color: var(--secondary); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero h1 span { color: var(--primary); }
+        .hero-subtitle { font-size: 1.5rem; color: #64748b; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .hero-image-box { max-width: 900px; margin: 40px auto; background: white; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; position: relative; }
+        .hero-image { width: 100%; height: 400px; background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #86efac 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .veg-icons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 40px; }
+        .veg-item { width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: float 3s ease-in-out infinite; }
+        .hero-cta { padding: 30px; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); }
+        .hero-cta h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+        .hero-cta p { color: #64748b; margin-bottom: 20px; }
+
+        .methods-section { padding: 80px 0; background: white; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: #64748b; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .method-card { background: white; border-radius: 25px; padding: 40px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .method-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: var(--shadow-glow); }
+        .method-card.natural { border-top: 5px solid var(--primary); }
+        .method-card.modern { border-top: 5px solid var(--accent); }
+        .method-icon { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 20px; }
+        .natural .method-icon { background: #dcfce7; color: var(--primary); }
+        .modern .method-icon { background: #fef3c7; color: var(--accent); }
+        .method-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary); }
+        .method-card > p { color: #64748b; margin-bottom: 25px; line-height: 1.7; }
+
+        .method-types { display: flex; flex-direction: column; gap: 15px; }
+        .type-item { background: #f8fafc; padding: 20px; border-radius: 15px; border-left: 4px solid var(--primary); }
+        .modern .type-item { border-left-color: var(--accent); }
+        .type-item h4 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
+        .type-item p { font-size: 0.95rem; color: #64748b; margin: 0; }
+
+        .cta-section { padding: 80px 0; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); text-align: center; }
+        .btn-main { display: inline-block; padding: 20px 50px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
+
+        .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
+        .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
+        .page-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .methods-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>The 5-Pillar Protocol</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="systems.html" class="btn-nav">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">🏆 Trusted by 50,000+ Happy Customers</div>
+        <h1>Transform Your Body With <span>The 5-Pillar Weight Loss Protocol</span></h1>
+        <p class="hero-subtitle">A scientifically-backed, holistic approach to sustainable weight loss through Nutrition, Exercise, Mindset, Sleep, and Supplementation</p>
+
+        <div class="hero-image-box">
+            <div class="hero-image">
+                <div class="veg-icons">
+                    <div class="veg-item">🥑</div>
+                    <div class="veg-item">🥦</div>
+                    <div class="veg-item">🥬</div>
+                    <div class="veg-item">🍎</div>
+                    <div class="veg-item">🥕</div>
+                    <div class="veg-item">🥗</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <h2>Choose Your Path to a Slimmer, Healthier You</h2>
+                <p>We understand that everyone's journey is unique. That's why we've curated two distinct approaches to help you achieve your weight loss goals—naturally or with modern scientific support.</p>
+                <a href="#methods" class="btn-main">Explore Your Options →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="methods-section" id="methods">
+    <div class="container">
+        <div class="section-header">
+            <h2>Types of Methods to Get Slimmer</h2>
+            <p>We've made it simple. Choose between our two proven pathways to transformation.</p>
+        </div>
+
+        <div class="methods-grid">
+            <div class="method-card natural">
+                <div class="method-icon">🌿</div>
+                <h3>1. Hardcore Natural Way</h3>
+                <p>The traditional, time-tested approach to weight loss through disciplined lifestyle changes and natural methods. Perfect for those who prefer a holistic, drug-free journey.</p>
+
+                <div class="method-types">
+                    <div class="type-item">
+                        <h4>🎯 Full Hard & Medium</h4>
+                        <p>Complete lifestyle overhaul with 90 to 120 minutes of dedicated daily workout routines designed for both men and women.</p>
+                    </div>
+                    <div class="type-item">
+                        <h4>⏰ For Busy People</h4>
+                        <p>Condensed, high-intensity 10 to 20 minute workouts that fit into your hectic schedule without compromising results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="method-card modern">
+                <div class="method-icon">🚀</div>
+                <h3>2. Modern Way with AI</h3>
+                <p>Leverage cutting-edge technology and scientific breakthroughs to accelerate your results. Our modern system features 5 specialized types of solutions.</p>
+
+                <div class="method-types">
+                    <div class="type-item">
+                        <h4>💊 Medical & Supplement Systems</h4>
+                        <p>Clinically-backed supplements and medical-grade formulations targeting metabolic health and fat oxidation.</p>
+                    </div>
+                    <div class="type-item">
+                        <h4>⚡ Metabolism & Hormone Reset</h4>
+                        <p>Advanced protocols to reboot your metabolic engine and balance hormones for optimal fat burning.</p>
+                    </div>
+                    <div class="type-item">
+                        <h4>🤖 Custom AI-Powered Plans</h4>
+                        <p>Personalized daily meal and workout plans generated by artificial intelligence based on your unique body data.</p>
+                    </div>
+                    <div class="type-item">
+                        <h4>🔬 Exotic Research Formulas</h4>
+                        <p>Breakthrough formulations backed by cutting-edge scientific research from around the globe.</p>
+                    </div>
+                    <div class="type-item">
+                        <h4>☕ Coffee Drink-Based Systems</h4>
+                        <p>Revolutionary morning rituals that turn your daily coffee into a fat-burning metabolism booster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" id="products">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ready to Start Your Transformation?</h2>
+            <p>Explore our complete range of proven weight loss solutions.</p>
+        </div>
+        <a href="systems.html" class="btn-main" style="font-size: 1.3rem; padding: 25px 60px;">View All Products →</a>
+    </div>
+</section>
+
+<div class="container">
+    <div class="page-nav">
+        <a href="index.html" class="page-btn active">Page 1: Overview</a>
+        <a href="systems.html" class="page-btn">Page 2: Systems</a>
+        <a href="solutions.html" class="page-btn">Page 3: Solutions</a>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
+                    The 5-Pillar Protocol
+                </div>
+                <p class="footer-desc">Your comprehensive guide to sustainable weight loss through our proven 5-pillar approach: Nutrition, Exercise, Mindset, Sleep, and Supplementation.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Medical Systems</a>
+                <a href="solutions.html">Exotic Solutions</a>
+            </div>
+            <div class="footer-links">
+                <h4>Our Systems</h4>
+                <a href="citrus-burn.html">Citrus Burn</a>
+                <a href="mitolyn.html">Mitolyn</a>
+                <a href="java-burn.html">Java Burn</a>
+                <a href="kito.html">Kito Flow AI</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
+                Disclaimer: These statements have not been evaluated by the FDA. These products are not intended to diagnose, treat, cure, or prevent any disease.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

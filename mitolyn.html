@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitolyn™ | Mitochondrial Fat-Burning Breakthrough</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #0EA5E9; 
+            --primary-dark: #0284C7;
+            --secondary: #0F172A; 
+            --accent: #10B981;
+            --accent-glow: rgba(16, 185, 129, 0.3);
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --white: #ffffff; 
+            --light: #F8FAFC;
+            --gradient-hero: linear-gradient(135deg, #0EA5E9 0%, #0284C7 50%, #0369A1 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(14,165,233,0.3);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
+            color: #334155; 
+            line-height: 1.6; 
+            background: var(--white); 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes pulse-warning {
+            0%, 100% { background-color: var(--warning); }
+            50% { background-color: #FBBF24; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px var(--primary); }
+            50% { box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-dark); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* URGENCY BAR */
+        .top-bar { 
+            background: var(--warning); 
+            color: var(--secondary); 
+            text-align: center; 
+            padding: 12px; 
+            font-weight: 800; 
+            font-size: 0.95rem; 
+            animation: pulse-warning 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .top-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        /* NAVIGATION */
+        nav { 
+            background: rgba(255,255,255,0.98); 
+            padding: 15px 0; 
+            border-bottom: 1px solid #E2E8F0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 999; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo {
+            font-weight: 900; 
+            font-size: 2rem; 
+            background: linear-gradient(135deg, #0EA5E9 0%, #EC4899 50%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+        
+        .nav-links a { 
+            margin-left: 25px; 
+            text-decoration: none; 
+            color: var(--secondary); 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover { color: var(--primary); }
+        
+        .nav-links .order-nav { 
+            background: var(--gradient-hero); 
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(14,165,233,0.4);
+        }
+
+        /* HERO SECTION */
+        .hero { 
+            padding: 80px 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #fff 0%, #F0F9FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #92400E;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 2px solid var(--warning);
+        }
+        
+        .hero h1 { 
+            font-size: 3rem; 
+            color: var(--secondary); 
+            line-height: 1.2; 
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero h1 span { 
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .hero p { 
+            font-size: 1.2rem; 
+            color: #64748B; 
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* SCIENCE SECTION */
+        .science { 
+            padding: 80px 0; 
+            background: var(--white);
+        }
+        
+        .science-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .science-date {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .science h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .science h2 span {
+            border-bottom: 4px solid var(--warning);
+        }
+        
+        .science-intro {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .science-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .science-image {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mito-visual {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .mito-visual::before {
+            content: '⚡';
+            font-size: 8rem;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .mito-label {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            margin-top: 20px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+        
+        .science-text p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .science-text strong {
+            color: var(--secondary);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .references {
+            font-size: 0.8rem;
+            color: #94A3B8;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+        
+        .references a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* PRODUCT INTRO */
+        .product-intro {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-intro::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .product-intro h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .product-logo {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-bottle {
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .product-intro p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-intro .highlight {
+            color: #FEF08A;
+            font-weight: 800;
+        }
+
+        /* INGREDIENTS SECTION */
+        .ingredients {
+            padding: 80px 0;
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .ingredients-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .ingredients-header p {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 600;
+        }
+        
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .ingredient-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 2px solid #F1F5F9;
+        }
+        
+        .ingredient-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(14,165,233,0.15);
+        }
+        
+        .ingredient-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ingredient-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .ingredient-desc {
+            color: #64748B;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 8px 0;
+            color: #334155;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .benefits-list li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .benefits-list .primary-benefit {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* TRUST BADGES */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .trust-badge span {
+            font-size: 2rem;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .testimonials-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .testimonials-header h2 span {
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        .user-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid white;
+        }
+        
+        .testimonial-card-large {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-soft);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-meta h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .verified {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-product {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #F8FAFC;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        
+        .product-thumb {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .product-info strong {
+            color: var(--secondary);
+            display: block;
+        }
+        
+        .product-info span {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+            color: white;
+            padding: 30px;
+            margin: -80px -20px 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            width: 320px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .bottle-count {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            line-height: 1;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #94A3B8;
+            font-weight: 600;
+        }
+        
+        .savings {
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        .features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #E2E8F0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 900;
+        }
+        
+        .btn-order {
+            background: var(--gradient-hero);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(14,165,233,0.4);
+        }
+        
+        .btn-order:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(14,165,233,0.6);
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+        }
+        
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            background: #F8FAFC;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            font-weight: 700;
+            color: var(--secondary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #64748B;
+            line-height: 1.7;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* GUARANTEE */
+        .guarantee {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+        }
+        
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 3px solid var(--accent);
+        }
+        
+        .guarantee-seal {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--accent) 0%, #059669 100%);
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .guarantee h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .guarantee p {
+            color: #475569;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--secondary);
+            color: #94A3B8;
+            padding: 60px 0 30px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0EA5E9 0%, #EC4899 50%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #94A3B8;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: slideInUp 0.5s ease-out;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            color: #94A3B8;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover {
+            color: var(--danger);
+        }
+        
+        .timer {
+            background: #FEF2F2;
+            color: var(--danger);
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .modal h2 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .modal p {
+            color: #64748B;
+            margin-bottom: 25px;
+        }
+        
+        .modal input {
+            width: 100%;
+            padding: 18px;
+            margin: 15px 0;
+            border: 2px solid #E2E8F0;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .modal input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(14,165,233,0.1);
+        }
+        
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: #94A3B8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .science-content { grid-template-columns: 1fr; }
+            .ingredients-grid { grid-template-columns: 1fr; }
+            .pricing-card.popular { transform: scale(1); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .product-logo { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">⚡ *96% Of Customers Order 6 Bottles (Our Recommended Option)</div>
+
+<nav>
+    <div class="container nav-content">
+        <div class="logo">MITOLYN</div>
+        <div class="nav-links">
+            <a href="#science">The Science</a>
+            <a href="#ingredients">Ingredients</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a href="#order" class="order-nav">Order Now →</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">🔬 February 2026 - New Scientific Discovery</div>
+        <h1>Harvard Scientists Discover <span>Shocking New Cause</span> Of Slow Metabolism...</h1>
+        <div class="hero-subtitle">And It's Not What You Think...</div>
+        <p>Harvard scientists used cutting-edge microscopic techniques to study 1,700 women and men, and found just one common factor in every overweight person: <strong>low mitochondria levels.</strong> They also found one thing common in every person who was slim, toned and has smooth young skin: <strong>high mitochondria levels.</strong></p>
+        
+        <div class="hero-features">
+            <div class="hero-feature">🌿 100% Natural Formula</div>
+            <div class="hero-feature">🍃 Plant Ingredients</div>
+            <div class="hero-feature">⚡ Non-GMO</div>
+            <div class="hero-feature">✓ Easy To Swallow</div>
+        </div>
+        
+        <button class="btn-order" style="margin-top: 30px;" onclick="openModal()">Discover The Mitolyn Solution »</button>
+    </div>
+</section>
+
+<section class="science" id="science">
+    <div class="container">
+        <div class="science-header">
+            <div class="science-date">The Mitochondrial Connection</div>
+            <h2>Why Mitochondria Are The <span>Key To Fat Burning</span></h2>
+        </div>
+        
+        <div class="science-content">
+            <div class="science-image">
+                <div class="mito-visual"></div>
+                <div class="mito-label">Mitochondria</div>
+            </div>
+            
+            <div class="science-text">
+                <p>That's because like little engines, <strong>mitochondria</strong> are tiny parts found inside every cell in our body that make <strong>energy</strong> from the food we eat and by burning fat stored in our body. This energy, called ATP, is what our body needs to do everything—from moving our muscles, to our heart beat, to thinking.</p>
+                
+                <div class="highlight-box">
+                    <p>In short, mitochondria burn fat and fuel every part of our body to keep it running smoothly. <strong>So the more mitochondria you have, the more fat you burn!</strong></p>
+                </div>
+                
+                <div class="references">
+                    <strong>References:</strong><br>
+                    (a) Leukocyte mitochondrial DNA copy number, anthropometric indices, and weight change in US women <a href="#">https://pubmed.ncbi.nlm.nih.gov/27367031/</a><br>
+                    (b) Impaired Mitochondrial Biogenesis in Adipose Tissue in Acquired Obesity <a href="#">https://pubmed.ncbi.nlm.nih.gov/25972572/</a><br>
+                    (c) Persistent low body weight in humans is associated with higher mitochondrial activity in white adipose tissue <a href="#">https://pubmed.ncbi.nlm.nih.gov/31374571/</a><br>
+                    (d) Mitochondrial DNA copy number in peripheral blood is independently associated with visceral fat accumulation in healthy young adults <a href="#">https://pubmed.ncbi.nlm.nih.gov/24707289/</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-intro">
+    <div class="container">
+        <h2>That's Why We Created...</h2>
+        <div class="product-logo">MITOLYN</div>
+        <div class="product-bottle">💊</div>
+        <p>Mitolyn is unlike <strong>anything</strong> you've ever tried or experienced in your life before.</p>
+        <p>It is one of the <span class="highlight">only products in the world</span> with a proprietary blend of <span class="highlight">6 exotic nutrients and plants</span> designed to support healthy mitochondria levels!</p>
+    </div>
+</section>
+
+<section class="ingredients" id="ingredients">
+    <div class="container">
+        <div class="ingredients-header">
+            <h2>Inside every Mitolyn capsule you'll find:</h2>
+            <p>A unique proprietary blend of 6 rare ingredients that promote calorie-burning mitochondria!</p>
+        </div>
+        
+        <div class="ingredients-grid">
+            <div class="ingredient-card">
+                <div class="ingredient-img">🫐</div>
+                <h3>Maqui Berry</h3>
+                <p class="ingredient-desc">exotic purple fruit packed full of the special antioxidant anthocyanin</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria¹˒²</li>
+                    <li>Supports a healthy heart</li>
+                    <li>Supports healthy cholesterol</li>
+                </ul>
+            </div>
+            
+            <div class="ingredient-card">
+                <div class="ingredient-img">🌿</div>
+                <h3>Rhodiola</h3>
+                <p class="ingredient-desc">adaptogen bursting with over 140 polyphenols like rosavin and salidroside</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria³˒⁴</li>
+                    <li>Reduces stress & improves mood</li>
+                    <li>Supports brain health</li>
+                </ul>
+            </div>
+            
+            <div class="ingredient-card">
+                <div class="ingredient-img">🔴</div>
+                <h3>Haematococcus</h3>
+                <p class="ingredient-desc">unique red algae crammed full of the mighty red antioxidant astaxanthin</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria⁵˒⁶</li>
+                    <li>Supports healthy joints</li>
+                    <li>Supports immune response</li>
+                </ul>
+            </div>
+            
+            <div class="ingredient-card">
+                <div class="ingredient-img">🍃</div>
+                <h3>Amla</h3>
+                <p class="ingredient-desc">special fruit rich in flavonoids, antioxidants and essential nutrients</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria⁷˒⁸</li>
+                    <li>Supports healthy digestion</li>
+                    <li>Supports vision</li>
+                </ul>
+            </div>
+            
+            <div class="ingredient-card">
+                <div class="ingredient-img">🍫</div>
+                <h3>Theobroma Cacao</h3>
+                <p class="ingredient-desc">tropical superfood overflowing with epicatechin - a natural flavonoid</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria⁹˒¹⁰</li>
+                    <li>Supports healthy blood pressure</li>
+                    <li>Natural aphrodisiac</li>
+                </ul>
+            </div>
+            
+            <div class="ingredient-card">
+                <div class="ingredient-img">🔴</div>
+                <h3>Schisandra</h3>
+                <p class="ingredient-desc">powerful calorie-burning red berries brimming with antioxidant compounds</p>
+                <ul class="benefits-list">
+                    <li class="primary-benefit">Promotes mitochondria¹¹˒¹²</li>
+                    <li>Supports liver health</li>
+                    <li>Maintains skin elasticity</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="trust-badges">
+            <div class="trust-badge">👍 Natural Formula</div>
+            <div class="trust-badge">🌱 Plant Ingredients</div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="reviews">
+    <div class="container">
+        <div class="testimonials-header">
+            <h2>Real Mitolyn Users.<br>Real <span>Life-Changing Results</span>.</h2>
+        </div>
+        
+        <div class="user-gallery">
+            <div class="user-avatar">👤</div>
+            <div class="user-avatar">👩</div>
+            <div class="user-avatar">👨</div>
+            <div class="user-avatar">👵</div>
+            <div class="user-avatar">🧑</div>
+            <div class="user-avatar">👴</div>
+            <div class="user-avatar">👱</div>
+        </div>
+        
+        <div class="testimonial-card-large">
+            <div class="testimonial-header">
+                <div class="testimonial-avatar">PB</div>
+                <div class="testimonial-meta">
+                    <h3>Peggy is 35 lbs lighter...</h3>
+                    <div class="verified">⭐⭐⭐⭐⭐ Verified Purchase</div>
+                </div>
+            </div>
+            <div class="testimonial-text">
+                I always felt self-conscious about my appearance, especially in social situations. Since trying Mitolyn, I've lost 35 pounds, and for the first time in years, I actually enjoy looking in the mirror. It's incredible how this change has boosted my confidence and made me feel like myself again!
+            </div>
+            <div class="testimonial-product">
+                <div class="product-thumb">💊</div>
+                <div class="product-info">
+                    <strong>Peggy B. - Rexton, MI</strong>
+                    <span>Purchased Mitolyn 6 Bottles Package</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-card-large">
+            <div class="testimonial-header">
+                <div class="testimonial-avatar">RL</div>
+                <div class="testimonial-meta">
+                    <h3>Russel has torched 29 lbs...</h3>
+                    <div class="verified">⭐⭐⭐⭐⭐ Verified Purchase</div>
+                </div>
+            </div>
+            <div class="testimonial-text">
+                No matter what I tried, my weight just wouldn't budge, especially around my belly. Mitolyn kick-started my metabolism and finally helped me shed 29 stubborn pounds. I feel lighter and more energetic, and my clothes are fitting so much better now — it's a huge relief.
+            </div>
+            <div class="testimonial-product">
+                <div class="product-thumb">💊</div>
+                <div class="product-info">
+                    <strong>Russell L. - Macon, GA</strong>
+                    <span>Purchased Mitolyn 3 Bottles Package</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-card-large">
+            <div class="testimonial-header">
+                <div class="testimonial-avatar">CA</div>
+                <div class="testimonial-meta">
+                    <h3>Connie's dropped 40 lbs...</h3>
+                    <div class="verified">⭐⭐⭐⭐⭐ Verified Purchase</div>
+                </div>
+            </div>
+            <div class="testimonial-text">
+                Being overweight made even basic activities exhausting. I could hardly play with my kids without feeling out of breath. After using Mitolyn, I've dropped 40 pounds, and I can keep up with my kids without feeling tired all the time. I have my energy and freedom back!
+            </div>
+            <div class="testimonial-product">
+                <div class="product-thumb">💊</div>
+                <div class="product-info">
+                    <strong>Connie A. - Montclair, NJ</strong>
+                    <span>Purchased Mitolyn 6 Bottles Package</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="order">
+    <div class="pricing-header">
+        Claim Your Discounted Mitolyn Below For Huge Savings
+    </div>
+    <div class="container">
+        <h2>Choose Your Package</h2>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-badge">Basic</div>
+                <h3>1 Bottle</h3>
+                <div class="bottle-count">30 Day Supply</div>
+                <div class="price">$59 <span>/bottle</span></div>
+                <div class="savings">You Save $40</div>
+                <ul class="features">
+                    <li>1 Bottle of Mitolyn</li>
+                    <li>90-Day Guarantee</li>
+                    <li>+ Small Shipping Fee</li>
+                </ul>
+                <button class="btn-order" onclick="openModal()">Order Now</button>
+            </div>
+            
+            <div class="pricing-card popular">
+                <div class="pricing-badge" style="background: var(--primary);">Most Popular</div>
+                <h3>6 Bottles</h3>
+                <div class="bottle-count">180 Day Supply</div>
+                <div class="price">$39 <span>/bottle</span></div>
+                <div class="savings">You Save $360 + Free Shipping</div>
+                <ul class="features">
+                    <li>6 Bottles of Mitolyn</li>
+                    <li>2 FREE Bonus Books</li>
+                    <li>FREE Shipping</li>
+                    <li>90-Day Money-Back Guarantee</li>
+                </ul>
+                <button class="btn-order" onclick="openModal()">Order Now</button>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">Bundle</div>
+                <h3>3 Bottles</h3>
+                <div class="bottle-count">90 Day Supply</div>
+                <div class="price">$49 <span>/bottle</span></div>
+                <div class="savings">You Save $150</div>
+                <ul class="features">
+                    <li>3 Bottles of Mitolyn</li>
+                    <li>2 FREE Bonus Books</li>
+                    <li>+ Small Shipping Fee</li>
+                    <li>90-Day Guarantee</li>
+                </ul>
+                <button class="btn-order" onclick="openModal()">Order Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                How does Mitolyn work?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Mitolyn works by supporting healthy mitochondria levels in your cells. Mitochondria are the "powerhouses" of your cells that convert food and stored fat into energy. By boosting mitochondrial function, Mitolyn helps your body burn more fat naturally, increase energy levels, and improve overall metabolism.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Is Mitolyn safe?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Mitolyn is formulated with 100% natural, plant-based ingredients in an FDA-registered, GMP-certified facility. It is non-GMO, soy-free, dairy-free, and non-habit forming. Thousands of customers have used Mitolyn safely. However, as with any supplement, consult your healthcare provider if you have medical conditions or take medications.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                How should I take Mitolyn?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Take one capsule of Mitolyn daily with a large glass of cold water. The proprietary blend of natural ingredients will get to work supporting your mitochondria and metabolism right away. For best results, take consistently for at least 90 days.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                What if Mitolyn doesn't work for me?
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                Every bottle of Mitolyn comes with our personal 90-day 100% money-back guarantee. If for any reason you're unsatisfied with your results, simply return all bottles (even if empty) for a full, no-questions-asked refund. Your satisfaction is our top priority.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="guarantee">
+    <div class="container">
+        <div class="guarantee-box">
+            <div class="guarantee-seal">🛡️</div>
+            <h2>90-Day Money-Back Guarantee</h2>
+            <p>Your order today is protected by our iron-clad 90-day 100% money-back guarantee. If you're not astonished by how quickly your stubborn fat melts away, or if you're not thrilled by your new toned slim body, simply let us know and we'll refund every penny. No questions asked. You have nothing to lose except the unwanted fat!</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">MITOLYN</div>
+                <p>The world's first mitochondrial support formula based on Harvard research. Made in the USA.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#science">The Science</a>
+                <a href="#ingredients">Ingredients</a>
+                <a href="#order">Order Now</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p><strong>Scientific References:</strong></p>
+            <p style="font-size: 0.8rem; margin: 15px 0; line-height: 1.6;">
+                1. Maqui Berry mitochondrial support study - Journal of Nutrition 2023<br>
+                2. Rhodiola rosea and cellular energy production - Phytomedicine 2022<br>
+                3. Astaxanthin from Haematococcus pluvialis - Marine Drugs 2023<br>
+                4. Amla and metabolic health - International Journal of Molecular Sciences 2023<br>
+                5. Theobroma cacao flavonoids and mitochondria - Nutrients 2022<br>
+                6. Schisandra chinensis and energy metabolism - Journal of Ethnopharmacology 2023
+            </p>
+            <p style="margin-top: 30px;">© 2026 Mitolyn. All Rights Reserved. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal-overlay" id="emailModal" onclick="closeModalOutside(event)">
+    <div class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="timer">⏰ OFFER EXPIRES IN: <span id="clock">10:00</span></div>
+        <h2>Claim Your Discounted Mitolyn</h2>
+        <p>Enter your email to secure your supply at the lowest price ever offered.</p>
+        
+        <form action="https://formsubmit.co/satishking1234567890123@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://4cf61jtef401oq3hwopedh6ndw.hop.clickbank.net">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="email" name="email" placeholder="Enter your best email address" required>
+            <button type="submit" class="btn-order">Claim My Discount »</button>
+        </form>
+        
+        <div class="secure-note">
+            <span>🔒</span> 256-Bit SSL Secure Encryption | Your Privacy Protected
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() { 
+        document.getElementById('emailModal').style.display = 'flex'; 
+        startTimer(600); 
+    }
+    
+    function closeModal() {
+        document.getElementById('emailModal').style.display = 'none';
+    }
+    
+    function closeModalOutside(event) {
+        if (event.target.id === 'emailModal') {
+            closeModal();
+        }
+    }
+    
+    function startTimer(duration) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            document.querySelector('#clock').textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+            if (--timer < 0) timer = duration;
+        }, 1000);
+    }
+    
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        item.classList.toggle('active');
+    }
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

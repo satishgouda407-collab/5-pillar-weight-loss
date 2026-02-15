@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical & Metabolism Systems | The 5-Pillar Weight Loss Protocol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-hero: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-hero); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        .products-section { padding: 60px 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+        .category-header { text-align: center; margin-bottom: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; border-radius: 20px; }
+        .category-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
+        .category-header p { opacity: 0.9; font-size: 1.1rem; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .product-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.4s ease; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: var(--shadow-glow); }
+        .product-image { height: 200px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+        .product-card:nth-child(2) .product-image { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); }
+        .product-card:nth-child(3) .product-image { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        .product-card:nth-child(4) .product-image { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+        .product-badge { position: absolute; top: 15px; right: 15px; background: #ef4444; color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
+        .product-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-content h3 { font-size: 1.5rem; color: var(--secondary); margin-bottom: 10px; }
+        .product-content .subtitle { color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .product-content p { color: #64748b; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+        .product-features { list-style: none; margin-bottom: 25px; }
+        .product-features li { padding: 8px 0; color: #475569; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f1f5f9; }
+        .product-features li::before { content: '✓'; color: var(--success); font-weight: 900; }
+        .btn-product { display: block; width: 100%; padding: 15px; background: var(--gradient-primary); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+        .btn-product:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
+        .btn-product.secondary { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 15px rgba(245,158,11,0.4); }
+        .btn-product.secondary:hover { box-shadow: 0 6px 20px rgba(245,158,11,0.6); }
+
+        .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
+        .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
+        .page-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .products-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .nav-links { display: none; }
+            .category-header h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>The 5-Pillar Protocol</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html" class="active">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="systems.html" class="btn-nav">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<section class="products-section">
+    <div class="container">
+        <!-- Category 1: Medical & Supplement -->
+        <div class="category-header">
+            <h2>1. Medical & Supplement Systems with Guide</h2>
+            <p>Professional-grade formulations backed by clinical research and expert guidance</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Citrus Burn -->
+            <div class="product-card">
+                <div class="product-image">
+                    🍊
+                    <span class="product-badge">HOT</span>
+                </div>
+                <div class="product-content">
+                    <span class="subtitle">Metabolic Ignition</span>
+                    <h3>Citrus Burn</h3>
+                    <p>A powerful thermogenic formula featuring rare citrus bioflavonoids that activate your body's natural fat-burning furnace. Clinically shown to increase metabolic rate by up to 23%.</p>
+                    <ul class="product-features">
+                        <li>Boosts metabolism naturally</li>
+                        <li>Suppresses appetite & cravings</li>
+                        <li>Increases energy levels</li>
+                        <li>100% natural ingredients</li>
+                    </ul>
+                    <a href="citrus-burn.html" class="btn-product">Get This Plan →</a>
+                </div>
+            </div>
+
+            <!-- Mitolyn -->
+            <div class="product-card">
+                <div class="product-image">
+                    💎
+                    <span class="product-badge">NEW</span>
+                </div>
+                <div class="product-content">
+                    <span class="subtitle">Cellular Energy</span>
+                    <h3>Mitolyn</h3>
+                    <p>Revolutionary mitochondrial support formula that optimizes cellular energy production. Helps your body burn fat at the cellular level while boosting overall vitality and mental clarity.</p>
+                    <ul class="product-features">
+                        <li>Supports healthy mitochondria</li>
+                        <li>Enhances cellular energy</li>
+                        <li>Promotes fat oxidation</li>
+                        <li>Improves mental focus</li>
+                    </ul>
+                    <a href="mitolyn.html" class="btn-product">Get This Plan →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Metabolism & Hormone -->
+        <div class="category-header">
+            <h2>2. Metabolism & Hormone Reset System</h2>
+            <p>Reset your body's metabolic engine and restore hormonal balance for sustainable weight loss</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Lean Biome -->
+            <div class="product-card">
+                <div class="product-image">
+                    🦠
+                </div>
+                <div class="product-content">
+                    <span class="subtitle">Gut Health Optimization</span>
+                    <h3>Lean Biome</h3>
+                    <p>Advanced probiotic and prebiotic blend that rebalances your gut microbiome. A healthy gut is the foundation of efficient metabolism and sustainable weight management.</p>
+                    <ul class="product-features">
+                        <li>9 proprietary probiotic strains</li>
+                        <li>Reduces belly fat storage</li>
+                        <li>Improves digestion</li>
+                        <li>Curbs unhealthy cravings</li>
+                    </ul>
+                    <a href="#" class="btn-product secondary">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- Java Burn -->
+            <div class="product-card">
+                <div class="product-image">
+                    ☕
+                    <span class="product-badge">BESTSELLER</span>
+                </div>
+                <div class="product-content">
+                    <span class="subtitle">Morning Metabolism</span>
+                    <h3>Java Burn</h3>
+                    <p>The world's first patent-pending formula designed to be mixed with coffee. Instantly boosts your metabolism, burns fat, and increases energy without changing the taste of your morning brew.</p>
+                    <ul class="product-features">
+                        <li>Tasteless, dissolves instantly</li>
+                        <li>Boosts metabolism by 400%</li>
+                        <li>Burns fat from stubborn areas</li>
+                        <li>Works with any coffee</li>
+                    </ul>
+                    <a href="java-burn.html" class="btn-product">Get This Plan →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3: AI Powered -->
+        <div class="category-header">
+            <h2>3. Custom Diet AI Powered Daily Plan</h2>
+            <p>Personalized nutrition and fitness plans powered by advanced artificial intelligence</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Kito Flow AI -->
+            <div class="product-card">
+                <div class="product-image">
+                    🤖
+                    <span class="product-badge">AI POWERED</span>
+                </div>
+                <div class="product-content">
+                    <span class="subtitle">Smart Keto Assistant</span>
+                    <h3>Kito Flow AI</h3>
+                    <p>Your personal AI nutritionist that creates customized keto meal plans, tracks your macros in real-time, and adapts to your progress. Features voice recognition and smart grocery lists.</p>
+                    <ul class="product-features">
+                        <li>AI-generated meal plans</li>
+                        <li>Real-time macro tracking</li>
+                        <li>Smart recipe suggestions</li>
+                        <li>Progress adaptation</li>
+                    </ul>
+                    <a href="kito.html" class="btn-product">Get This Plan →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="page-nav">
+        <a href="index.html" class="page-btn">Page 1: Overview</a>
+        <a href="systems.html" class="page-btn active">Page 2: Systems</a>
+        <a href="solutions.html" class="page-btn">Page 3: Solutions</a>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">
+                    <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
+                    The 5-Pillar Protocol
+                </div>
+                <p class="footer-desc">Your comprehensive guide to sustainable weight loss through our proven 5-pillar approach.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Medical Systems</a>
+                <a href="solutions.html">Exotic Solutions</a>
+            </div>
+            <div class="footer-links">
+                <h4>Our Systems</h4>
+                <a href="citrus-burn.html">Citrus Burn</a>
+                <a href="mitolyn.html">Mitolyn</a>
+                <a href="java-burn.html">Java Burn</a>
+                <a href="kito.html">Kito Flow AI</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
+                Disclaimer: These statements have not been evaluated by the FDA.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

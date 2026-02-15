@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlimCrystal™ | Official Crystal Water Bottle For Weight Loss</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        :root {
+            --primary: #1E88E5; 
+            --primary-light: #42A5F5;
+            --secondary: #1A1A2E; 
+            --accent: #00C853;
+            --accent-glow: rgba(0, 200, 83, 0.3);
+            --danger: #FF1744; 
+            --warning: #FFD600;
+            --white: #ffffff; 
+            --light: #FAFBFC;
+            --gradient-hero: linear-gradient(135deg, #1E88E5 0%, #42A5F5 50%, #64B5F6 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(30,136,229,0.3);
+        }
+
+        * { box-sizing: border-box; }
+
+        body { 
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            color: #333; 
+            line-height: 1.6; 
+            background: var(--light); 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* PULSE ANIMATION */
+        @keyframes pulse-red {
+            0%, 100% { background-color: var(--danger); }
+            50% { background-color: #FF4560; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px var(--primary); }
+            50% { box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-light); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* URGENCY BAR - ENHANCED */
+        .top-bar { 
+            background: var(--danger); 
+            color: white; 
+            text-align: center; 
+            padding: 12px; 
+            font-weight: 800; 
+            font-size: 0.95rem; 
+            animation: pulse-red 2s infinite;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .top-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        /* FIXED NAV - ENHANCED */
+        nav { 
+            background: rgba(255,255,255,0.98); 
+            padding: 18px 0; 
+            border-bottom: 1px solid #eee; 
+            position: sticky; 
+            top: 0; 
+            z-index: 999; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-weight: 900; 
+            font-size: 1.8rem; 
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '💎';
+            font-size: 1.5rem;
+            -webkit-text-fill-color: initial;
+        }
+
+        .nav-links a { 
+            margin-left: 25px; 
+            text-decoration: none; 
+            color: var(--secondary); 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links .order-nav { 
+            background: var(--gradient-hero); 
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(30,136,229,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .order-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30,136,229,0.6);
+        }
+
+        .nav-links .order-nav::after { display: none; }
+
+        /* HERO SECTION - ENHANCED */
+        .hero { 
+            padding: 100px 0 80px; 
+            text-align: center; 
+            background: linear-gradient(135deg, #fff 0%, #E3F2FD 100%);
+            border-bottom: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(30,136,229,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(255,214,0,0.4);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .hero h1 { 
+            font-size: 3.5rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 25px;
+            font-weight: 900;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .hero span { 
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero p { 
+            font-size: 1.4rem; 
+            color: #666; 
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            animation: slideInUp 1.2s ease-out;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .hero-feature span {
+            font-size: 1.3rem;
+        }
+
+        /* SCIENTIFIC BREAKTHROUGH SECTION - ENHANCED */
+        .science { 
+            padding: 100px 0; 
+            background: #fff; 
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .science-box { 
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 50px; 
+            border-radius: 25px; 
+            border-left: 8px solid var(--primary);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .science-box::before {
+            content: '💧';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4rem;
+            opacity: 0.1;
+        }
+
+        .science-box h2 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .science-highlight {
+            background: var(--primary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        /* STATS BAR */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* COMPARISON SECTION - ENHANCED */
+        .comparison { 
+            padding: 80px 0; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+        }
+
+        .comp-card { 
+            background: white; 
+            border-radius: 25px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .comp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+
+        .comp-card:first-child::before {
+            background: var(--danger);
+        }
+
+        .comp-card:last-child::before {
+            background: var(--accent);
+        }
+
+        .comp-card img { 
+            width: 100%; 
+            height: 280px; 
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .comp-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .comp-content { 
+            padding: 35px; 
+        }
+
+        .comp-content h3{
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .comp-card:first-child h3 {
+            color: var(--danger);
+        }
+
+        .comp-card:last-child h3 {
+            color: var(--accent);
+        }
+
+        .red-text { 
+            color: var(--danger); 
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .green-text { 
+            color: var(--accent); 
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* INGREDIENTS GRID - ENHANCED */
+        .ingredients { 
+            padding: 100px 0; 
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+        }
+
+        .ing-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            margin-top: 50px; 
+        }
+
+        .ing-card { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            padding: 25px; 
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30,136,229,0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .ing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .ing-card:hover::before {
+            opacity: 1;
+        }
+
+        .ing-card img { 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%; 
+            border: 3px solid var(--primary);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .ing-card div {
+            z-index: 1;
+        }
+
+        .ing-card strong {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .ing-card p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* HOW IT WORKS SECTION - NEW */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .step-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-hero);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 20px rgba(30,136,229,0.4);
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+
+        /* PRICING TABLE - ENHANCED */
+        .pricing { 
+            padding: 100px 0; 
+            text-align: center;
+            background: linear-gradient(135deg, #fff 0%, #E3F2FD 100%);
+        }
+
+        .price-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            justify-content: center; 
+            margin-top: 50px; 
+        }
+
+        .price-card { 
+            background: white; 
+            border: 2px solid #eee; 
+            border-radius: 30px; 
+            padding: 50px 30px; 
+            width: 320px; 
+            position: relative; 
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .price-card.popular { 
+            border-color: var(--primary); 
+            transform: scale(1.08); 
+            box-shadow: var(--shadow-glow);
+            z-index: 2;
+        }
+
+        .price-card.popular:hover {
+            transform: scale(1.08) translateY(-10px);
+        }
+
+        .price-card.popular::before { 
+            content: 'MOST POPULAR'; 
+            background: var(--gradient-hero); 
+            color: white; 
+            position: absolute; 
+            top: -15px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            padding: 8px 25px; 
+            border-radius: 50px; 
+            font-weight: 800;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(30,136,229,0.4);
+            animation: glow 2s infinite;
+        }
+
+        .price-card h3 { 
+            font-size: 1.8rem; 
+            margin: 0;
+            color: var(--secondary);
+            font-weight: 800;
+        }
+
+        .supply-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .price-card .cost { 
+            font-size: 4rem; 
+            font-weight: 900; 
+            color: var(--primary); 
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .price-card .cost span { 
+            font-size: 1.3rem; 
+            color: #999;
+            font-weight: 600;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .savings-tag {
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .buy-now { 
+            background: var(--gradient-hero); 
+            color: white; 
+            width: 100%; 
+            border: none; 
+            padding: 18px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 1.3rem; 
+            cursor: pointer; 
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(30,136,229,0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-now:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(30,136,229,0.6);
+        }
+
+        /* BONUS SECTION - ENHANCED */
+        .bonuses { 
+            padding: 80px 0; 
+            background: var(--gradient-dark); 
+            color: white; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonuses::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30,136,229,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .bonuses h2 {
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bonus-flex { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            justify-content: center; 
+            margin-top: 50px; 
+            position: relative;
+            z-index: 1;
+        }
+
+        .bonus-box { 
+            background: rgba(255,255,255,0.05); 
+            padding: 40px; 
+            border-radius: 25px; 
+            width: 480px; 
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus-box:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .bonus-box::before {
+            content: '🎁';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.2;
+        }
+
+        .bonus-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+
+        .bonus-value {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-top: 15px;
+        }
+
+        /* TESTIMONIALS SECTION - NEW */
+        .testimonials {
+            padding: 100px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: left;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .stars {
+            color: var(--warning);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .author-info strong {
+            color: var(--secondary);
+            display: block;
+        }
+
+        .author-info span {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* GUARANTEE - ENHANCED */
+        .guarantee { 
+            padding: 100px 0; 
+            text-align: center; 
+            background: linear-gradient(135deg, #fff 0%, #f0f9f4 100%);
+            position: relative;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .seal { 
+            width: 180px; 
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,200,83,0.3));
+        }
+
+        .guarantee h2 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .guarantee p {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* FAQ SECTION - NEW */
+        .faq {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-soft);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-weight: 700;
+            color: var(--secondary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #666;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* MODAL - ENHANCED */
+        .modal-overlay { 
+            display: none; 
+            position: fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            background: rgba(0,0,0,0.9); 
+            z-index: 10000; 
+            justify-content: center; 
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal { 
+            background: white; 
+            padding: 50px; 
+            border-radius: 30px; 
+            max-width: 500px; 
+            width: 90%; 
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            position: relative;
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--danger);
+        }
+
+        .timer { 
+            color: var(--danger); 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            margin-bottom: 20px;
+            background: rgba(255,23,68,0.1);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal h2 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .modal input { 
+            width: 100%; 
+            padding: 18px; 
+            margin: 15px 0; 
+            border: 2px solid #eee; 
+            border-radius: 15px; 
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(30,136,229,0.1);
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER - ENHANCED */
+        footer {
+            background: var(--secondary);
+            color: rgba(255,255,255,0.6);
+            padding: 60px 0 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            .comparison { grid-template-columns: 1fr; } 
+            .price-card.popular { transform: scale(1); margin: 20px 0; }
+            .steps-grid, .testimonial-grid, .stats-bar { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .nav-links { display: none; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+<div class="top-bar">🔥 FLASH SALE: 50% OFF ENDING SOON | ONLY 127 BOTTLES REMAINING AT THIS PRICE</div>
+
+<nav>
+    <div class="container nav-content">
+        <div class="logo">SlimCrystal™</div>
+        <div class="nav-links">
+            <a href="#about">The Science</a>
+            <a href="#crystals">Crystals</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a href="#order" class="order-nav">ORDER NOW</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">⭐ 94,000+ Happy Customers & Counting</div>
+        <h1 class="animate__animated animate__fadeInUp">Drink Water. Lose Weight.<br><span>Transform Your Life.</span></h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">The world's first crystal-infused water bottle that naturally boosts metabolism, increases energy, and supports healthy weight loss just by drinking water.</p>
+        <button class="buy-now animate__animated animate__pulse animate__infinite" style="width: auto; padding: 25px 60px;" onclick="openModal()">CLAIM MY 50% DISCOUNT »</button>
+
+        <div class="hero-features">
+            <div class="hero-feature"><span>🇺🇸</span> Free USA Shipping</div>
+            <div class="hero-feature"><span>🛡️</span> 60-Day Guarantee</div>
+            <div class="hero-feature"><span>💎</span> 9 Natural Crystals</div>
+            <div class="hero-feature"><span>⚡</span> Results in 30 Days</div>
+        </div>
+    </div>
+</section>
+
+<section class="science" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Ancient Crystal Secret</h2>
+            <p>How 9 powerful crystals can rewire your metabolism and restore youthful energy</p>
+        </div>
+
+        <div class="science-box animate__animated animate__fadeInLeft">
+            <h2>It's Not Just Water. It's <span class="science-highlight">Crystal-Charged Water.</span></h2>
+            <p>For centuries, ancient civilizations have used the natural energy of crystals to heal, energize, and transform the body. Modern science now confirms that specific crystals can influence water structure, creating <strong>"living water"</strong> that your body absorbs more efficiently.</p>
+            <p>SlimCrystal combines 9 specific crystals—including Amethyst, Clear Quartz, and Red Jasper—to create a powerful elixir that naturally boosts your metabolism, reduces cravings, and floods your cells with pure energy.</p>
+            <blockquote style="font-style: italic; border-left: 4px solid var(--primary); padding-left: 20px; font-size: 1.3rem; color: var(--secondary); margin: 30px 0;">
+                "The structured water created by these crystals has shown remarkable effects on cellular hydration and metabolic function. It's like drinking from the fountain of youth."
+                <footer style="margin-top: 10px; font-size: 0.9rem; color: #666; font-style: normal;">— Dr. Michael Johnson, Holistic Medicine Researcher</footer>
+            </blockquote>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">94%</span>
+                <div class="stat-label">Report Increased Energy<br>Within 2 Weeks</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">34lbs</span>
+                <div class="stat-label">Average Weight Loss<br>Over 3 Months</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Natural & Safe<br>No Side Effects</div>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comp-card">
+                <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500" alt="Tired Woman">
+                <div class="comp-content">
+                    <h3>Before SlimCrystal™</h3>
+                    <p class="red-text">✕ Constant fatigue and low energy</p>
+                    <p class="red-text">✕ Stubborn weight that won't budge</p>
+                    <p class="red-text">✕ Uncontrollable sugar cravings</p>
+                    <p class="red-text">✕ Poor sleep and brain fog</p>
+                    <p class="red-text">✕ Sluggish metabolism</p>
+                </div>
+            </div>
+            <div class="comp-card">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500" alt="Happy Woman">
+                <div class="comp-content">
+                    <h3>After SlimCrystal™</h3>
+                    <p class="green-text">✓ All-day natural energy</p>
+                    <p class="green-text">✓ Steady, healthy weight loss</p>
+                    <p class="green-text">✓ Cravings completely gone</p>
+                    <p class="green-text">✓ Deep sleep and mental clarity</p>
+                    <p class="green-text">✓ Revved-up metabolism</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ingredients" id="crystals">
+    <div class="container">
+        <div class="section-header">
+            <h2>The 9 Slimming Crystals</h2>
+            <p>Each crystal is carefully selected for its unique ability to transform your water and your body</p>
+        </div>
+
+        <div class="ing-grid">
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Amethyst">
+                <div>
+                    <strong>Amethyst</strong>
+                    <p>Known as the "Stone of Transformation," it reduces stress hormones that cause belly fat storage and promotes restful sleep.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Clear Quartz">
+                <div>
+                    <strong>Clear Quartz</strong>
+                    <p>The "Master Healer" amplifies the energy of all other crystals and boosts overall vitality and immune function.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Red Jasper">
+                <div>
+                    <strong>Red Jasper</strong>
+                    <p>Increases stamina, supports healthy circulation, and provides grounding energy throughout the day.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Citrine">
+                <div>
+                    <strong>Citrine</strong>
+                    <p>The "Success Stone" boosts metabolism, increases motivation, and helps manifest your weight loss goals.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Carnelian">
+                <div>
+                    <strong>Carnelian</strong>
+                    <p>Ignites your inner fire, boosts confidence, and supports healthy digestion and nutrient absorption.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Sodalite">
+                <div>
+                    <strong>Sodalite</strong>
+                    <p>Balances metabolism, reduces inflammation, and helps control emotional eating patterns.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Moonstone">
+                <div>
+                    <strong>Moonstone</strong>
+                    <p>Supports hormonal balance, reduces water retention, and promotes emotional stability.</p>
+                </div>
+            </div>
+            <div class="ing-card">
+                <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?w=100" alt="Green Aventurine">
+                <div>
+                    <strong>Green Aventurine</strong>
+                    <p>Attracts abundance and good health while supporting heart health and circulation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+    <div class="container">
+        <h2>How SlimCrystal™ Transforms Your Water</h2>
+        <p style="opacity: 0.8; max-width: 600px; margin: 0 auto;">Three simple steps to unlock the power of crystal healing</p>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Fill Your Bottle</h3>
+                <p>Add fresh water to your SlimCrystal bottle. The crystals immediately begin restructuring the water molecules.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Let It Charge</h3>
+                <p>Wait 7-10 minutes for the crystals to infuse the water with their natural energy and healing vibrations.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Drink & Transform</h3>
+                <p>Enjoy your crystal-charged water throughout the day and watch as your energy soars and weight melts away.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="order">
+    <div class="container">
+        <div class="section-header">
+            <h2>Choose Your Transformation Package</h2>
+            <p>Stock is limited due to rare crystal sourcing. Secure your bottle now.</p>
+        </div>
+
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <div class="supply-tag">1 Bottle</div>
+                <div class="original-price">$197</div>
+                <div class="cost">$117 <span>/bottle</span></div>
+                <div class="savings-tag">Save $80 + Free Bracelet</div>
+                <ul class="price-features">
+                    <li>1 SlimCrystal Bottle</li>
+                    <li>Free Crystal Bracelet</li>
+                    <li>60-Day Guarantee</li>
+                    <li>+ Shipping</li>
+                </ul>
+                <button class="buy-now" onclick="openModal()">GET STARTED</button>
+            </div>
+
+            <div class="price-card popular">
+                <h3>Best Value</h3>
+                <div class="supply-tag">2 Bottles + Bonuses</div>
+                <div class="original-price">$394</div>
+                <div class="cost">$97 <span>/bottle</span></div>
+                <div class="savings-tag">Save $200 + Free Shipping</div>
+                <ul class="price-features">
+                    <li>2 SlimCrystal Bottles</li>
+                    <li>2 Free Crystal Bracelets</li>
+                    <li>FREE Bonus Guides</li>
+                    <li>FREE Express Shipping</li>
+                    <li>60-Day Money-Back Guarantee</li>
+                </ul>
+                <button class="buy-now" onclick="openModal()">CLAIM BEST DEAL »</button>
+            </div>
+
+            <div class="price-card">
+                <h3>Family Pack</h3>
+                <div class="supply-tag">3 Bottles</div>
+                <div class="original-price">$591</div>
+                <div class="cost">$89 <span>/bottle</span></div>
+                <div class="savings-tag">Save $324 + Free Shipping</div>
+                <ul class="price-features">
+                    <li>3 SlimCrystal Bottles</li>
+                    <li>3 Free Crystal Bracelets</li>
+                    <li>FREE Bonus Guides</li>
+                    <li>FREE Express Shipping</li>
+                    <li>60-Day Guarantee</li>
+                </ul>
+                <button class="buy-now" onclick="openModal()">ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bonuses">
+    <div class="container">
+        <h2>Order 2+ Bottles Today & Get These Bonuses FREE</h2>
+        <p style="opacity: 0.8;">Combined value of $97—yours free with your order</p>
+
+        <div class="bonus-flex">
+            <div class="bonus-box">
+                <div class="bonus-tag">BONUS #1</div>
+                <h3>Slim Over 55 Program</h3>
+                <p>The complete guide to healthy weight loss for men and women over 55. Includes simple meal plans, gentle exercises, and mindset strategies specifically designed for your body's needs.</p>
+                <div class="bonus-value">Retail Value: $97 — YOURS FREE</div>
+            </div>
+            <div class="bonus-box">
+                <div class="bonus-tag">BONUS #2</div>
+                <h3>Healthy Fat Loss Desserts Cookbook</h3>
+                <p>Enjoy delicious desserts while losing weight! This cookbook features 35+ guilt-free recipes that satisfy your sweet tooth without sabotaging your progress.</p>
+                <div class="bonus-value">Retail Value: $47 — YOURS FREE</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2>Real People. Real Results.</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto;">Join 94,000+ customers who transformed their health with SlimCrystal™</p>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"I lost 54lbs and got down to a size 8! My late night cravings were gone and I started to sleep better and lose weight naturally. I don't have to worry about ever gaining weight!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <strong>Samantha McGinn</strong>
+                        <span>Saratoga, CA | Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"I will turn 80 in December, and my grandkids call me 'super granny!' I have the energy and stamina of when I was young. I strongly feel that I will live to be 100!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JW</div>
+                    <div class="author-info">
+                        <strong>Janice W.</strong>
+                        <span>Louisville, KY | Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"I lost 34 pounds so far, my blood sugar is back to normal and I just got a raise! Immediately after I started drinking from this bottle, I noticed a huge boost in my energy level!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">TA</div>
+                    <div class="author-info">
+                        <strong>Tracy Atkins</strong>
+                        <span>Boston, MA | Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="guarantee">
+    <div class="container">
+        <div class="guarantee-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2602/2602462.png" alt="Guarantee" class="seal">
+            <h2>60-Day "Empty Bottle" Money-Back Guarantee</h2>
+            <p>We are so confident SlimCrystal™ will transform your health that we offer a 60-day guarantee. Try it for 2 full months. If you don't experience increased energy, better sleep, and visible weight loss, simply return even the empty bottles for a full, no-questions-asked refund. You have nothing to lose except the stubborn fat.</p>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How quickly will I see results?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Most customers report increased energy and reduced cravings within the first week. Visible weight loss typically begins within 2-4 weeks, with dramatic results appearing by month 2-3. Everyone's body is different, but the 60-day guarantee gives you plenty of time to experience the full transformation.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Is SlimCrystal™ safe? How do I clean it?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! SlimCrystal is made from BPA-free, high-quality glass and stainless steel. The crystals are completely natural and safe. To clean, simply hand wash the glass bottle with warm soapy water. The crystal chamber can be rinsed with water—never use harsh chemicals on the crystals.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    How do I use the bottle?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Simply fill your SlimCrystal bottle with fresh water and let it sit for 7-10 minutes to allow the crystals to charge the water. Then drink throughout the day! For best results, drink 2-3 bottles daily. The more crystal-charged water you drink, the better your results.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    What if it doesn't work for me?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    While 94% of customers love their results, we understand every body is unique. That's why we offer our 60-day "empty bottle" guarantee. If you're not completely satisfied for any reason, contact our 24/7 customer support for a full refund—no questions asked.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">SlimCrystal™</div>
+                <p style="line-height: 1.8; max-width: 300px;">The world's first crystal-infused water bottle for natural weight loss and increased energy. Made with love and 9 powerful healing crystals.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#about">The Science</a>
+                <a href="#crystals">Crystals</a>
+                <a href="#order">Order Now</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p><strong>Scientific References:</strong></p>
+            <p style="font-size: 0.8rem; margin: 15px 0;">
+                1. Emoto, M. (2004). "The Hidden Messages in Water." <em>Journal of Alternative Medicine</em>.<br>
+                2. Dean, C. (2016). "Crystal Healing: The Science and Psychology Behind Gemstones." <em>Holistic Health Review</em>.<br>
+                3. Richardson, A. (2019). "Structured Water and Cellular Hydration." <em>Journal of Natural Health</em>.
+            </p>
+            <p style="margin-top: 30px; opacity: 0.6;">© 2026 SlimCrystal™. All Rights Reserved. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.5;">
+                ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal-overlay" id="emailModal" onclick="closeModalOutside(event)">
+    <div class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="timer">⏰ OFFER EXPIRES IN: <span id="clock">10:00</span></div>
+        <h2>Unlock Your 50% Discount</h2>
+        <p>Enter your email below to verify stock availability and receive your secure checkout link instantly.</p>
+
+        <form action="https://formsubmit.co/satishking1234567890123@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://5abf3phit506qfxho5vxsr3pfb.hop.clickbank.net">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="email" name="email" placeholder="Enter your best email address" required>
+            <button type="submit" class="buy-now">ACTIVATE MY DISCOUNT »</button>
+        </form>
+
+        <div class="secure-badge">
+            <span>🔒</span> 256-Bit Secure SSL Encryption | Your Data is Protected
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() { 
+        document.getElementById('emailModal').style.display = 'flex'; 
+        startTimer(600); 
+    }
+
+    function closeModal() {
+        document.getElementById('emailModal').style.display = 'none';
+    }
+
+    function closeModalOutside(event) {
+        if (event.target.id === 'emailModal') {
+            closeModal();
+        }
+    }
+
+    function startTimer(duration) {
+        var timer = duration, minutes, seconds;
+        var interval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            document.querySelector('#clock').textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        item.classList.toggle('active');
+    }
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.stat-item, .ing-card, .step-card, .testimonial-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>

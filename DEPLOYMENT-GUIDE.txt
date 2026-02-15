@@ -1,0 +1,185 @@
+
+# 🚀 DEPLOYMENT GUIDE - The 5-Pillar Weight Loss Protocol
+
+## ✅ WHAT YOU HAVE NOW
+
+**Complete Website Package:**
+- ✅ 3 Main Pages (Home, Systems, Solutions)
+- ✅ 6 Product Landing Pages (Citrus Burn, Mitolyn, Java Burn, Kito, Lanta, Slim Crystal)
+- ✅ All links working between pages
+- ✅ Professional design with mobile responsiveness
+- ✅ SEO-friendly structure
+
+---
+
+## 🎯 RECOMMENDED: GitHub Pages (FREE & EASIEST)
+
+### Step-by-Step Instructions:
+
+**1. Create GitHub Account**
+- Go to https://github.com/signup
+- Sign up with your email
+- Verify your account
+
+**2. Create New Repository**
+- Click the "+" button (top right) → "New repository"
+- Repository name: `5-pillar-weight-loss`
+- Description: "Weight loss affiliate website"
+- Select "Public"
+- Check "Add a README file"
+- Click "Create repository"
+
+**3. Upload Website Files**
+- Click "Add file" → "Upload files"
+- Drag and drop ALL files from the ZIP folder
+- OR click "choose your files" and select all
+- Wait for upload to complete
+- Click "Commit changes"
+
+**4. Enable GitHub Pages**
+- Go to "Settings" tab (top of page)
+- Scroll down to "Pages" section (left sidebar)
+- Under "Source", select "Deploy from a branch"
+- Select "main" branch
+- Click "Save"
+
+**5. Your Site is Live!**
+- Wait 2-5 minutes
+- Your URL: `https://YOURUSERNAME.github.io/5-pillar-weight-loss/`
+- Share this link with customers!
+
+---
+
+## 🌐 ALTERNATIVE: Netlify (FREE & FAST)
+
+### Step-by-Step:
+
+**1. Sign Up**
+- Go to https://app.netlify.com/signup
+- Sign up with GitHub or email
+
+**2. Deploy**
+- Drag and drop the entire website folder to the Netlify dashboard
+- OR click "Add new site" → "Deploy manually"
+
+**3. Get Your URL**
+- Instant URL: `https://5-pillar-weight-loss-abc123.netlify.app`
+- Custom domain available in free plan
+
+---
+
+## 💰 PAID HOSTING (For Custom Domain)
+
+### Option 1: Bluehost (~$3/month)
+1. Go to https://www.bluehost.com
+2. Buy hosting plan
+3. Use File Manager or FTP to upload files
+4. Point your domain to the hosting
+
+### Option 2: Namecheap (~$2/month)
+1. Go to https://www.namecheap.com/hosting
+2. Buy "Stellar" shared hosting
+3. Use cPanel File Manager
+4. Upload all files to `public_html` folder
+
+---
+
+## 🔗 IMPORTANT: Update Affiliate Links
+
+Before going live, you MUST update the affiliate links in each product page:
+
+### Files to Edit:
+1. **citrus-burn.html** - Find formsubmit.co link, replace with your affiliate link
+2. **mitolyn.html** - Find formsubmit.co link, replace with your affiliate link  
+3. **java-burn.html** - Find formsubmit.co link, replace with your affiliate link
+4. **kito.html** - Find formsubmit.co link, replace with your affiliate link
+5. **lanta-flat-belly-shake.html** - Find ClickBank link, replace with your affiliate link
+6. **slim-crystal.html** - Find ClickBank link, replace with your affiliate link
+
+### How to Edit:
+1. Open HTML file in any text editor (Notepad, TextEdit, VS Code)
+2. Search for: `formsubmit.co` or `clickbank.net`
+3. Replace with your actual affiliate link
+4. Save file
+5. Re-upload to hosting
+
+---
+
+## 📱 TESTING CHECKLIST
+
+Before launching, test:
+- [ ] Open index.html in browser
+- [ ] Click "Systems" page link
+- [ ] Click "Solutions" page link
+- [ ] Click each product "Get This Plan" button
+- [ ] Test on mobile phone
+- [ ] Test on tablet
+- [ ] Check all images load
+- [ ] Verify no broken links
+
+---
+
+## 🎨 CUSTOMIZATION OPTIONS
+
+### Change Colors:
+Edit in each HTML file's `<style>` section:
+```css
+:root {
+    --primary: #10b981;        /* Change this color code */
+    --accent: #f59e0b;         /* Change this color code */
+}
+```
+
+### Change Company Name:
+Search and replace "The 5-Pillar Protocol" in all files
+
+### Add Your Logo:
+1. Create logo image (PNG, 200x200px recommended)
+2. Upload to `images/` folder
+3. Replace emoji logo with: `<img src="images/logo.png">`
+
+---
+
+## 📊 ADD GOOGLE ANALYTICS
+
+1. Get GA tracking code from https://analytics.google.com
+2. Add this before `</head>` in every HTML file:
+```html
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_GA_ID');
+</script>
+```
+
+---
+
+## 🆘 TROUBLESHOOTING
+
+**Problem: Links not working**
+→ Check that all files are in the same folder
+→ Ensure file names match exactly (case-sensitive)
+
+**Problem: Images not showing**
+→ Upload images to `images/` folder
+→ Check image paths in HTML
+
+**Problem: Site not loading**
+→ Clear browser cache (Ctrl+Shift+R)
+→ Check GitHub Pages settings
+→ Verify repository is public
+
+---
+
+## 📞 NEED HELP?
+
+- GitHub Pages Help: https://docs.github.com/en/pages
+- Netlify Help: https://docs.netlify.com
+- HTML Tutorial: https://www.w3schools.com/html/
+
+---
+
+**🎉 You're ready to launch your weight loss affiliate website!**
