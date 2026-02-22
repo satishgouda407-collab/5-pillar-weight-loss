@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical-grade metabolism support systems. Explore scientifically-formulated supplements, hormone reset protocols, and AI-powered personalized plans for sustainable metabolic health.">
     <title>Medical & Metabolism Systems | The 5-Pillar Weight Loss Protocol</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -35,10 +37,22 @@
         .nav-links a.active { color: var(--primary); }
         .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
 
-        .products-section { padding: 60px 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+        /* Authority Intro Section */
+        .authority-intro { padding: 60px 0 40px; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); text-align: center; }
+        .authority-intro h1 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px; font-weight: 800; }
+        .authority-intro > p { font-size: 1.15rem; color: #64748b; max-width: 800px; margin: 0 auto 30px; line-height: 1.7; }
+        
+        .categorization-explained { background: white; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; max-width: 900px; margin: 30px auto; text-align: left; }
+        .categorization-explained h3 { color: var(--secondary); margin-bottom: 20px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .category-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .category-item { background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); }
+        .category-item h4 { font-size: 1rem; color: var(--secondary); margin-bottom: 8px; }
+        .category-item p { font-size: 0.9rem; color: #64748b; margin: 0; }
+
+        .products-section { padding: 40px 0 60px; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
         .category-header { text-align: center; margin-bottom: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; border-radius: 20px; }
-        .category-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
-        .category-header p { opacity: 0.9; font-size: 1.1rem; }
+        .category-header h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        .category-header p { opacity: 0.9; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .product-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.4s ease; display: flex; flex-direction: column; }
@@ -51,36 +65,56 @@
         .product-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
         .product-content h3 { font-size: 1.5rem; color: var(--secondary); margin-bottom: 10px; }
         .product-content .subtitle { color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .product-content p { color: #64748b; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+        .product-content > p { color: #64748b; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+        
         .product-features { list-style: none; margin-bottom: 25px; }
-        .product-features li { padding: 8px 0; color: #475569; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f1f5f9; }
-        .product-features li::before { content: '✓'; color: var(--success); font-weight: 900; }
+        .product-features li { padding: 10px 0; color: #475569; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid #f1f5f9; }
+        .product-features li::before { content: '✓'; color: var(--success); font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+        
         .btn-product { display: block; width: 100%; padding: 15px; background: var(--gradient-primary); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
         .btn-product:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
         .btn-product.secondary { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 15px rgba(245,158,11,0.4); }
         .btn-product.secondary:hover { box-shadow: 0 6px 20px rgba(245,158,11,0.6); }
+
+        /* Pre-footer Disclaimer */
+        .pre-footer-disclaimer { background: #fef3c7; padding: 40px 0; text-align: center; border-top: 3px solid var(--accent); }
+        .pre-footer-disclaimer .container { max-width: 800px; }
+        .pre-footer-disclaimer h4 { color: #92400e; margin-bottom: 15px; font-size: 1.2rem; }
+        .pre-footer-disclaimer p { color: #78350f; font-size: 1rem; line-height: 1.7; margin-bottom: 15px; }
+        .pre-footer-disclaimer strong { color: #92400e; }
 
         .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
         .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
         .page-btn:hover { border-color: var(--primary); color: var(--primary); }
         .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
 
-        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 0; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .footer-desc { line-height: 1.8; max-width: 300px; }
         .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
         .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--primary-light); }
-        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; }
+        .footer-disclaimer { font-size: 0.85rem; opacity: 0.8; max-width: 900px; margin: 0 auto 20px; line-height: 1.6; }
 
         @media (max-width: 768px) {
             .products-grid { grid-template-columns: 1fr; }
+            .category-list { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .nav-links { display: none; }
             .category-header h2 { font-size: 1.8rem; }
+            .authority-intro h1 { font-size: 2rem; }
         }
     </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
 
@@ -94,17 +128,43 @@
             <a href="index.html">Home</a>
             <a href="systems.html" class="active">Systems</a>
             <a href="solutions.html">Solutions</a>
-            <a href="systems.html" class="btn-nav">Get Started</a>
+            <a href="systems.html" class="btn-nav">Explore Systems</a>
         </div>
     </div>
 </nav>
+
+<!-- Authority Intro Section -->
+<section class="authority-intro">
+    <div class="container">
+        <h1>Medical-Grade Metabolism Support Systems</h1>
+        <p>Our systems are organized into three distinct categories based on their mechanism of action and support approach. Each category contains carefully researched solutions designed to support your metabolic health through different pathways—whether through targeted supplementation, hormonal balance, or AI-powered personalization.</p>
+        
+        <div class="categorization-explained">
+            <h3>📊 How Our Systems Are Organized</h3>
+            <div class="category-list">
+                <div class="category-item">
+                    <h4>💊 Supplements & Guides</h4>
+                    <p>Research-backed formulations with comprehensive usage guides for metabolic support.</p>
+                </div>
+                <div class="category-item">
+                    <h4>⚡ Metabolism & Hormones</h4>
+                    <p>Protocols targeting metabolic rate and hormonal balance for energy optimization.</p>
+                </div>
+                <div class="category-item">
+                    <h4>🤖 AI-Powered Plans</h4>
+                    <p>Personalized daily recommendations based on your unique body composition data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="products-section">
     <div class="container">
         <!-- Category 1: Medical & Supplement -->
         <div class="category-header">
             <h2>1. Medical & Supplement Systems with Guide</h2>
-            <p>Professional-grade formulations backed by clinical research and expert guidance</p>
+            <p>Professional-grade formulations backed by nutritional research and comprehensive educational guides</p>
         </div>
 
         <div class="products-grid">
@@ -112,19 +172,19 @@
             <div class="product-card">
                 <div class="product-image">
                     🍊
-                    <span class="product-badge">HOT</span>
+                    <span class="product-badge">POPULAR</span>
                 </div>
                 <div class="product-content">
-                    <span class="subtitle">Metabolic Ignition</span>
+                    <span class="subtitle">Metabolic Support Formula</span>
                     <h3>Citrus Burn</h3>
-                    <p>A powerful thermogenic formula featuring rare citrus bioflavonoids that activate your body's natural fat-burning furnace. Clinically shown to increase metabolic rate by up to 23%.</p>
+                    <p>A carefully formulated blend featuring citrus bioflavonoids and plant compounds traditionally used to support metabolic function. Designed for adults seeking natural metabolic support.</p>
                     <ul class="product-features">
-                        <li>Boosts metabolism naturally</li>
-                        <li>Suppresses appetite & cravings</li>
-                        <li>Increases energy levels</li>
-                        <li>100% natural ingredients</li>
+                        <li>Supports healthy metabolic function</li>
+                        <li>May help reduce occasional cravings</li>
+                        <li>Contains natural energy-supporting compounds</li>
+                        <li>Formulated with researched ingredients</li>
                     </ul>
-                    <a href="citrus-burn.html" class="btn-product">Get This Plan →</a>
+                    <a href="citrus-burn.html" class="btn-product">Explore This System →</a>
                 </div>
             </div>
 
@@ -132,19 +192,19 @@
             <div class="product-card">
                 <div class="product-image">
                     💎
-                    <span class="product-badge">NEW</span>
+                    <span class="product-badge">CELLULAR</span>
                 </div>
                 <div class="product-content">
-                    <span class="subtitle">Cellular Energy</span>
+                    <span class="subtitle">Cellular Energy Support</span>
                     <h3>Mitolyn</h3>
-                    <p>Revolutionary mitochondrial support formula that optimizes cellular energy production. Helps your body burn fat at the cellular level while boosting overall vitality and mental clarity.</p>
+                    <p>Advanced formula designed to support mitochondrial health—the cellular powerhouses responsible for energy production. Ideal for those experiencing low energy and seeking cellular-level support.</p>
                     <ul class="product-features">
-                        <li>Supports healthy mitochondria</li>
-                        <li>Enhances cellular energy</li>
-                        <li>Promotes fat oxidation</li>
-                        <li>Improves mental focus</li>
+                        <li>Supports healthy mitochondrial function</li>
+                        <li>Promotes natural cellular energy production</li>
+                        <li>Contains antioxidant compounds for cell health</li>
+                        <li>May support healthy aging processes</li>
                     </ul>
-                    <a href="mitolyn.html" class="btn-product">Get This Plan →</a>
+                    <a href="mitolyn.html" class="btn-product">Explore This System →</a>
                 </div>
             </div>
         </div>
@@ -152,7 +212,7 @@
         <!-- Category 2: Metabolism & Hormone -->
         <div class="category-header">
             <h2>2. Metabolism & Hormone Reset System</h2>
-            <p>Reset your body's metabolic engine and restore hormonal balance for sustainable weight loss</p>
+            <p>Support your body's metabolic engine and restore natural balance for sustainable energy management</p>
         </div>
 
         <div class="products-grid">
@@ -164,14 +224,14 @@
                 <div class="product-content">
                     <span class="subtitle">Gut Health Optimization</span>
                     <h3>Lean Biome</h3>
-                    <p>Advanced probiotic and prebiotic blend that rebalances your gut microbiome. A healthy gut is the foundation of efficient metabolism and sustainable weight management.</p>
+                    <p>Advanced probiotic and prebiotic blend supporting gut microbiome balance. Research increasingly shows gut health is foundational to metabolic efficiency and weight management.</p>
                     <ul class="product-features">
-                        <li>9 proprietary probiotic strains</li>
-                        <li>Reduces belly fat storage</li>
-                        <li>Improves digestion</li>
-                        <li>Curbs unhealthy cravings</li>
+                        <li>9 researched probiotic strains</li>
+                        <li>Supports digestive health</li>
+                        <li>May help reduce bloating and discomfort</li>
+                        <li>Supports nutrient absorption</li>
                     </ul>
-                    <a href="#" class="btn-product secondary">Coming Soon→</a>
+                    <a href="#" class="btn-product secondary">Coming Soon →</a>
                 </div>
             </div>
 
@@ -182,16 +242,16 @@
                     <span class="product-badge">BESTSELLER</span>
                 </div>
                 <div class="product-content">
-                    <span class="subtitle">Morning Metabolism</span>
+                    <span class="subtitle">Morning Metabolism Support</span>
                     <h3>Java Burn</h3>
-                    <p>The world's first patent-pending formula designed to be mixed with coffee. Instantly boosts your metabolism, burns fat, and increases energy without changing the taste of your morning brew.</p>
+                    <p>A patent-pending formula designed to be mixed with your morning coffee. Contains ingredients that may support metabolic rate when combined with caffeine. Tasteless and dissolves instantly.</p>
                     <ul class="product-features">
-                        <li>Tasteless, dissolves instantly</li>
-                        <li>Boosts metabolism by 400%</li>
-                        <li>Burns fat from stubborn areas</li>
-                        <li>Works with any coffee</li>
+                        <li>Tasteless powder, dissolves instantly</li>
+                        <li>Designed to work with coffee's natural compounds</li>
+                        <li>Supports morning metabolic activity</li>
+                        <li>Convenient daily ritual integration</li>
                     </ul>
-                    <a href="java-burn.html" class="btn-product">Get This Plan →</a>
+                    <a href="java-burn.html" class="btn-product">Explore This System →</a>
                 </div>
             </div>
         </div>
@@ -199,7 +259,7 @@
         <!-- Category 3: AI Powered -->
         <div class="category-header">
             <h2>3. Custom Diet AI Powered Daily Plan</h2>
-            <p>Personalized nutrition and fitness plans powered by advanced artificial intelligence</p>
+            <p>Personalized nutrition and fitness plans powered by advanced artificial intelligence and your unique data</p>
         </div>
 
         <div class="products-grid">
@@ -212,17 +272,26 @@
                 <div class="product-content">
                     <span class="subtitle">Smart Keto Assistant</span>
                     <h3>Kito Flow AI</h3>
-                    <p>Your personal AI nutritionist that creates customized keto meal plans, tracks your macros in real-time, and adapts to your progress. Features voice recognition and smart grocery lists.</p>
+                    <p>Your personal AI nutritionist that creates customized keto meal plans, tracks macros in real-time, and adapts to your progress. Features voice recognition and intelligent grocery planning.</p>
                     <ul class="product-features">
-                        <li>AI-generated meal plans</li>
-                        <li>Real-time macro tracking</li>
-                        <li>Smart recipe suggestions</li>
-                        <li>Progress adaptation</li>
+                        <li>AI-generated personalized meal plans</li>
+                        <li>Real-time macro tracking and adjustment</li>
+                        <li>Smart recipe suggestions based on preferences</li>
+                        <li>Adaptive recommendations as you progress</li>
                     </ul>
-                    <a href="kito.html" class="btn-product">Get This Plan →</a>
+                    <a href="kito.html" class="btn-product">Explore This System →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Pre-footer Disclaimer -->
+<section class="pre-footer-disclaimer">
+    <div class="container">
+        <h4>⚠️ Important Notice About Results</h4>
+        <p><strong>Results vary by individual.</strong> The systems presented on this page are designed to support metabolic health and weight management, but outcomes depend on many factors including adherence, starting condition, genetics, and lifestyle. These products and systems are not intended to diagnose, treat, cure, or prevent any disease.</p>
+        <p><strong>This is not medical advice.</strong> Always consult with a qualified healthcare provider before beginning any new supplement regimen, especially if you have existing health conditions or take medications.</p>
     </div>
 </section>
 
@@ -242,13 +311,14 @@
                     <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
                     The 5-Pillar Protocol
                 </div>
-                <p class="footer-desc">Your comprehensive guide to sustainable weight loss through our proven 5-pillar approach.</p>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="systems.html">Medical Systems</a>
                 <a href="solutions.html">Exotic Solutions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
             </div>
             <div class="footer-links">
                 <h4>Our Systems</h4>
@@ -259,19 +329,24 @@
             </div>
             <div class="footer-links">
                 <h4>Support</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Full Disclaimer</a>
             </div>
         </div>
         <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided is for educational purposes only and is not intended as medical advice. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Individual results may vary.
+            </p>
             <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
             <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
-                Disclaimer: These statements have not been evaluated by the FDA.
+                These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.
             </p>
         </div>
     </div>
 </footer>
 
 </body>
-</html>
+</html>'''
+

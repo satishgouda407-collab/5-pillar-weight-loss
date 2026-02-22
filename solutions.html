@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore advanced and alternative weight management solutions. Exotic research-backed formulas, lifestyle programs, and coffee-based systems for metabolic support.">
     <title>Exotic & Lifestyle Solutions | The 5-Pillar Weight Loss Protocol</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -35,9 +37,39 @@
         .nav-links a.active { color: var(--primary); }
         .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
 
+        /* Problem/Solution Flow Section */
+        .problem-solution-flow { padding: 80px 0; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); }
+        .flow-header { text-align: center; margin-bottom: 50px; }
+        .flow-header h1 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px; }
+        .flow-header > p { font-size: 1.15rem; color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.7; }
+
+        /* Difference Explanation Box */
+        .difference-box { background: white; border: 2px solid #e2e8f0; border-radius: 20px; padding: 40px; margin: 40px 0; box-shadow: var(--shadow-soft); }
+        .difference-box h3 { color: var(--secondary); margin-bottom: 20px; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+        .difference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .difference-card { padding: 25px; border-radius: 15px; }
+        .difference-card.systems { background: #f0fdf4; border-left: 5px solid var(--primary); }
+        .difference-card.solutions { background: #fef3c7; border-left: 5px solid var(--accent); }
+        .difference-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--secondary); }
+        .difference-card p { font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.6; }
+
+        /* Comparison Block */
+        .comparison-section { padding: 60px 0; background: white; }
+        .comparison-table { background: white; border: 2px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); }
+        .comparison-header { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--secondary); color: white; }
+        .comparison-header > div { padding: 20px; font-weight: 700; text-align: center; }
+        .comparison-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #e2e8f0; }
+        .comparison-row:last-child { border-bottom: none; }
+        .comparison-row > div { padding: 20px; text-align: center; }
+        .comparison-row > div:first-child { text-align: left; font-weight: 600; color: var(--secondary); background: #f8fafc; }
+        .check { color: var(--success); font-weight: 700; }
+        .partial { color: var(--accent); font-weight: 700; }
+
+        /* Products Section */
         .products-section { padding: 60px 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
-        .category-header { text-align: center; margin-bottom: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; border-radius: 20px; }
-        .category-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
+        .category-header { text-align: center; margin-bottom: 50px; padding: 40px; background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%); color: white; border-radius: 20px; position: relative; }
+        .urgency-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ef4444; color: white; padding: 8px 25px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 15px rgba(239,68,68,0.4); }
+        .category-header h2 { font-size: 2.2rem; margin-bottom: 15px; }
         .category-header p { opacity: 0.9; font-size: 1.1rem; }
 
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 60px; }
@@ -51,36 +83,61 @@
         .product-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
         .product-content h3 { font-size: 1.5rem; color: var(--secondary); margin-bottom: 10px; }
         .product-content .subtitle { color: var(--primary); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .product-content p { color: #64748b; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+        .product-content > p { color: #64748b; line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
         .product-features { list-style: none; margin-bottom: 25px; }
-        .product-features li { padding: 8px 0; color: #475569; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f1f5f9; }
-        .product-features li::before { content: '✓'; color: var(--success); font-weight: 900; }
+        .product-features li { padding: 10px 0; color: #475569; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid #f1f5f9; }
+        .product-features li::before { content: '✓'; color: var(--success); font-weight: 900; flex-shrink: 0; margin-top: 2px; }
         .btn-product { display: block; width: 100%; padding: 15px; background: var(--gradient-primary); color: white; text-align: center; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
         .btn-product:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
         .btn-product.secondary { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 4px 15px rgba(245,158,11,0.4); }
         .btn-product.secondary:hover { box-shadow: 0 6px 20px rgba(245,158,11,0.6); }
+
+        /* CTA Section */
+        .cta-section { padding: 60px 0; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); text-align: center; }
+        .btn-main { display: inline-block; padding: 20px 50px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
 
         .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
         .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
         .page-btn:hover { border-color: var(--primary); color: var(--primary); }
         .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
 
-        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
+        /* Pre-footer Disclaimer */
+        .pre-footer-disclaimer { background: #fef3c7; padding: 40px 0; text-align: center; border-top: 3px solid var(--accent); }
+        .pre-footer-disclaimer .container { max-width: 800px; }
+        .pre-footer-disclaimer h4 { color: #92400e; margin-bottom: 15px; font-size: 1.2rem; }
+        .pre-footer-disclaimer p { color: #78350f; font-size: 1rem; line-height: 1.7; margin-bottom: 15px; }
+        .pre-footer-disclaimer strong { color: #92400e; }
+
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .footer-desc { line-height: 1.8; max-width: 300px; }
         .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
         .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--primary-light); }
-        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; }
+        .footer-disclaimer { font-size: 0.85rem; opacity: 0.8; max-width: 900px; margin: 0 auto 20px; line-height: 1.6; }
 
         @media (max-width: 768px) {
             .products-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .nav-links { display: none; }
             .category-header h2 { font-size: 1.8rem; }
+            .difference-grid { grid-template-columns: 1fr; }
+            .comparison-header, .comparison-row { grid-template-columns: 1fr; }
+            .comparison-row > div:first-child { background: #f8fafc; font-weight: 700; }
+            .flow-header h1 { font-size: 2rem; }
         }
     </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
 
@@ -94,15 +151,93 @@
             <a href="index.html">Home</a>
             <a href="systems.html">Systems</a>
             <a href="solutions.html" class="active">Solutions</a>
-            <a href="solutions.html" class="btn-nav">Get Started</a>
+            <a href="solutions.html" class="btn-nav">Explore Solutions</a>
         </div>
     </div>
 </nav>
+
+<!-- Problem → Explanation → Solution Flow -->
+<section class="problem-solution-flow">
+    <div class="container">
+        <div class="flow-header">
+            <h1>Advanced Solutions for Unique Metabolic Needs</h1>
+            <p>Sometimes, standard approaches need to be complemented with specialized solutions. Our Solutions page features advanced, exotic, and alternative approaches for individuals who have specific preferences, unique metabolic challenges, or are looking to enhance their existing protocol with innovative options.</p>
+        </div>
+
+        <!-- Clear Difference Explanation -->
+        <div class="difference-box">
+            <h3>🔍 Understanding the Difference: Systems vs. Solutions</h3>
+            <div class="difference-grid">
+                <div class="difference-card systems">
+                    <h4>📋 Systems (Page 2)</h4>
+                    <p><strong>Structured, foundational approaches</strong> designed for broad metabolic support. These include medical-grade supplements, hormone reset protocols, and AI-powered daily planners. Systems are your core framework for metabolic health.</p>
+                </div>
+                <div class="difference-card solutions">
+                    <h4>🎯 Solutions (Page 3)</h4>
+                    <p><strong>Advanced, specialized approaches</strong> for specific needs. These include exotic research formulas, lifestyle integration products, and unique delivery methods. Solutions complement your Systems or address particular preferences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Block -->
+<section class="comparison-section">
+    <div class="container">
+        <h2 style="text-align: center; font-size: 2rem; color: var(--secondary); margin-bottom: 30px;">Which Approach Is Right for You?</h2>
+        
+        <div class="comparison-table">
+            <div class="comparison-header">
+                <div>Your Situation</div>
+                <div>Systems Page</div>
+                <div>Solutions Page</div>
+            </div>
+            <div class="comparison-row">
+                <div>Need foundational metabolic support</div>
+                <div class="check">✓ Best Choice</div>
+                <div>—</div>
+            </div>
+            <div class="comparison-row">
+                <div>Want supplement + guide combination</div>
+                <div class="check">✓ Best Choice</div>
+                <div>—</div>
+            </div>
+            <div class="comparison-row">
+                <div>Interested in exotic/traditional ingredients</div>
+                <div>—</div>
+                <div class="check">✓ Best Choice</div>
+            </div>
+            <div class="comparison-row">
+                <div>Prefer lifestyle-integrated products</div>
+                <div>—</div>
+                <div class="check">✓ Best Choice</div>
+            </div>
+            <div class="comparison-row">
+                <div>Want coffee-based morning rituals</div>
+                <div>—</div>
+                <div class="check">✓ Best Choice</div>
+            </div>
+            <div class="comparison-row">
+                <div>Need AI-powered personalization</div>
+                <div class="check">✓ Best Choice</div>
+                <div>—</div>
+            </div>
+            <div class="comparison-row">
+                <div>Want to combine multiple approaches</div>
+                <div class="partial">◐ Partial</div>
+                <div class="partial">◐ Partial</div>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; color: #64748b; font-size: 1rem;"><strong>💡 Tip:</strong> Many members combine both approaches—using Systems as their foundation and adding Solutions for specific needs or preferences.</p>
+    </div>
+</section>
 
 <section class="products-section">
     <div class="container">
         <!-- Category 4: Exotic Research -->
         <div class="category-header">
+            <div class="urgency-tag">⚡ Some Options Limited Availability</div>
             <h2>4. Exotic Research-Backed Formula System</h2>
             <p>Breakthrough discoveries from ancient traditions and modern scientific research</p>
         </div>
@@ -117,14 +252,14 @@
                 <div class="product-content">
                     <span class="subtitle">Ancient Japanese Formula</span>
                     <h3>Fat-Belly Tonic</h3>
-                    <p>A powerful blend of exotic herbs and antioxidants from Okinawa, Japan. This ancient formula targets the root cause of stubborn belly fat by activating your body's dormant fat-burning hormones.</p>
+                    <p>A blend of exotic herbs and antioxidants inspired by traditional Okinawan wellness practices. This formula supports metabolic health through ingredients used for generations in one of the world's longest-lived populations.</p>
                     <ul class="product-features">
-                        <li>Okinawa-inspired ingredients</li>
-                        <li>Targets visceral fat</li>
-                        <li>Boosts energy & vitality</li>
-                        <li>Anti-aging benefits</li>
+                        <li>Okinawa-inspired botanical ingredients</li>
+                        <li>Supports healthy inflammatory response</li>
+                        <li>Rich in antioxidant compounds</li>
+                        <li>Traditional wellness approach</li>
                     </ul>
-                    <a href="#" class="btn-product secondary">Coming Soon→</a>
+                    <a href="#" class="btn-product secondary">Coming Soon →</a>
                 </div>
             </div>
 
@@ -137,14 +272,14 @@
                 <div class="product-content">
                     <span class="subtitle">Morning Shake Ritual</span>
                     <h3>Lanta Flat Belly Shake</h3>
-                    <p>Delicious morning shake packed with metabolism-boosting superfoods. Simply mix with water or milk each morning to kickstart your fat-burning metabolism for the entire day.</p>
+                    <p>Delicious morning shake packed with metabolism-supporting superfoods. Simply mix with water or milk each morning to support your nutritional goals and provide sustained energy throughout the day.</p>
                     <ul class="product-features">
-                        <li>Delicious chocolate/vanilla flavor</li>
-                        <li>5-second morning ritual</li>
-                        <li>Controls hunger for hours</li>
-                        <li>Rich in vitamins & minerals</li>
+                        <li>Convenient meal replacement option</li>
+                        <li>Supports healthy digestion</li>
+                        <li>Rich in vitamins and minerals</li>
+                        <li>Quick morning preparation</li>
                     </ul>
-                    <a href="lanta-flat-belly-shake.html" class="btn-product">Get This Plan →</a>
+                    <a href="lanta-flat-belly-shake.html" class="btn-product">Explore This Solution →</a>
                 </div>
             </div>
         </div>
@@ -152,7 +287,7 @@
         <!-- Category 5: Lifestyle & Clinical -->
         <div class="category-header">
             <h2>5. Lifestyle & Clinical Diet Program</h2>
-            <p>Comprehensive lifestyle transformation programs designed by medical professionals</p>
+            <p>Comprehensive lifestyle transformation programs designed by wellness professionals</p>
         </div>
 
         <div class="products-grid">
@@ -165,9 +300,9 @@
                 <div class="product-content">
                     <span class="subtitle">Medical-Grade Program</span>
                     <h3>Mayo Clinic Inspired Diet</h3>
-                    <p>A comprehensive lifestyle program based on the renowned Mayo Clinic approach. Features structured meal plans, behavioral psychology techniques, and long-term maintenance strategies.</p>
+                    <p>A comprehensive lifestyle program based on renowned wellness institution approaches. Features structured meal plans, behavioral psychology techniques, and long-term maintenance strategies for sustainable health.</p>
                     <ul class="product-features">
-                        <li>Doctor-approved meal plans</li>
+                        <li>Professional-designed meal plans</li>
                         <li>Behavioral change support</li>
                         <li>Long-term maintenance guide</li>
                         <li>Heart-healthy focus</li>
@@ -185,22 +320,22 @@
                 <div class="product-content">
                     <span class="subtitle">Crystal-Infused Water</span>
                     <h3>Slim Crystal</h3>
-                    <p>The world's first crystal-infused water bottle designed for weight loss. Nine natural crystals restructure your water molecules, creating "living water" that boosts metabolism and energy.</p>
+                    <p>A unique water bottle system designed to enhance hydration habits. Features nine natural crystals and encourages increased daily water intake through an aesthetically pleasing, mindful hydration approach.</p>
                     <ul class="product-features">
-                        <li>9 powerful healing crystals</li>
-                        <li>Restructures water molecules</li>
-                        <li>Increases hydration efficiency</li>
-                        <li>Beautiful, reusable bottle</li>
+                        <li>Encourages increased water consumption</li>
+                        <li>Beautiful, reusable bottle design</li>
+                        <li>Supports hydration goals</li>
+                        <li>Mindful wellness practice</li>
                     </ul>
-                    <a href="slim-crystal.html" class="btn-product">Get This Plan →</a>
+                    <a href="slim-crystal.html" class="btn-product">Explore This Solution →</a>
                 </div>
             </div>
         </div>
 
         <!-- Category 6: Coffee Drink Based -->
         <div class="category-header">
-            <h2>6. Coffee Drink-Based Fat-Loss System</h2>
-            <p>Transform your morning coffee ritual into a powerful fat-burning experience</p>
+            <h2>6. Coffee Drink-Based Support System</h2>
+            <p>Transform your morning coffee ritual into a metabolism-supporting experience</p>
         </div>
 
         <div class="products-grid">
@@ -212,12 +347,12 @@
                 <div class="product-content">
                     <span class="subtitle">High-Altitude Blend</span>
                     <h3>Alpilean Coffee</h3>
-                    <p>Specially sourced coffee beans from high-altitude regions combined with metabolism-boosting alpine nutrients. Each cup raises your internal body temperature to burn more calories.</p>
+                    <p>Specially sourced coffee beans from high-altitude regions combined with metabolism-supporting alpine nutrients. Each cup provides your morning caffeine boost with added botanical support.</p>
                     <ul class="product-features">
                         <li>High-altitude Arabica beans</li>
-                        <li>Thermogenic alpine nutrients</li>
-                        <li>Smooth, rich flavor</li>
-                        <li>Accelerates calorie burn</li>
+                        <li>Botanical nutrient blend</li>
+                        <li>Smooth, rich flavor profile</li>
+                        <li>Morning ritual integration</li>
                     </ul>
                     <a href="#" class="btn-product secondary">Coming Soon →</a>
                 </div>
@@ -231,17 +366,37 @@
                 <div class="product-content">
                     <span class="subtitle">Crystal-Charged Coffee</span>
                     <h3>Slim Crystal Coffee System</h3>
-                    <p>Combine the power of crystal-charged water with premium organic coffee. This unique system uses the Slim Crystal bottle to prepare your coffee, infusing it with energizing crystal vibrations.</p>
+                    <p>Combine the Slim Crystal water bottle with your morning coffee preparation. This unique approach uses crystal-charged water as the base for your coffee, creating a mindful morning ritual.</p>
                     <ul class="product-features">
-                        <li>Crystal-energized water base</li>
-                        <li>Organic, fair-trade beans</li>
-                        <li>Enhanced bioavailability</li>
-                        <li>Sustained energy release</li>
+                        <li>Uses crystal-charged water base</li>
+                        <li>Organic, fair-trade bean options</li>
+                        <li>Enhances morning hydration</li>
+                        <li>Unique preparation method</li>
                     </ul>
-                    <a href="slim-crystal.html" class="btn-product">Get This Plan →</a>
+                    <a href="slim-crystal.html" class="btn-product">Explore This Solution →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;">Not Sure Which Solution Is Right for You?</h2>
+            <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Start with our Systems page for foundational support, then explore Solutions to enhance your protocol.</p>
+        </div>
+        <a href="systems.html" class="btn-main">Explore Systems First →</a>
+        <p style="margin-top: 20px; color: #64748b; font-size: 0.95rem;">Or <a href="index.html" style="color: var(--primary);">return to the homepage</a> to review all approaches</p>
+    </div>
+</section>
+
+<!-- Pre-footer Disclaimer -->
+<section class="pre-footer-disclaimer">
+    <div class="container">
+        <h4>⚠️ Important Notice</h4>
+        <p><strong>Results vary by individual.</strong> The solutions presented on this page are designed to support metabolic health and weight management as part of a comprehensive lifestyle approach. Outcomes depend on factors including adherence, starting condition, genetics, diet, exercise, and overall lifestyle.</p>
+        <p><strong>This is not medical advice.</strong> Always consult with a qualified healthcare provider before beginning any new supplement regimen, diet program, or wellness routine, especially if you have existing health conditions or take medications.</p>
     </div>
 </section>
 
@@ -261,36 +416,42 @@
                     <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
                     The 5-Pillar Protocol
                 </div>
-                <p class="footer-desc">Your comprehensive guide to sustainable weight loss through our proven 5-pillar approach.</p>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="systems.html">Medical Systems</a>
                 <a href="solutions.html">Exotic Solutions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
             </div>
             <div class="footer-links">
                 <h4>Our Systems</h4>
                 <a href="citrus-burn.html">Citrus Burn</a>
                 <a href="mitolyn.html">Mitolyn</a>
                 <a href="java-burn.html">Java Burn</a>
-                <a href="#">Slim Crystal</a>
+                <a href="slim-crystal.html">Slim Crystal</a>
             </div>
             <div class="footer-links">
                 <h4>Support</h4>
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Full Disclaimer</a>
             </div>
         </div>
         <div class="footer-bottom">
+            <p class="footer-disclaimer">
+                <strong>Medical Disclaimer:</strong> The information provided is for educational purposes only and is not intended as medical advice. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Individual results may vary.
+            </p>
             <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
             <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
-                Disclaimer: These statements have not been evaluated by the FDA.
+                These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.
             </p>
         </div>
     </div>
 </footer>
 
 </body>
-</html>
+</html>'''
+

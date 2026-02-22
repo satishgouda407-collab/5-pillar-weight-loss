@@ -3,964 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java Burn™ | Morning Coffee Metabolism Booster</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta name="description" content="Java Burn is a tasteless powder supplement designed to be added to coffee. Learn how it may support metabolism and energy as part of your morning routine.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Java Burn™ | Coffee Enhancement Supplement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #F97316; 
-            --primary-dark: #EA580C;
-            --secondary: #1C1917; 
-            --accent: #0EA5E9;
-            --warning: #FACC15;
-            --danger: #EF4444;
-            --white: #ffffff; 
-            --light: #FAFAF9;
-            --gradient-hero: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #DC2626 100%);
-            --gradient-dark: linear-gradient(135deg, #1C1917 0%, #292524 100%);
-            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
-            --shadow-glow: 0 0 30px rgba(249,115,22,0.3);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
-            color: #44403C; 
-            line-height: 1.6; 
-            background: var(--white); 
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        @keyframes pulse-warning {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-        
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px var(--primary); }
-            50% { box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary-dark); }
-        }
-
-        /* URGENCY BAR */
-        .top-bar { 
-            background: var(--secondary); 
-            color: var(--warning); 
-            text-align: center; 
-            padding: 12px; 
-            font-weight: 800; 
-            font-size: 0.95rem; 
-            border-bottom: 3px solid var(--primary);
-        }
-
-        /* NAVIGATION */
-        nav { 
-            background: rgba(255,255,255,0.98); 
-            padding: 15px 0; 
-            border-bottom: 1px solid #E7E5E4; 
-            position: sticky; 
-            top: 0; 
-            z-index: 999; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo {
-            font-weight: 900; 
-            font-size: 2rem; 
-            color: var(--secondary);
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo::before {
-            content: '☕';
-            font-size: 1.8rem;
-        }
-        
-        .nav-links a { 
-            margin-left: 25px; 
-            text-decoration: none; 
-            color: var(--secondary); 
-            font-weight: 700; 
-            font-size: 0.9rem; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover { color: var(--primary); }
-        
-        .nav-links .order-nav { 
-            background: var(--gradient-hero); 
-            color: white; 
-            padding: 12px 25px; 
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(249,115,22,0.4);
-            animation: pulse-warning 2s infinite;
-        }
-
-        /* HERO SECTION */
-        .hero { 
-            background: var(--gradient-dark);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
-            background-size: 100px 100px;
-            opacity: 0.5;
-        }
-        
-        .promo-banner {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--warning) 0%, #F59E0B 100%);
-            color: var(--secondary);
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 1rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 5px 20px rgba(250,204,21,0.3);
-        }
-        
-        .hero h1 { 
-            font-size: 3.5rem; 
-            font-weight: 900;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .hero h1 span {
-            color: var(--warning);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #FED7AA;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .video-container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.3);
-            border-radius: 20px;
-            padding: 40px;
-            border: 3px solid var(--primary);
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .video-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 40px rgba(249,115,22,0.4);
-        }
-        
-        .play-button {
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            font-size: 3rem;
-            color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .video-container:hover .play-button {
-            transform: scale(1.1);
-            background: white;
-        }
-        
-        .tap-to-play {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* PRICING SECTION */
-        .pricing {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-        }
-        
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .intro-offer {
-            display: inline-block;
-            background: linear-gradient(135deg, #F97316 0%, #DC2626 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(249,115,22,0.3);
-            animation: pulse-warning 2s infinite;
-        }
-        
-        .pricing-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .pricing-card {
-            background: white;
-            border-radius: 25px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            border: 3px solid #E7E5E4;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--warning);
-            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-            transform: scale(1.02);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.02) translateY(-5px);
-        }
-        
-        .pricing-header-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .bottle-info h3 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            font-weight: 900;
-        }
-        
-        .bottle-info p {
-            color: #78716C;
-            font-weight: 600;
-        }
-        
-        .price-info {
-            text-align: right;
-        }
-        
-        .price {
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--primary);
-            line-height: 1;
-        }
-        
-        .price span {
-            font-size: 1.2rem;
-            color: #78716C;
-        }
-        
-        .savings {
-            color: #DC2626;
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-top: 5px;
-        }
-        
-        .product-image {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, #292524 0%, #1C1917 100%);
-            border-radius: 20px;
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .btn-cart {
-            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
-            color: white;
-            border: none;
-            padding: 20px;
-            border-radius: 15px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            cursor: pointer;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 5px 20px rgba(14,165,233,0.4);
-            transition: all 0.3s ease;
-            margin: 20px 0;
-        }
-        
-        .btn-cart:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(14,165,233,0.6);
-        }
-        
-        .total-price {
-            text-align: center;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-        
-        .total-price span {
-            display: block;
-            color: #16A34A;
-            font-size: 1rem;
-            margin-top: 5px;
-        }
-
-        /* GUARANTEE SECTION */
-        .guarantee {
-            background: var(--secondary);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .guarantee-seal {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, #FACC15 0%, #F59E0B 100%);
-            border-radius: 50%;
-            margin: 0 auto 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            box-shadow: 0 0 50px rgba(250,204,21,0.4);
-            animation: float 3s ease-in-out infinite;
-            position: relative;
-        }
-        
-        .guarantee-seal::before {
-            content: '100%';
-            position: absolute;
-            top: 30%;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #92400E;
-        }
-        
-        .guarantee-seal::after {
-            content: 'GUARANTEE';
-            position: absolute;
-            bottom: 25%;
-            font-size: 1rem;
-            font-weight: 800;
-            color: #92400E;
-            letter-spacing: 2px;
-        }
-        
-        .guarantee h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
-        
-        .guarantee p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #D6D3D1;
-        }
-
-        /* FAQ SECTION */
-        .faq {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .faq h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .faq-item {
-            max-width: 800px;
-            margin: 0 auto 15px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid #F5F5F4;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            border-color: #FDBA74;
-        }
-        
-        .faq-item.active {
-            border-color: var(--primary);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .faq-question {
-            padding: 25px 30px;
-            font-weight: 800;
-            color: var(--primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2rem;
-            background: white;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-question:hover {
-            background: #FFF7ED;
-        }
-        
-        .faq-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item.active .faq-icon {
-            background: var(--primary);
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            padding: 0 30px 25px;
-            color: #57534E;
-            line-height: 1.8;
-            display: none;
-            font-size: 1.05rem;
-        }
-        
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        /* REFERENCES */
-        .references {
-            padding: 60px 0;
-            background: #F5F5F4;
-            font-size: 0.85rem;
-            color: #78716C;
-        }
-        
-        .references h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-        
-        .references ol {
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-        
-        .references li {
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--secondary);
-            color: #A8A29E;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        
-        .footer-disclaimer {
-            max-width: 900px;
-            margin: 0 auto 30px;
-            padding: 20px;
-            border: 1px solid #44403C;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.02);
-        }
-
-        /* MODAL */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-        
-        .modal {
-            background: white;
-            padding: 50px;
-            border-radius: 30px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            animation: float 0.5s ease-out;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 2rem;
-            color: #A8A29E;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .modal-close:hover {
-            color: var(--danger);
-        }
-        
-        .timer {
-            background: #FEF2F2;
-            color: var(--danger);
-            padding: 15px;
-            border-radius: 15px;
-            font-weight: 800;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            border: 2px solid var(--danger);
-        }
-        
-        .modal h2 {
-            color: var(--secondary);
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        
-        .modal p {
-            color: #78716C;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-        
-        .modal input {
-            width: 100%;
-            padding: 18px;
-            margin: 15px 0;
-            border: 2px solid #E7E5E4;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .modal input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
-        }
-        
-        .btn-submit {
-            background: var(--gradient-hero);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 800;
-            cursor: pointer;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 20px rgba(249,115,22,0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(249,115,22,0.6);
-        }
-        
-        .secure-note {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            color: #A8A29E;
-            font-size: 0.9rem;
-        }
-
+        .logo { font-weight: 700; font-size: 1.5rem; color: #F97316; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: #F97316; }
+        .hero { padding: 60px 0 40px; text-align: center; background: linear-gradient(135deg, #FFF7ED 0%, #fff 100%); }
+        .hero h1 { font-size: 2.2rem; color: #1C1917; margin-bottom: 15px; font-weight: 700; }
+        .hero h1 span { color: #F97316; }
+        .hero-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .integration { padding: 50px 0; background: #fff; }
+        .integration h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .coffee-routine { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 30px; border-radius: 12px; max-width: 800px; margin: 0 auto; }
+        .coffee-routine h3 { color: #92400E; margin-bottom: 15px; }
+        .coffee-routine ol { margin-left: 20px; color: #78350F; }
+        .coffee-routine li { margin-bottom: 10px; }
+        .ingredients { padding: 50px 0; background: #f8f9fa; }
+        .ingredients h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .ing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .ing-card { background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #e5e7eb; }
+        .ing-card h3 { color: #F97316; font-size: 1.1rem; margin-bottom: 8px; }
+        .ing-card p { font-size: 0.9rem; color: #555; }
+        .who-not { padding: 40px 0; background: #fff; }
+        .who-not h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .warning-box { background: #FEF2F2; border: 1px solid #EF4444; border-radius: 12px; padding: 25px; max-width: 800px; margin: 0 auto; }
+        .warning-box h3 { color: #DC2626; margin-bottom: 15px; }
+        .warning-box ul { margin-left: 20px; color: #7F1D1D; }
+        .warning-box li { margin-bottom: 10px; }
+        .faq { padding: 50px 0; background: #f8f9fa; }
+        .faq h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .faq-item { max-width: 800px; margin: 0 auto 15px; background: #fff; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden; }
+        .faq-question { padding: 20px; font-weight: 600; color: #1C1917; cursor: pointer; border-bottom: 1px solid #e5e7eb; }
+        .faq-answer { padding: 20px; color: #555; font-size: 0.95rem; }
+        .cta-section { padding: 50px 0; background: linear-gradient(135deg, #1C1917 0%, #292524 100%); color: #fff; text-align: center; }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 15px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 25px; opacity: 0.9; }
+        .btn-main { display: inline-block; padding: 15px 40px; background: #F97316; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; }
+        .disclaimer { padding: 30px 0; background: #f3f4f6; }
+        .disclaimer-box { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.85rem; color: #6b7280; }
+        .disclaimer-box strong { color: #374151; display: block; margin-bottom: 10px; }
+        footer { background: #1C1917; color: #9CA3AF; padding: 40px 0 20px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { display: block; color: #9CA3AF; text-decoration: none; margin-bottom: 8px; }
+        .footer-bottom { border-top: 1px solid #374151; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .price { font-size: 3rem; }
-            .faq-question { font-size: 1rem; padding: 20px; }
-            .nav-links { display: none; }
+            .ing-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
         }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
-
-<div class="top-bar">⚡ SPECIAL INTRODUCTORY PROMO - Try Java Burn For Over 80% OFF Today!</div>
-
 <nav>
     <div class="container nav-content">
-        <div class="logo">JAVA BURN</div>
+        <a href="index.html" class="logo">Java Burn™</a>
         <div class="nav-links">
-            <a href="#pricing">Pricing</a>
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
             <a href="#faq">FAQ</a>
-            <a href="#order" class="order-nav">Order Now →</a>
         </div>
     </div>
 </nav>
-
 <section class="hero">
     <div class="container">
-        <div class="promo-banner">🔥 Special Introductory Promo!</div>
-        <h1>Try <span>JAVA BURN</span></h1>
-        <div class="hero-subtitle">For Over 80% OFF Today!</div>
-        
-        <div class="video-container" onclick="openModal()">
-            <div class="play-button">▶</div>
-            <div class="tap-to-play">Tap To Play</div>
-            <div class="disclaimer">*Results may vary.</div>
-        </div>
+        <h1>A Tasteless Powder That <span>Enhances Your Morning Coffee</span></h1>
+        <p class="hero-subtitle">Java Burn is a dietary supplement powder designed to be mixed with coffee. It contains natural ingredients that may support metabolism and energy levels as part of a healthy morning routine.</p>
     </div>
 </section>
-
-<section class="pricing" id="pricing">
+<section class="integration">
     <div class="container">
-        <div class="pricing-header">
-            <div class="intro-offer">🎉 Introductory Offer!</div>
-        </div>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card featured">
-                <div class="pricing-header-card">
-                    <div class="bottle-info">
-                        <h3>6 BOTTLES</h3>
-                        <p>180 Day Supply</p>
-                    </div>
-                    <div class="price-info">
-                        <div class="price">$49<span>/Bottle</span></div>
-                        <div class="savings">YOU SAVE $888!</div>
-                    </div>
-                </div>
-                <div class="product-image">☕</div>
-                <button class="btn-cart" onclick="openModal()">Add To Cart</button>
-                <div class="total-price">
-                    $294
-                    <span>+ FREE SHIPPING</span>
-                </div>
-            </div>
-            
-            <div class="pricing-card">
-                <div class="pricing-header-card">
-                    <div class="bottle-info">
-                        <h3>3 BOTTLES</h3>
-                        <p>90 Day Supply</p>
-                    </div>
-                    <div class="price-info">
-                        <div class="price">$69<span>/Bottle</span></div>
-                        <div class="savings">YOU SAVE $384!</div>
-                    </div>
-                </div>
-                <div class="product-image">☕</div>
-                <button class="btn-cart" onclick="openModal()">Add To Cart</button>
-                <div class="total-price">
-                    $207
-                    <span>+ Shipping</span>
-                </div>
-            </div>
-            
-            <div class="pricing-card">
-                <div class="pricing-header-card">
-                    <div class="bottle-info">
-                        <h3>2 BOTTLES</h3>
-                        <p>60 Day Supply</p>
-                    </div>
-                    <div class="price-info">
-                        <div class="price">$79<span>/Bottle</span></div>
-                    </div>
-                </div>
-                <div class="product-image">☕</div>
-                <button class="btn-cart" onclick="openModal()">Add To Cart</button>
-                <div class="total-price">
-                    $158
-                    <span>+ Shipping</span>
-                </div>
-            </div>
+        <h2>How It Fits Into Your Daily Routine</h2>
+        <div class="coffee-routine">
+            <h3>☕ Your Morning Ritual, Enhanced</h3>
+            <ol>
+                <li><strong>Brew your coffee</strong> as you normally would—any type, any brand</li>
+                <li><strong>Add Java Burn powder</strong>—it's tasteless and dissolves quickly</li>
+                <li><strong>Stir and enjoy</strong> your coffee as usual, now with added nutritional support</li>
+                <li><strong>Proceed with your day</strong> knowing you've supported your metabolic health</li>
+            </ol>
+            <p style="margin-top: 15px; font-style: italic;">Works with hot or iced coffee, espresso, latte, or black coffee. No change to taste or texture.</p>
         </div>
     </div>
 </section>
-
-<section class="guarantee">
+<section class="ingredients">
     <div class="container">
-        <div class="guarantee-seal"></div>
-        <h2>This product is backed by a 100% money back guarantee for 60 full days from your original purchase.</h2>
-        <p>If you're not totally and completely satisfied with this product, your results or your experience in the first 60 days from your purchase simply let us know by calling our toll free number or dropping us an email and we'll give you a full refund within 48 hours of the product being returned. That's right, simply return the product, even empty pouches, anytime within 60 days of your purchase and you'll receive a full, no questions asked refund (less shipping and handling).</p>
+        <h2>Natural Ingredients</h2>
+        <div class="ing-grid">
+            <div class="ing-card">
+                <h3>🍃 Green Tea Extract</h3>
+                <p>Contains catechins and EGCG, compounds studied for their potential role in supporting metabolism and providing antioxidant benefits.</p>
+            </div>
+            <div class="ing-card">
+                <h3>⚡ L-Carnitine</h3>
+                <p>An amino acid that plays a role in energy production by transporting fatty acids into your cells' mitochondria.</p>
+            </div>
+            <div class="ing-card">
+                <h3>🌿 L-Theanine</h3>
+                <p>An amino acid found in tea leaves that may promote relaxation without drowsiness and support cognitive function.</p>
+            </div>
+            <div class="ing-card">
+                <h3>🔬 Chromium</h3>
+                <p>An essential trace mineral that may help support healthy blood sugar levels and carbohydrate metabolism.</p>
+            </div>
+        </div>
     </div>
 </section>
-
+<section class="who-not">
+    <div class="container">
+        <h2>Who Should NOT Use Java Burn</h2>
+        <div class="warning-box">
+            <h3>⚠️ Important Contraindications</h3>
+            <ul>
+                <li><strong>Pregnant or nursing women:</strong> Should avoid caffeine-containing supplements unless approved by their healthcare provider</li>
+                <li><strong>Children under 18:</strong> Not formulated for or intended for use by minors</li>
+                <li><strong>Caffeine-sensitive individuals:</strong> Those who experience jitters, anxiety, or sleep disturbances from caffeine should consult a doctor first</li>
+                <li><strong>People with medical conditions:</strong> Those with heart conditions, high blood pressure, or anxiety disorders should seek medical advice</li>
+                <li><strong>Those taking medications:</strong> May interact with certain medications—consult your healthcare provider</li>
+            </ul>
+        </div>
+    </div>
+</section>
 <section class="faq" id="faq">
     <div class="container">
-        <h2>Java Burn FAQs</h2>
-        
+        <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                How much Java Burn should I order?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                Research shows it's best to take Java Burn consistently for at least 90 - 180 days to experience optimal results. The longer and more consistently you take Java Burn the more you will benefit. Therefore, we strongly recommend you take advantage of our best deal 180 day supply package, or our almost just-as-popular 90 day deep-discount package. We're only able to guarantee this special pricing for today or until our limited inventory runs out, and we're selling out of our current stock fast. The fact is we guarantee you'll never be able to buy Java Burn cheaper than today which is another important reason why picking up at least 90 -180 days worth is definitely the smart option.
-            </div>
+            <div class="faq-question">Does Java Burn change the taste of my coffee?</div>
+            <div class="faq-answer">No. Java Burn is specifically formulated to be tasteless and odorless. It dissolves quickly in hot or cold beverages without altering the flavor, aroma, or texture of your coffee.</div>
         </div>
-        
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Is Java Burn safe?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                Java Burn is absolutely 100% natural, safe and effective. Many thousands of folks enjoy taking Java Burn every day and there have been absolutely zero side effects reported. Every packet of Java Burn is manufactured here in the USA in our state of the art FDA approved and GMP (good manufacturing practices) certified facility under the most sterile, strict and precise standards. Java Burn is 100% all natural, vegetarian, gluten-free and non-GMO. As always, if you have a medical condition it's recommended to consult with your doctor.
-            </div>
+            <div class="faq-question">When is the best time to take it?</div>
+            <div class="faq-answer">Morning is ideal as it's designed to work with your coffee. The natural ingredients may help support energy levels throughout the day. Avoid taking late in the afternoon if you're sensitive to caffeine.</div>
         </div>
-        
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Will Java Burn work for me?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                In a word..YES! There has never been anything else like Java Burn ever even attempted in the history of health. Java Burn is the world's first and only 100% safe and natural proprietary patent-pending formula, that when combined with coffee, is scientifically proven to increase both the speed and efficiency of metabolism to deliver unparalleled fat burning results.
-            </div>
+            <div class="faq-question">How long should I use it to see results?</div>
+            <div class="faq-answer">Individual results vary significantly. Some people report feeling more energetic within days, while metabolic changes typically require consistent use over 8-12 weeks combined with diet and exercise. There is no guaranteed timeline for results.</div>
         </div>
-        
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Will Java Burn affect my coffee in any way?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                Not at all! Java Burn is tasteless and dissolves instantly into your coffee. It works just as well regardless of what kind of coffee you drink or what you put into it. The individual nutrients in Java Burn may offer health benefits when taken with other beverages. However, Java Burn contains a proprietary, patent-pending formula of 100% natural ingredients that are designed to work synergistically with coffee to ignite metabolism and to create the most ideal environment for fat-burning.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                What is the best way to take Java Burn?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                For best results, simply mix a single packet of Java Burn into your coffee each morning. Then enjoy your coffee as normal with or without food. Java Burn is a tasteless, dissolvable serum that works instantly to boost your metabolism and enhance fat burning when combined with your daily coffee ritual.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Do I have to take Java Burn in the morning?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                No you do not. You can enjoy and benefit from Java Burn at any time of day. However, for best results, it is recommended to take Java Burn with your morning coffee to maximize your metabolism throughout the day. The formula is designed to work synergistically with caffeine to provide sustained energy and fat burning benefits.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Why is Java Burn a serum instead of powder?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                Java Burn uses a unique serum delivery system that allows for faster absorption and better bioavailability of the nutrients. This liquid formula dissolves instantly in hot or cold beverages without clumping or leaving residue, ensuring you get the full dose of metabolism-boosting compounds in every serving.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Does Java Burn work with other beverages?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                The individual nutrients in Java Burn may offer health benefits when taken with other beverages. However, Java Burn contains a proprietary, patent-pending formula of 100% natural ingredients that are designed to work synergistically with coffee to ignite metabolism and to create the most ideal environment for fat-burning.
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                How will Java Burn be shipped to me and how quickly?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                We will ship your order directly to your home or office using a premium carrier such as FedEx or UPS. If you're in the US or Canada you can expect your order shipped within 5 to 7 business days. International orders typically take 8 – 15 business days (plus customs clearance time).
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">
-                Will I be billed anything else after I order?
-                <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-                Absolutely not! Rest assured this is a one-time payment only. This is not an auto-ship program of any kind. There are no hidden charges or subscription fees whatsoever. I've always hated that stuff as much as you do!
-            </div>
+            <div class="faq-question">Can I use it with other beverages?</div>
+            <div class="faq-answer">While formulated for coffee, the powder can technically be added to other beverages. However, the ingredients are specifically selected to work synergistically with coffee's natural compounds for optimal potential benefit.</div>
         </div>
     </div>
 </section>
-
-<section class="references">
+<section class="cta-section">
     <div class="container">
-        <h3>Scientific References</h3>
-        <ol>
-            <li>Adeva-Andany, Maria M et al. "Significance of l-carnitine for human health." IUBMB life vol. 69,8 (2017): 578-594. doi:10.1002/iub.1646</li>
-            <li>Askarpour, Moein et al. "Beneficial effects of l-carnitine supplementation for weight management in overweight and obese adults: An updated systematic review and dose-response meta-analysis of randomized controlled trials." Pharmacological research vol. 151 (2020): 104554. doi:10.1016/j.phrs.2019.104554</li>
-            <li>Baba, Yoshitake et al. "Effects of l-Theanine on Cognitive Function in Middle-Aged and Older Subjects: A Randomized Placebo-Controlled Study." Journal of medicinal food vol. 24,4 (2021): 333-341. doi:10.1089/jmf.2020.4803</li>
-            <li>Broadhurst, C Leigh, and Philip Domenico. "Clinical studies on chromium picolinate supplementation in diabetes mellitus--a review." Diabetes technology & therapeutics vol. 8,6 (2006): 677-87. doi:10.1089/dia.2006.8.677</li>
-            <li>Center, Sharon A et al. "Influence of dietary supplementation with (L)-carnitine on metabolic rate, fatty acid oxidation, body condition, and weight loss in overweight cats." American journal of veterinary research vol. 73,7 (2012): 1002-15. doi:10.2460/ajvr.73.7.1002</li>
-            <li>Cha, Y S et al. "Effects of carnitine coingested caffeine on carnitine metabolism and endurance capacity in athletes." Journal of nutritional science and vitaminology vol. 47,6 (2001): 378-84. doi:10.3177/jnsv.47.378</li>
-        </ol>
+        <h2>Support Your Morning Metabolism</h2>
+        <p>Learn more about how Java Burn can complement your healthy lifestyle when combined with balanced nutrition and regular activity.</p>
+        <a href="systems.html" class="btn-main">Explore All Systems →</a>
     </div>
 </section>
-
+<section class="disclaimer">
+    <div class="container">
+        <div class="disclaimer-box">
+            <strong>Medical Disclaimer & FTC Compliance</strong>
+            <p><strong>These statements have not been evaluated by the Food and Drug Administration.</strong> This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p>Individual results may vary. The information provided is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare provider before starting any supplement regimen.</p>
+            <p>This website contains affiliate links. We may receive compensation for purchases made through these links.</p>
+            <p style="margin-top: 15px;"><a href="privacy-policy.html" style="color: #6b7280;">Privacy Policy</a> | <a href="terms-of-service.html" style="color: #6b7280;">Terms of Service</a></p>
+        </div>
+    </div>
+</section>
 <footer>
     <div class="container">
-        <div class="footer-disclaimer">
-            † Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.
+        <div class="footer-content">
+            <div>
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">The 5-Pillar Protocol</strong>
+                <p style="max-width: 300px; font-size: 0.85rem;">A comprehensive approach to metabolic health through Nutrition, Exercise, Mindset, Sleep, and Supplementation.</p>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Products</strong>
+                <a href="citrus-burn.html">CitrusBurn</a>
+                <a href="java-burn.html">Java Burn</a>
+                <a href="mitolyn.html">Mitolyn</a>
+                <a href="kito.html">Kito Flow</a>
+            </div>
         </div>
-        <p>© 2026 Java Burn. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>© 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">This content is for educational purposes only. Results vary by individual.</p>
+        </div>
     </div>
 </footer>
-
-<div class="modal-overlay" id="emailModal" onclick="closeModalOutside(event)">
-    <div class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="timer">⏰ OFFER EXPIRES IN: <span id="clock">10:00</span></div>
-        <h2>Claim Your 80% Discount</h2>
-        <p>Enter your email to secure your Java Burn supply at the lowest price ever offered.</p>
-        
-        <form action="https://formsubmit.co/satishking1234567890123@gmail.com" method="POST">
-            <input type="hidden" name="_next" value="https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="email" name="email" placeholder="Enter your best email address" required>
-            <button type="submit" class="btn-submit">Claim My Discount »</button>
-        </form>
-        
-        <div class="secure-note">
-            <span>🔒</span> 256-Bit SSL Secure Encryption | Your Privacy Protected
-        </div>
-    </div>
-</div>
-
-<script>
-    function openModal() { 
-        document.getElementById('emailModal').style.display = 'flex'; 
-        startTimer(600); 
-    }
-    
-    function closeModal() {
-        document.getElementById('emailModal').style.display = 'none';
-    }
-    
-    function closeModalOutside(event) {
-        if (event.target.id === 'emailModal') {
-            closeModal();
-        }
-    }
-    
-    function startTimer(duration) {
-        var timer = duration, minutes, seconds;
-        setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
-            document.querySelector('#clock').textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-            if (--timer < 0) timer = duration;
-        }, 1000);
-    }
-    
-    function toggleFaq(element) {
-        const item = element.parentElement;
-        item.classList.toggle('active');
-    }
-</script>
-
 </body>
-</html>
+</html>'''
+
