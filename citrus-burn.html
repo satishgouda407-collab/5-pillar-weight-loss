@@ -436,6 +436,7 @@
                                             </label>
                                             <div class="entry__field" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 5px;">
                                                 <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required style="background: transparent; border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; padding: 12px; width: 100%;" />
+                                                   <input type="hidden" name="attributes[PRODUCT]" value="Citrus Burn">
                                             </div>
                                         </div>
                                         <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
@@ -679,6 +680,16 @@
         });
     });
 </script>
+
+<script>
+// Redirect after form submission
+document.getElementById('sib-form').addEventListener('submit', function() {
+    setTimeout(function() {
+        window.location.href = 'https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net';
+    }, 2000); // 2 second delay
+});
+</script>
+
 
 </body>
 </html>
