@@ -3,713 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CitrusBurn is a dietary supplement with natural citrus bioflavonoids that supports healthy metabolism and energy levels. Learn how it fits into the 5-Pillar Weight Loss Protocol.">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <title>CitrusBurn™ | Struggling to Burn Fat Even When You Eat Clean?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Brevo Form Font Dependencies -->
+    <meta name="description" content="Citrus Burn - Advanced metabolic support with citrus bioflavonoids. Supports natural energy, reduces cravings, and promotes healthy weight management.">
+    <title>Citrus Burn | Advanced Metabolic Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-display: block;
-            font-family: Roboto;
-            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
         }
-        @font-face {
-            font-display: fallback;
-            font-family: Roboto;
-            font-weight: 600;
-            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-        }
-        @font-face {
-            font-display: fallback;
-            font-family: Roboto;
-            font-weight: 700;
-            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-        }
-    </style>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-    <style>
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: #fff; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.5rem; color: #FF6B00; text-decoration: none; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.9rem; }
-        .nav-links a:hover { color: #FF6B00; }
-        .hero { padding: 60px 0 40px; text-align: center; background: linear-gradient(135deg, #FFF5F0 0%, #fff 100%); }
-        .hero h1 { font-size: 2.2rem; color: #1A1A2E; margin-bottom: 15px; font-weight: 700; }
-        .hero h1 span { color: #FF6B00; }
-        .hero-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
-        .who-for { padding: 40px 0; background: #fff; }
-        .who-for h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; color: #1A1A2E; }
-        .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .who-card { background: #f8f9fa; padding: 25px; border-radius: 12px; border-left: 4px solid #FF6B00; }
-        .who-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: #1A1A2E; }
-        .who-card p { font-size: 0.95rem; color: #555; }
-        .how-it-works { padding: 50px 0; background: #f8f9fa; }
-        .how-it-works h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .step { background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .step-number { width: 40px; height: 40px; background: #FF6B00; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 700; }
-        .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
-        .step p { font-size: 0.9rem; color: #666; }
-        .pillar-integration { padding: 50px 0; background: #fff; }
-        .pillar-integration h2 { text-align: center; font-size: 1.8rem; margin-bottom: 20px; }
-        .pillar-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #0EA5E9; max-width: 800px; margin: 0 auto; }
-        .pillar-box p { margin-bottom: 15px; color: #444; }
-        .pillar-box ul { margin-left: 20px; color: #555; }
-        .pillar-box li { margin-bottom: 8px; }
-        .ingredients { padding: 50px 0; background: #f8f9fa; }
-        .ingredients h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
-        .ing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
-        .ing-card { background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #e5e7eb; }
-        .ing-card h3 { color: #FF6B00; font-size: 1.1rem; margin-bottom: 8px; }
-        .ing-card p { font-size: 0.9rem; color: #555; }
-        .safety { padding: 40px 0; background: #fff; }
-        .safety-box { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 12px; padding: 25px; max-width: 800px; margin: 0 auto; }
-        .safety-box h3 { color: #92400E; margin-bottom: 15px; font-size: 1.2rem; }
-        .safety-box ul { margin-left: 20px; color: #78350F; }
-        .safety-box li { margin-bottom: 8px; }
-
-        /* Email Capture Section Styles */
-        .email-capture-section { 
-            padding: 60px 0; 
-            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%); 
-            color: #fff; 
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; }
+        
+        /* Hero Section */
+        .hero { padding: 80px 0; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: #b45309; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 span { color: var(--primary); }
+        .hero > .container > div > p { font-size: 1.2rem; color: #64748b; margin-bottom: 30px; }
+        
+        .hero-benefits { list-style: none; margin-bottom: 30px; }
+        .hero-benefits li { display: flex; align-items: center; gap: 12px; padding: 10px 0; color: #475569; }
+        .hero-benefits li::before { content: '✓'; color: var(--success); font-weight: 700; }
+        
+        .hero-image { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 25px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 8rem; }
+        
+        /* Order Box */
+        .order-box { background: white; border-radius: 20px; padding: 30px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; margin-top: 30px; }
+        .price-row { display: flex; align-items: baseline; gap: 15px; margin-bottom: 20px; }
+        .current-price { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+        .original-price { font-size: 1.5rem; color: #94a3b8; text-decoration: line-through; }
+        .savings { background: var(--accent); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; }
+        
+        .btn-cta { 
+            display: block; 
+            width: 100%; 
+            padding: 20px; 
+            background: var(--gradient-primary); 
+            color: white; 
             text-align: center; 
-        }
-        .email-capture-section h2 { 
-            font-size: 2rem; 
-            margin-bottom: 15px; 
-            color: #fff;
-        }
-        .email-capture-section .subtitle { 
-            max-width: 600px; 
-            margin: 0 auto 30px; 
-            opacity: 0.9; 
-            font-size: 1.1rem;
-        }
-        .email-capture-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .benefits-list {
-            text-align: left;
-            margin: 20px 0 30px 0;
-            padding: 20px;
-            background: rgba(255,107,0,0.1);
-            border-radius: 12px;
-            border-left: 4px solid #FF6B00;
-        }
-        .benefits-list h4 {
-            color: #FF6B00;
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
             margin-bottom: 15px;
-            font-size: 1.1rem;
         }
-        .benefits-list ul {
-            list-style: none;
-            padding: 0;
-        }
-        .benefits-list li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #e0e0e0;
-        }
-        .benefits-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #FF6B00;
-            font-weight: bold;
-        }
-
-        /* Brevo Form Customization */
-        #sib-container {
-            background: transparent !important;
-            border: none !important;
-            max-width: 100% !important;
-        }
-        #sib-form {
-            text-align: left;
-        }
-        .sib-form-block {
-            padding: 0 !important;
-        }
-        .entry__label {
-            color: #fff !important;
-            font-family: 'Inter', sans-serif !important;
-            font-weight: 600 !important;
-            margin-bottom: 10px !important;
-            display: block;
-        }
-        .entry__field {
-            background: rgba(255,255,255,0.1) !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
-            border-radius: 8px !important;
-            padding: 5px !important;
-        }
-        .entry__field input {
-            background: transparent !important;
-            border: none !important;
-            color: #fff !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 16px !important;
-            padding: 12px !important;
-            width: 100% !important;
-        }
-        .entry__field input::placeholder {
-            color: rgba(255,255,255,0.5) !important;
-        }
-        .sib-form-block__button {
-            background: #FF6B00 !important;
-            color: #fff !important;
-            border: none !important;
-            padding: 15px 40px !important;
-            font-family: 'Inter', sans-serif !important;
-            font-weight: 600 !important;
-            font-size: 1.1rem !important;
-            border-radius: 50px !important;
-            cursor: pointer !important;
-            width: 100% !important;
-            margin-top: 20px !important;
-            transition: all 0.3s !important;
-        }
-        .sib-form-block__button:hover {
-            background: #FF8C42 !important;
-            transform: translateY(-2px) !important;
-        }
-        .sib-form-message-panel {
-            border-radius: 8px !important;
-            margin-bottom: 20px !important;
-        }
-        #success-message {
-            background: rgba(19, 206, 102, 0.2) !important;
-            border-color: #13ce66 !important;
-        }
-        #success-message .sib-form-message-panel__inner-text {
-            color: #13ce66 !important;
-        }
-        #error-message {
-            background: rgba(255, 73, 73, 0.2) !important;
-            border-color: #ff4949 !important;
-        }
-        #error-message .sib-form-message-panel__inner-text {
-            color: #ff6b6b !important;
-        }
-        .entry__error--primary {
-            background: rgba(255, 73, 73, 0.1) !important;
-            color: #ff6b6b !important;
-            border-radius: 6px !important;
-            padding: 10px !important;
-            margin-top: 10px !important;
-        }
-        .entry__specification {
-            color: rgba(255,255,255,0.6) !important;
-            font-size: 0.85rem !important;
-            margin-top: 8px !important;
-        }
-        .privacy-note {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+        
+        /* Order Bump */
+        .order-bump { 
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+            border: 2px solid var(--accent); 
+            border-radius: 15px; 
+            padding: 20px; 
             margin-top: 20px;
-            text-align: center;
         }
-        .privacy-note a {
-            color: #FF6B00;
-            text-decoration: underline;
+        .order-bump-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .order-bump-header input { width: 22px; height: 22px; accent-color: var(--accent); }
+        .order-bump-header label { font-weight: 700; color: #92400e; font-size: 1rem; cursor: pointer; }
+        .order-bump p { color: #78350f; font-size: 0.95rem; margin: 0; }
+        .order-bump-price { display: inline-block; background: var(--accent); color: white; padding: 3px 12px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-left: 10px; }
+        
+        .guarantee-text { text-align: center; color: #64748b; font-size: 0.9rem; margin-top: 15px; }
+        .guarantee-text span { color: var(--success); }
+        
+        /* Trust Badges */
+        .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .trust-badge { display: flex; align-items: center; gap: 8px; color: #64748b; font-size: 0.9rem; }
+        
+        /* Features Section */
+        .features-section { padding: 80px 0; background: white; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
+        .section-header p { color: #64748b; font-size: 1.1rem; }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .feature-card { background: white; border-radius: 20px; padding: 35px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; text-align: center; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature-card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .feature-card p { color: #64748b; }
+        
+        /* How It Works */
+        .how-it-works { padding: 80px 0; background: #f8fafc; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+        .step-card { text-align: center; }
+        .step-number { width: 60px; height: 60px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; }
+        .step-card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .step-card p { color: #64748b; }
+        
+        /* Ingredients */
+        .ingredients-section { padding: 80px 0; background: white; }
+        .ingredients-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; }
+        .ingredient-card { background: #f8fafc; border-radius: 15px; padding: 25px; display: flex; gap: 20px; }
+        .ingredient-icon { font-size: 2.5rem; }
+        .ingredient-content h4 { color: var(--secondary); margin-bottom: 8px; }
+        .ingredient-content p { color: #64748b; font-size: 0.95rem; }
+        
+        /* Testimonials */
+        .testimonials-section { padding: 80px 0; background: #f8fafc; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .testimonial-card { background: white; border-radius: 20px; padding: 30px; box-shadow: var(--shadow-soft); }
+        .testimonial-card .stars { color: var(--accent); margin-bottom: 15px; }
+        .testimonial-card p { color: #475569; font-style: italic; margin-bottom: 20px; }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; }
+        .author-avatar { width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+        .author-info h4 { color: var(--secondary); font-size: 1rem; }
+        .author-info span { color: #64748b; font-size: 0.85rem; }
+        
+        /* FAQ Section */
+        .faq-section { padding: 80px 0; background: white; }
+        .faq-item { background: #f8fafc; border-radius: 15px; margin-bottom: 15px; overflow: hidden; }
+        .faq-question { padding: 20px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question h4 { color: var(--secondary); font-size: 1.05rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+        .faq-answer-content { padding: 0 25px 20px; color: #64748b; }
+        
+        /* CTA Section */
+        .cta-section { padding: 80px 0; background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-main { 
+            display: inline-block; 
+            padding: 20px 50px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
-
-        .cta-section { padding: 50px 0; background: #f8f9fa; color: #333; text-align: center; }
-        .cta-section h2 { font-size: 1.8rem; margin-bottom: 15px; color: #1A1A2E; }
-        .cta-section p { max-width: 600px; margin: 0 auto 25px; color: #666; }
-        .btn-main { display: inline-block; padding: 15px 40px; background: #FF6B00; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; }
-        .btn-main:hover { background: #FF8C42; transform: translateY(-2px); }
-        .disclaimer { padding: 30px 0; background: #f3f4f6; }
-        .disclaimer-box { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.85rem; color: #6b7280; }
-        .disclaimer-box strong { color: #374151; display: block; margin-bottom: 10px; }
-        footer { background: #1A1A2E; color: #9CA3AF; padding: 40px 0 20px; font-size: 0.9rem; }
-        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
-        .footer-links a { display: block; color: #9CA3AF; text-decoration: none; margin-bottom: 8px; }
-        .footer-links a:hover { color: #fff; }
-        .footer-bottom { border-top: 1px solid #374151; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+        .btn-main:hover { background: #d97706; transform: translateY(-3px); }
+        
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+        
         @media (max-width: 768px) {
-            .who-grid, .steps, .ing-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 1.8rem; }
-            .email-capture-container { padding: 25px; }
+            .hero-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-image { height: 250px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .ingredients-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
 </head>
 <body>
 
 <nav>
     <div class="container nav-content">
-        <a href="index.html" class="logo">CitrusBurn™</a>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>The 5-Pillar Protocol</span>
+        </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="systems.html">Systems</a>
             <a href="solutions.html">Solutions</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="my-weight-loss-journey.html">My Story</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="metabolic-quiz.html" class="btn-nav">Take The Quiz</a>
         </div>
     </div>
 </nav>
 
 <section class="hero">
     <div class="container">
-        <h1>Struggling to Burn Fat Even <span>When You Eat Clean?</span></h1>
-        <p class="hero-subtitle">Citrus Burn is designed to support your body's natural metabolism when it feels slow or stuck. A dietary supplement featuring natural compounds from citrus fruits that may help support your body's energy production and metabolic function as part of a healthy lifestyle.</p>
-    </div>
-</section>
-
-<section class="who-for">
-    <div class="container">
-        <h2>Who May Benefit From CitrusBurn</h2>
-        <div class="who-grid">
-            <div class="who-card">
-                <h3>🍊 Adults 35+</h3>
-                <p>Individuals experiencing natural metabolic slowdown who want to support their body's energy production through natural means.</p>
-            </div>
-            <div class="who-card">
-                <h3>⚡ Active Individuals</h3>
-                <p>People who exercise regularly and want to optimize their body's natural fat-burning processes alongside their fitness routine.</p>
-            </div>
-            <div class="who-card">
-                <h3>🥗 Health-Conscious Adults</h3>
-                <p>Those already following a balanced diet who want additional support for their metabolism and energy levels.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="how-it-works" id="how-it-works">
-    <div class="container">
-        <h2>How CitrusBurn Supports Your Body</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Natural Compounds</h3>
-                <p>Citrus bioflavonoids from natural sources that have been studied for their potential effects on metabolic enzymes.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Cellular Support</h3>
-                <p>May help support the function of enzymes involved in your body's natural energy production processes.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Lifestyle Integration</h3>
-                <p>Works best when combined with balanced nutrition, regular movement, and adequate sleep.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="pillar-integration">
-    <div class="container">
-        <h2>How CitrusBurn Fits The 5-Pillar Protocol</h2>
-        <div class="pillar-box">
-            <p>CitrusBurn is designed as a <strong>Supplementation Pillar</strong> support tool within our comprehensive 5-Pillar approach:</p>
-            <ul>
-                <li><strong>Nutrition:</strong> Works alongside balanced meals, not as a replacement</li>
-                <li><strong>Exercise:</strong> May support energy levels for physical activity</li>
-                <li><strong>Mindset:</strong> Part of a conscious commitment to health</li>
-                <li><strong>Sleep:</strong> Supports the metabolic processes that occur during rest</li>
-                <li><strong>Supplementation:</strong> Provides targeted nutritional compounds</li>
-            </ul>
-            <p style="margin-top: 15px; font-style: italic;">Remember: No supplement can replace the foundation pillars of nutrition, exercise, and sleep.</p>
-        </div>
-    </div>
-</section>
-
-<section class="ingredients">
-    <div class="container">
-        <h2>Key Natural Ingredients</h2>
-        <div class="ing-grid">
-            <div class="ing-card">
-                <h3>🍊 Citrus Bioflavonoids</h3>
-                <p>Natural compounds found in citrus fruits that have been studied for their potential role in supporting metabolic enzyme function and cellular energy production.</p>
-            </div>
-            <div class="ing-card">
-                <h3>🌿 Natural Extracts</h3>
-                <p>Plant-based ingredients traditionally used to support digestion and energy metabolism as part of a healthy lifestyle.</p>
-            </div>
-            <div class="ing-card">
-                <h3>⚡ Vitamin C Complex</h3>
-                <p>Essential nutrient that plays a role in numerous bodily functions including energy production and immune support.</p>
-            </div>
-            <div class="ing-card">
-                <h3>🍃 Antioxidant Support</h3>
-                <p>Natural antioxidants that may help protect cells from oxidative stress during metabolic processes.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="safety">
-    <div class="container">
-        <div class="safety-box">
-            <h3>⚠️ Important Safety Information</h3>
-            <ul>
-                <li><strong>Not for everyone:</strong> Consult your healthcare provider before use if you are pregnant, nursing, taking medications, or have a medical condition.</li>
-                <li><strong>Age restriction:</strong> Not intended for individuals under 18 years of age.</li>
-                <li><strong>Allergies:</strong> Contains citrus-derived ingredients. Avoid if you have citrus allergies.</li>
-                <li><strong>Not a substitute:</strong> This supplement supports but does not replace a healthy diet and exercise.</li>
-                <li><strong>Individual results vary:</strong> Effects depend on many factors including diet, exercise, genetics, and consistency.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- EMAIL CAPTURE SECTION WITH BREVO FORM -->
-<section class="email-capture-section" id="get-access">
-    <div class="container">
-        <h2>🔒 Get Exclusive Access to CitrusBurn</h2>
-        <p class="subtitle">Enter your email below to unlock the special offer and learn more about how CitrusBurn can support your metabolic health journey.</p>
-
-        <div class="email-capture-container">
-            <div class="benefits-list">
-                <h4>What You'll Get:</h4>
-                <ul>
-                    <li>Exclusive pricing not available elsewhere</li>
-                    <li>Free shipping on select packages</li>
-                    <li>180-day money-back guarantee information</li>
-                    <li>Bonus guides for metabolic health</li>
-                    <li>Access to our private wellness community</li>
+        <div class="hero-content">
+            <div>
+                <span class="hero-badge">⭐ BEST SELLER</span>
+                <h1>Citrus Burn: <span>Advanced Metabolic Support</span></h1>
+                <p>Support your metabolism naturally with citrus bioflavonoids. No jitters, no crashes — just sustained energy and reduced cravings.</p>
+                
+                <ul class="hero-benefits">
+                    <li>Supports metabolic enzyme function</li>
+                    <li>Natural energy without stimulants</li>
+                    <li>Helps reduce sugar cravings</li>
+                    <li>180-day money-back guarantee</li>
                 </ul>
-            </div>
-
-            <!-- Brevo Form Integration -->
-            <div class="sib-form" style="text-align: center;">
-                <div id="sib-form-container" class="sib-form-container">
-
-                    <!-- Error Message -->
-                    <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:8px; border-color:#ff4949; max-width:100%; display: none;">
-                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
-                                <path fill="currentColor" d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-                            </svg>
-                            <span class="sib-form-message-panel__inner-text">
-                                Your subscription could not be saved. Please try again.
-                            </span>
+                
+                <div class="order-box">
+                    <div class="price-row">
+                        <span class="current-price">$69</span>
+                        <span class="original-price">$99</span>
+                        <span class="savings">SAVE 30%</span>
+                    </div>
+                    
+                    <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-cta">Get Citrus Burn Now →</a>
+                    
+                    <!-- Order Bump -->
+                    <div class="order-bump">
+                        <div class="order-bump-header">
+                            <input type="checkbox" id="cb-bump" checked>
+                            <label for="cb-bump">YES! Add the Metabolic Grocery List <span class="order-bump-price">+$9</span></label>
                         </div>
+                        <p>My personally curated shopping list with the exact foods that support metabolic health — includes printable PDF and meal prep guide</p>
                     </div>
-
-                    <!-- Success Message -->
-                    <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#13ce66; background-color:rgba(19, 206, 102, 0.1); border-radius:8px; border-color:#13ce66; max-width:100%; display: none;">
-                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
-                                <path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-                            </svg>
-                            <span class="sib-form-message-panel__inner-text">
-                                Success! Redirecting you to the exclusive offer...
-                            </span>
-                        </div>
+                    
+                    <p class="guarantee-text"><span>✓</span> 180-Day Money-Back Guarantee &nbsp;|&nbsp; <span>✓</span> Free Shipping on 3+ Bottles</p>
+                    
+                    <div class="trust-badges">
+                        <span class="trust-badge">🛡️ Secure Checkout</span>
+                        <span class="trust-badge">🚚 Free Shipping</span>
+                        <span class="trust-badge">💬 24/7 Support</span>
                     </div>
-
-                    <!-- Form -->
-                    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:transparent; max-width:100%; border-radius:8px; border-width:0; direction:ltr">
-                        <form id="sib-form" method="POST" action="https://b03ef3a2.sibforms.com/serve/MUIFAFfXrZxxm6_HjwhTfwY2OrOuSu--lojDnE4oNfbE05XX2p725OI8EadJLfs_KJKI5Bv4962eNiClugdxZ71NOntbUvCcFcGbOF4ea4zR9VQ9C1CWZ04sYdwUEmimrVAhIZALhSe4eCcQrHS-15C-h4-otv5kTmLrqPVn0CzeQo8ecHYH4inXtTqOfo7KlIr-qBFNRe4TXHK8sQ==" data-type="subscription">
-
-                            <div style="padding: 8px 0;">
-                                <div class="sib-input sib-form-block">
-                                    <div class="form__entry entry_block">
-                                        <div class="form__label-row">
-                                            <label class="entry__label" style="font-weight: 600; text-align:left; font-size:16px; font-family:'Inter', sans-serif; color:#fff;" for="EMAIL" data-required="*">
-                                                Enter your best email address
-                                            </label>
-                                            <div class="entry__field" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 5px;">
-                                                <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required style="background: transparent; border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; padding: 12px; width: 100%;" />
-                                                   <input type="hidden" name="attributes[PRODUCT]" value="Citrus Burn">
-                                            </div>
-                                        </div>
-                                        <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
-                                        </label>
-                                        <label class="entry__specification" style="font-size:12px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.6); text-align:left; display: block; margin-top: 8px;">
-                                            We respect your privacy. Unsubscribe at any time.
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="padding: 8px 0;">
-                                <div class="sib-form-block" style="text-align: center;">
-                                    <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:18px; text-align:center; font-weight:700; font-family:'Inter', sans-serif; color:#FFFFFF; background-color:#FF6B00; border-radius:50px; border-width:0px; padding: 18px 40px; width: 100%; cursor: pointer; transition: all 0.3s;" form="sib-form" type="submit">
-                                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width: 0; height: 0; display: none;">
-                                            <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                                        </svg>
-                                        YES! Send Me The Exclusive Offer →
-                                    </button>
-                                </div>
-                            </div>
-
-<div style="text-align:center; margin-top:25px;">
-    <a href="https://nutristructure.gumroad.com/l/mfmje" target="_blank"
-    style="
-        display:inline-block;
-        background:#ffcc00;
-        color:#000;
-        padding:16px 32px;
-        border-radius:12px;
-        font-size:18px;
-        font-weight:bold;
-        text-decoration:none;
-        box-shadow:0 6px 15px rgba(0,0,0,0.2);
-        transition:0.3s;
-    "
-    onmouseover="this.style.transform='scale(1.05)'"
-    onmouseout="this.style.transform='scale(1)'">
-        📘 Get Full Guide – 100% Off Today
-    </a>
-</div>
-
-                            <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
-                            <input type="hidden" name="locale" value="en">
-
-                        </form>
-                    </div>
-
-                    <p class="privacy-note">
-                        🔒 Your information is secure. By entering your email, you agree to receive marketing communications. 
-                        <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms</a>
-                    </p>
-
                 </div>
             </div>
+            
+            <div class="hero-image">🍊</div>
+        </div>
+    </div>
+</section>
 
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Citrus Burn?</h2>
+            <p>A unique approach to metabolic support that works WITH your body</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>Made with citrus bioflavonoids and plant-based compounds that support your body's natural metabolic processes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>No Jitters</h3>
+                <p>Unlike harsh stimulants, Citrus Burn provides sustained energy without the crash or anxiety.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Craving Control</h3>
+                <p>Helps reduce sugar and carb cravings by supporting balanced blood sugar levels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Simple, effective, and easy to incorporate into your daily routine</p>
+        </div>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Take Daily</h3>
+                <p>Take 2 capsules each morning with water. Consistency is key for optimal results.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Feel The Difference</h3>
+                <p>Most people notice improved energy and reduced cravings within 2-3 weeks.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Transform</h3>
+                <p>Combined with the 5-Pillar Protocol, support your metabolic health for lasting results.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ingredients -->
+<section class="ingredients-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Key Ingredients</h2>
+            <p>Each ingredient is carefully selected for its metabolic-supporting properties</p>
+        </div>
+        
+        <div class="ingredients-grid">
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🍊</span>
+                <div class="ingredient-content">
+                    <h4>Citrus Bioflavonoids</h4>
+                    <p>Powerful antioxidants from citrus fruits that support metabolic enzyme function and healthy inflammation response.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🌱</span>
+                <div class="ingredient-content">
+                    <h4>Green Tea Extract</h4>
+                    <p>Rich in EGCG, a compound studied for its effects on metabolism and energy expenditure.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">⚡</span>
+                <div class="ingredient-content">
+                    <h4>Chromium</h4>
+                    <p>An essential mineral that supports healthy blood sugar levels and reduces cravings.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🧬</span>
+                <div class="ingredient-content">
+                    <h4>B-Vitamin Complex</h4>
+                    <p>Essential for energy metabolism and converting food into usable energy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real reviews from real people who transformed their metabolic health</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"I've tried so many supplements before, but Citrus Burn is different. My energy is steady throughout the day, and I don't crave sweets anymore. Game changer!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <span>Lost 47 lbs with Citrus Burn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"No jitters, no crashes — just clean energy. I take it every morning with my coffee and feel amazing all day. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>James D.</h4>
+                        <span>3-month user</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Finally something that works! Combined with the 5-Pillar Protocol, I've lost 32 pounds and feel better than I have in years."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">KL</div>
+                    <div class="author-info">
+                        <h4>Karen L.</h4>
+                        <span>Lost 32 lbs with the Protocol</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-item active">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>How long does one bottle last?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Each bottle contains 60 capsules, which is a 30-day supply when taken as directed (2 capsules per day).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>Are there any side effects?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Citrus Burn is made with natural ingredients and is generally well-tolerated. However, as with any supplement, consult your healthcare provider before starting, especially if you have any medical conditions or take medications.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>When will I see results?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Most people notice improved energy and reduced cravings within 2-3 weeks. For best results, we recommend using Citrus Burn consistently for at least 90 days combined with the 5-Pillar Protocol.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>What's the refund policy?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>We offer a 180-day money-back guarantee. If you're not satisfied for any reason, simply contact us for a full refund — no questions asked.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="cta-section">
     <div class="container">
-        <h2>Learn More About Metabolic Health</h2>
-        <p>Explore our comprehensive resources on the 5-Pillar Protocol and discover how small changes can lead to significant improvements in your overall wellness journey.</p>
-        <a href="systems.html" class="btn-main">Explore The 5-Pillar System</a>
-    </div>
-</section>
-
-<section class="disclaimer">
-    <div class="container">
-        <div class="disclaimer-box">
-            <strong>Medical Disclaimer & FTC Compliance</strong>
-            <p><strong>These statements have not been evaluated by the Food and Drug Administration.</strong> This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-            <p>Individual results may vary. The information provided on this website is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare provider before starting any supplement regimen.</p>
-            <p>This website contains affiliate links. We may receive compensation for purchases made through these links. The 5-Pillar Weight Loss Protocol is an independent affiliate and not directly associated with the product manufacturers.</p>
-            <p>Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of related products, and may not reflect the typical purchaser's experience, may not apply to the average person and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
-            <p style="margin-top: 15px;"><a href="privacy-policy.html" style="color: #6b7280;">Privacy Policy</a> | <a href="terms-of-service.html" style="color: #6b7280;">Terms of Service</a> | <a href="affiliate-disclosure.html" style="color: #6b7280;">Affiliate Disclosure</a></p>
-        </div>
+        <h2>Ready to Support Your Metabolism?</h2>
+        <p>Join 50,000+ people who have transformed their metabolic health with Citrus Burn and the 5-Pillar Protocol.</p>
+        <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-main">Get Citrus Burn Now →</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">180-Day Money-Back Guarantee • Free Shipping on 3+ Bottles</p>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-grid">
             <div>
-                <strong style="color: #fff; display: block; margin-bottom: 10px;">The 5-Pillar Protocol</strong>
-                <p style="max-width: 300px; font-size: 0.85rem;">A comprehensive approach to metabolic health through Nutrition, Exercise, Mindset, Sleep, and Supplementation. Our mission is to provide educational resources for sustainable wellness.</p>
+                <div class="footer-brand">The 5-Pillar Protocol</div>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
             </div>
             <div class="footer-links">
-                <strong style="color: #fff; display: block; margin-bottom: 10px;">Quick Links</strong>
+                <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="systems.html">Systems</a>
                 <a href="solutions.html">Solutions</a>
-                <a href="my-weight-loss-journey.html">My Story</a>
+                <a href="customer-transformations.html">Results</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="recommended-stack.html">My Stack</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
                 <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-            </div>
-            <div class="footer-links">
-                <strong style="color: #fff; display: block; margin-bottom: 10px;">Product Reviews</strong>
-                <a href="citrus-burn.html">CitrusBurn</a>
-                <a href="java-burn.html">Java Burn</a>
-                <a href="mitolyn.html">Mitolyn</a>
-                <a href="kito.html">Kito Flow</a>
-                <a href="lanta-flat-belly-shake.html">Lanta Flat Belly Shake</a>
-                <a href="slim-crystal.html">Slim Crystal</a>
-            </div>
-            <div class="footer-links">
-                <strong style="color: #fff; display: block; margin-bottom: 10px;">Resources</strong>
-                <a href="index.html#pillars">The 5 Pillars</a>
-                <a href="systems.html#nutrition">Nutrition Guide</a>
-                <a href="systems.html#exercise">Exercise Tips</a>
-                <a href="systems.html#mindset">Mindset Training</a>
-                <a href="systems.html#sleep">Sleep Optimization</a>
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
-            <p style="margin-top: 10px;">This content is for educational purposes only. Results vary by individual. Always consult healthcare professionals before making changes to your health regimen.</p>
-            <p style="margin-top: 10px; font-size: 0.75rem; color: #6b7280;">
-                IMPORTANT: The content on this website is not intended to be a substitute for professional medical advice, diagnosis, or treatment. 
-                Never disregard professional medical advice or delay in seeking it because of something you have read on this website.
-            </p>
+            <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Results may vary. Individual experiences are not typical.</p>
         </div>
     </div>
 </footer>
 
-<!-- Brevo Form Scripts -->
 <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'en';
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
-    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
-
-    window.translation = {
-        common: {
-            selectedList: '{quantity} list selected',
-            selectedLists: '{quantity} lists selected',
-            selectedOption: '{quantity} selected',
-            selectedOptions: '{quantity} selected',
-        }
-    };
-
-    var AUTOHIDE = Boolean(0);
-
-    // AFFILIATE LINK - https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net
-    const AFFILIATE_LINK = 'https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net';
-
-    // Function to handle successful form submission
-    function handleFormSuccess() {
-        // Show success message
-        document.getElementById('success-message').style.display = 'block';
-        document.getElementById('error-message').style.display = 'none';
-
-        // Track conversion with Google Analytics
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
-                'send_to': 'GA_MEASUREMENT_ID',
-                'event_category': 'email_capture',
-                'event_label': 'citrus_burn',
-                'value': 1.0
-            });
-        }
-
-        // Redirect to affiliate link after 1 seconds
-        setTimeout(function() {
-            window.location.href = AFFILIATE_LINK;
-        }, 2000);
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    if (!isActive) {
+        faqItem.classList.add('active');
     }
-
-    // Function to handle form errors
-    function handleFormError() {
-        document.getElementById('error-message').style.display = 'block';
-        document.getElementById('success-message').style.display = 'none';
-    }
-
-    // Monitor form submission
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('sib-form');
-        const successPanel = document.getElementById('success-message');
-        const errorPanel = document.getElementById('error-message');
-
-        // Create observer to watch for style changes on success/error panels
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                    const target = mutation.target;
-                    if (target.id === 'success-message' && target.style.display !== 'none') {
-                        handleFormSuccess();
-                    } else if (target.id === 'error-message' && target.style.display !== 'none') {
-                        handleFormError();
-                    }
-                }
-            });
-        });
-
-        // Observe both panels
-        if (successPanel) {
-            observer.observe(successPanel, { attributes: true });
-        }
-        if (errorPanel) {
-            observer.observe(errorPanel, { attributes: true });
-        }
-
-        // Alternative: Intercept form submission
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                // Form will submit to Brevo
-                // The success handler will be triggered by the Brevo script
-                console.log('Form submitted to Brevo');
-            });
-        }
-    });
+}
 </script>
-
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
-<!-- Additional Tracking and Functionality -->
-<script>
-    // Track button clicks
-    document.addEventListener('DOMContentLoaded', function() {
-        // Track CTA button clicks
-        const ctaButtons = document.querySelectorAll('.btn-main');
-        ctaButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        'event_category': 'cta',
-                        'event_label': button.textContent.trim()
-                    });
-                }
-            });
-        });
-
-        // Track navigation clicks
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        'event_category': 'navigation',
-                        'event_label': link.textContent.trim()
-                    });
-                }
-            });
-        });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-</script>
-
-<script>
-// Redirect after form submission
-document.getElementById('sib-form').addEventListener('submit', function() {
-    setTimeout(function() {
-        window.location.href = 'https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net';
-    }, 2000); // 2 second delay
-});
-</script>
-
 
 </body>
 </html>

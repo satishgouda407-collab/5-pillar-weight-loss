@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take our free 4-question metabolic quiz to discover if your metabolism is in 'Survival' or 'Burn' mode. Get personalized recommendations.">
+    <title>Metabolic Quiz: Is Your Body in Survival or Burn Mode?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --success: #22c55e;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #334155; 
+            line-height: 1.6; 
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Header */
+        .quiz-header { text-align: center; margin-bottom: 40px; }
+        .quiz-header h1 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
+        .quiz-header p { color: #64748b; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+        
+        /* Progress Bar */
+        .progress-container { margin-bottom: 40px; }
+        .progress-bar { height: 8px; background: #e2e8f0; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--gradient-primary); width: 0%; transition: width 0.3s ease; }
+        .progress-text { text-align: center; margin-top: 10px; color: #64748b; font-size: 0.9rem; }
+        
+        /* Quiz Card */
+        .quiz-card { 
+            background: white; 
+            border-radius: 25px; 
+            padding: 40px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+            border: 2px solid #e2e8f0;
+        }
+        
+        .question { display: none; }
+        .question.active { display: block; animation: slideIn 0.3s ease; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .question h3 { font-size: 1.4rem; color: var(--secondary); margin-bottom: 25px; }
+        .question-number { color: var(--primary); font-weight: 700; }
+        
+        .options { display: flex; flex-direction: column; gap: 15px; }
+        .option { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 20px; 
+            background: #f8fafc; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+        }
+        .option:hover { 
+            border-color: var(--primary); 
+            background: #f0fdf4; 
+        }
+        .option input { display: none; }
+        .option-radio { 
+            width: 24px; 
+            height: 24px; 
+            border: 2px solid #cbd5e1; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0;
+        }
+        .option input:checked + .option-radio { 
+            border-color: var(--primary); 
+            background: var(--primary); 
+        }
+        .option input:checked + .option-radio::after {
+            content: '✓';
+            color: white;
+            font-size: 12px;
+        }
+        .option-text { font-size: 1rem; color: #475569; }
+        .option input:checked ~ .option-text { color: var(--primary); font-weight: 600; }
+        
+        /* Navigation Buttons */
+        .quiz-nav { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 30px; 
+            padding-top: 30px; 
+            border-top: 1px solid #e2e8f0; 
+        }
+        .btn { 
+            padding: 15px 35px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border: none;
+        }
+        .btn-secondary { 
+            background: #f1f5f9; 
+            color: #64748b; 
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .btn-primary { 
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+        }
+        .btn-primary:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(16,185,129,0.6);
+        }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* Results Section */
+        .results { display: none; text-align: center; }
+        .results.active { display: block; animation: fadeIn 0.5s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .result-badge { 
+            display: inline-block; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+            margin-bottom: 25px;
+        }
+        .result-badge.survival { background: #fef3c7; color: #92400e; }
+        .result-badge.burn { background: #dcfce7; color: #166534; }
+        .result-badge.mixed { background: #dbeafe; color: #1e40af; }
+        
+        .result-title { font-size: 2rem; color: var(--secondary); margin-bottom: 20px; }
+        .result-description { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; }
+        
+        .recommendation-box { 
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
+            border: 2px solid var(--primary); 
+            border-radius: 20px; 
+            padding: 30px; 
+            margin: 30px 0; 
+            text-align: left;
+        }
+        .recommendation-box h4 { color: var(--secondary); margin-bottom: 15px; }
+        .recommendation-box ul { margin-left: 20px; color: #475569; }
+        .recommendation-box li { margin-bottom: 10px; }
+        
+        .cta-box { 
+            background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); 
+            color: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            margin-top: 30px;
+        }
+        .cta-box h3 { margin-bottom: 15px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 25px; }
+        .btn-cta { 
+            display: inline-block; 
+            padding: 18px 45px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover { 
+            background: #d97706; 
+            transform: translateY(-2px);
+        }
+        
+        /* Email Capture in Results */
+        .email-capture { 
+            background: #f8fafc; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin-top: 30px; 
+        }
+        .email-capture p { margin-bottom: 15px; color: #475569; }
+        .email-form { display: flex; gap: 10px; }
+        .email-form input { 
+            flex: 1; 
+            padding: 12px 20px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 50px; 
+            font-size: 1rem; 
+            outline: none;
+        }
+        .email-form button { 
+            padding: 12px 25px; 
+            background: var(--primary); 
+            color: white; 
+            border: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            cursor: pointer;
+        }
+        
+        @media (max-width: 600px) {
+            .quiz-header h1 { font-size: 1.7rem; }
+            .quiz-card { padding: 25px; }
+            .email-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<div class="container">
+    <div class="quiz-header">
+        <h1>🔥 The 60-Second Metabolic Quiz</h1>
+        <p>Discover if your metabolism is in "Survival Mode" or "Burn Mode" — and get personalized recommendations to optimize it.</p>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-text">Question <span id="currentQ">1</span> of 4</p>
+    </div>
+    
+    <div class="quiz-card" id="quizCard">
+        <!-- Question 1 -->
+        <div class="question active" data-q="1">
+            <h3><span class="question-number">Q1:</span> How do you feel when you wake up in the morning?</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="survival" onchange="selectOption(1)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Exhausted, even after 8+ hours of sleep</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="survival" onchange="selectOption(1)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Tired and groggy — need coffee to function</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="mixed" onchange="selectOption(1)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Okay, but energy crashes by mid-afternoon</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="burn" onchange="selectOption(1)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Refreshed and ready to start the day</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="question" data-q="2">
+            <h3><span class="question-number">Q2:</span> What's your relationship with food cravings?</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="survival" onchange="selectOption(2)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Constant cravings for sugar and carbs</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="survival" onchange="selectOption(2)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I think about food all day long</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="mixed" onchange="selectOption(2)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Occasional cravings, especially when stressed</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="burn" onchange="selectOption(2)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Rarely crave unhealthy foods</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="question" data-q="3">
+            <h3><span class="question-number">Q3:</span> How does your body respond to dieting?</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q3" value="survival" onchange="selectOption(3)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I lose a few pounds, then gain back more</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="survival" onchange="selectOption(3)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Weight won't budge no matter what I try</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="mixed" onchange="selectOption(3)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Slow progress that plateaus quickly</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="burn" onchange="selectOption(3)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I can lose weight when I focus on it</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="question" data-q="4">
+            <h3><span class="question-number">Q4:</span> How would you describe your stress levels?</h3>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="survival" onchange="selectOption(4)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Constantly stressed and overwhelmed</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="survival" onchange="selectOption(4)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">High stress — I can't seem to relax</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="mixed" onchange="selectOption(4)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Moderate stress, manageable most days</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="burn" onchange="selectOption(4)">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Low stress — I handle it well</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="results" id="results">
+            <div id="resultContent"></div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="quiz-nav" id="quizNav">
+            <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next Question →</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentQuestion = 1;
+const totalQuestions = 4;
+const answers = {};
+
+function selectOption(qNum) {
+    const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+    if (selected) {
+        answers[qNum] = selected.value;
+        document.getElementById('nextBtn').disabled = false;
+    }
+}
+
+function updateProgress() {
+    const progress = (currentQuestion / totalQuestions) * 100;
+    document.getElementById('progressFill').style.width = progress + '%';
+    document.getElementById('currentQ').textContent = currentQuestion;
+}
+
+function nextQuestion() {
+    if (currentQuestion < totalQuestions) {
+        document.querySelector(`.question[data-q="${currentQuestion}"]`).classList.remove('active');
+        currentQuestion++;
+        document.querySelector(`.question[data-q="${currentQuestion}"]`).classList.add('active');
+        
+        document.getElementById('prevBtn').disabled = false;
+        document.getElementById('nextBtn').disabled = !answers[currentQuestion];
+        
+        if (currentQuestion === totalQuestions) {
+            document.getElementById('nextBtn').textContent = 'See My Results →';
+        }
+        
+        updateProgress();
+    } else {
+        showResults();
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 1) {
+        document.querySelector(`.question[data-q="${currentQuestion}"]`).classList.remove('active');
+        currentQuestion--;
+        document.querySelector(`.question[data-q="${currentQuestion}"]`).classList.add('active');
+        
+        document.getElementById('prevBtn').disabled = currentQuestion === 1;
+        document.getElementById('nextBtn').disabled = false;
+        document.getElementById('nextBtn').textContent = 'Next Question →';
+        
+        updateProgress();
+    }
+}
+
+function showResults() {
+    // Hide questions and nav
+    document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+    document.getElementById('quizNav').style.display = 'none';
+    document.querySelector('.progress-container').style.display = 'none';
+    
+    // Calculate result
+    const survivalCount = Object.values(answers).filter(a => a === 'survival').length;
+    const burnCount = Object.values(answers).filter(a => a === 'burn').length;
+    
+    let resultType, resultTitle, resultDesc, recommendations;
+    
+    if (survivalCount >= 2) {
+        resultType = 'survival';
+        resultTitle = 'Your Metabolism is in SURVIVAL MODE';
+        resultDesc = 'Your body has adapted to years of restrictive dieting by slowing down your metabolic rate. This is why traditional diets don\'t work for you anymore. The good news? This is completely reversible with the right approach.';
+        recommendations = [
+            'Focus on rebuilding metabolic trust through nutrient-dense foods',
+            'Prioritize sleep and stress management (cortisol is your enemy)',
+            'Consider targeted supplementation to support your metabolism',
+            'Avoid aggressive calorie restriction — it makes things worse'
+        ];
+    } else if (burnCount >= 2) {
+        resultType = 'burn';
+        resultTitle = 'Your Metabolism is in BURN MODE';
+        resultDesc = 'Great news! Your metabolism is functioning well. You respond predictably to diet and exercise changes. Focus on optimizing your routine for even better results.';
+        recommendations = [
+            'Maintain your current healthy habits',
+            'Fine-tune your nutrition for peak performance',
+            'Consider advanced protocols to break through plateaus',
+            'Focus on long-term sustainability'
+        ];
+    } else {
+        resultType = 'mixed';
+        resultTitle = 'Your Metabolism is in TRANSITION';
+        resultDesc = 'You show signs of both metabolic efficiency and some adaptive slowdown. With the right protocol, you can shift fully into "Burn Mode" and optimize your results.';
+        recommendations = [
+            'Address stress and sleep quality immediately',
+            'Support your metabolism with key minerals',
+            'Follow a moderate, sustainable nutrition plan',
+            'Track your progress and adjust as needed'
+        ];
+    }
+    
+    // Build results HTML
+    const resultsHTML = `
+        <div class="result-badge ${resultType}">${resultType === 'survival' ? '⚠️' : resultType === 'burn' ? '✅' : '⚡'} ${resultType.toUpperCase()} MODE</div>
+        <h2 class="result-title">${resultTitle}</h2>
+        <p class="result-description">${resultDesc}</p>
+        
+        <div class="recommendation-box">
+            <h4>🎯 Your Personalized Action Plan:</h4>
+            <ul>
+                ${recommendations.map(r => `<li>${r}</li>`).join('')}
+            </ul>
+        </div>
+        
+        <div class="cta-box">
+            <h3>Ready to Reset Your Metabolism?</h3>
+            <p>Join 50,000+ people who have transformed their bodies using the 5-Pillar Protocol. Get the complete system designed specifically for ${resultType} mode metabolisms.</p>
+            <a href="5-pillar-protocol.html?type=${resultType}" class="btn-cta">Get The 5-Pillar Protocol →</a>
+        </div>
+        
+        <div class="email-capture">
+            <p><strong>📧 Want personalized tips?</strong> Enter your email to get a customized 7-day metabolic reset plan based on your results.</p>
+            <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Send My Plan →</button>
+            </form>
+        </div>
+    `;
+    
+    document.getElementById('resultContent').innerHTML = resultsHTML;
+    document.getElementById('results').classList.add('active');
+    
+    // Track completion
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'quiz_complete', {
+            'event_category': 'engagement',
+            'event_label': resultType + '_mode'
+        });
+    }
+}
+
+function handleEmailSubmit(e) {
+    e.preventDefault();
+    alert('Thank you! Your personalized 7-day plan is on its way to your inbox.');
+    
+    // TODO: Add your Brevo email capture integration here
+    // Paste your Brevo form code here to capture emails with quiz results
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'event_category': 'lead_capture',
+            'event_label': 'quiz_results_email'
+        });
+    }
+}
+
+// Initialize
+updateProgress();
+</script>
+
+</body>
+</html>

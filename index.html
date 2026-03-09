@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The 5-Pillar Weight Loss Protocol - A scientifically-backed, holistic approach to sustainable weight loss through Nutrition, Exercise, Mindset, Sleep, and Supplementation. Supports healthy metabolism naturally.">
-    <title>The 5-Pillar Weight Loss Protocol | Metabolism Support System</title>
+    <meta name="description" content="The 5-Pillar Weight Loss Protocol - A scientifically-backed, holistic approach to sustainable weight loss through Nutrition, Exercise, Mindset, Sleep, and Supplementation.">
+    <title>Why Your Body Stopped Listening To Your Diet | The 5-Pillar Protocol</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -46,17 +45,80 @@
         .nav-links a.active { color: var(--primary); }
         .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
 
-        /* Hero Section - Enhanced */
-        .hero { padding: 100px 0 80px; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); position: relative; overflow: hidden; }
+        /* Sticky CTA Button - Mobile */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            text-align: center;
+        }
+        .sticky-cta .btn-sticky {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* Hero Section - Enhanced with Emotional Hook */
+        .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); position: relative; overflow: hidden; }
         .hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; }
         
         .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: #b45309; padding: 10px 25px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; margin-bottom: 25px; border: 1px solid rgba(245,158,11,0.3); }
         
-        .hero h1 { font-size: 3.2rem; color: var(--secondary); line-height: 1.15; margin-bottom: 25px; font-weight: 800; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero h1 { font-size: 2.8rem; color: var(--secondary); line-height: 1.15; margin-bottom: 25px; font-weight: 800; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero h1 span { color: var(--primary); }
         
-        .hero-problem { font-size: 1.4rem; color: #475569; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 500; }
+        .hero-problem { font-size: 1.3rem; color: #475569; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 500; }
         
+        /* Lead Magnet CTA Box */
+        .lead-magnet-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .lead-magnet-box h3 {
+            color: #92400e;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .lead-magnet-box p {
+            color: #78350f;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .btn-lead {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-lead:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245,158,11,0.6);
+        }
+
         /* Value Proposition Bullets */
         .value-props { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; max-width: 1000px; margin-left: auto; margin-right: auto; }
         .value-prop { background: white; padding: 25px 30px; border-radius: 20px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; flex: 1; min-width: 280px; max-width: 320px; text-align: left; transition: all 0.3s ease; }
@@ -65,13 +127,40 @@
         .value-prop h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px; }
         .value-prop p { font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5; }
 
-        .hero-image-box { max-width: 900px; margin: 50px auto; background: white; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; position: relative; }
-        .hero-image { width: 100%; height: 400px; background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #86efac 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .veg-icons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 40px; }
-        .veg-item { width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); animation: float 3s ease-in-out infinite; }
-        .hero-cta { padding: 40px; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); }
-        .hero-cta h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
-        .hero-cta p { color: #64748b; margin-bottom: 25px; font-size: 1.1rem; }
+        /* Customer Transformations Section */
+        .transformations-section { padding: 80px 0; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); }
+        .transformations-section .section-header { text-align: center; margin-bottom: 50px; }
+        .transformations-section h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+        .transformations-section > .container > p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; text-align: center; }
+        
+        .transformation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .transformation-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.3s ease; }
+        .transformation-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .transformation-card .image-container { position: relative; height: 250px; overflow: hidden; }
+        .transformation-card img { width: 100%; height: 100%; object-fit: cover; }
+        .transformation-card .result-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .transformation-card .content { padding: 25px; }
+        .transformation-card h4 { color: var(--secondary); font-size: 1.1rem; margin-bottom: 8px; }
+        .transformation-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+        .transformation-card .testimonial { 
+            background: #f8fafc; 
+            padding: 15px; 
+            border-radius: 12px; 
+            margin-top: 15px;
+            font-style: italic;
+            color: #475569;
+            font-size: 0.9rem;
+        }
 
         /* Trust Section */
         .trust-section { padding: 60px 0; background: #f8fafc; text-align: center; }
@@ -79,24 +168,61 @@
         .trust-badge { display: flex; align-items: center; gap: 10px; color: #475569; font-weight: 600; font-size: 0.95rem; }
         .trust-badge span { font-size: 1.5rem; }
         
-        .disclaimer-box { background: white; border: 2px solid #e2e8f0; border-radius: 15px; padding: 25px; max-width: 800px; margin: 30px auto; text-align: left; }
-        .disclaimer-box h4 { color: var(--secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .disclaimer-box p { font-size: 0.9rem; color: #64748b; margin: 0; line-height: 1.6; }
+        .guarantee-box {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            border: 2px solid var(--success);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-align: left;
+        }
+        .guarantee-box .icon { font-size: 3rem; }
+        .guarantee-box h4 { color: #166534; margin-bottom: 8px; }
+        .guarantee-box p { color: #15803d; font-size: 0.95rem; margin: 0; }
 
-        /* Social Proof Block */
-        .social-proof { padding: 80px 0; background: white; text-align: center; }
-        .social-proof h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
-        .social-proof > p { color: #64748b; margin-bottom: 40px; font-size: 1.1rem; }
-        
-        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
-        .testimonial-card { background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; text-align: left; transition: all 0.3s ease; }
-        .testimonial-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; }
-        .testimonial-text { font-style: italic; color: #475569; line-height: 1.7; margin-bottom: 20px; font-size: 0.95rem; }
-        .testimonial-author { display: flex; align-items: center; gap: 12px; }
-        .author-avatar { width: 45px; height: 45px; background: var(--gradient-hero); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
-        .author-info strong { color: var(--secondary); display: block; font-size: 0.95rem; }
-        .author-info span { color: #94a3b8; font-size: 0.85rem; }
+        /* Email Capture Section */
+        .email-capture-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        .email-capture-section h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        .email-capture-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+        }
+        .email-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .email-form button {
+            padding: 15px 30px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .email-form button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        .privacy-note { font-size: 0.85rem; opacity: 0.7; margin-top: 20px; }
 
         /* Methods Section */
         .methods-section { padding: 80px 0; background: white; }
@@ -143,14 +269,28 @@
         .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; }
         .footer-disclaimer { font-size: 0.85rem; opacity: 0.8; max-width: 900px; margin: 0 auto 20px; line-height: 1.6; }
 
+        /* Science Citations Section */
+        .science-section { padding: 60px 0; background: #f8fafc; }
+        .science-section h3 { text-align: center; color: var(--secondary); margin-bottom: 30px; }
+        .citations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1000px; margin: 0 auto; }
+        .citation-card { background: white; padding: 25px; border-radius: 15px; border-left: 4px solid var(--primary); }
+        .citation-card h4 { color: var(--secondary); font-size: 1rem; margin-bottom: 10px; }
+        .citation-card p { color: #64748b; font-size: 0.9rem; margin-bottom: 10px; }
+        .citation-card a { color: var(--primary); font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2rem; }
             .value-props { flex-direction: column; align-items: center; }
             .methods-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
+            .transformation-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .nav-links { display: none; }
             .trust-badges { flex-direction: column; gap: 20px; }
+            .email-form { flex-direction: column; }
+            .sticky-cta { display: block; }
+            .citations-grid { grid-template-columns: 1fr; }
+            .guarantee-box { flex-direction: column; text-align: center; }
+            body { padding-bottom: 80px; }
         }
     </style>
     <!-- Google Analytics -->
@@ -174,208 +314,128 @@
             <a href="index.html" class="active">Home</a>
             <a href="systems.html">Systems</a>
             <a href="solutions.html">Solutions</a>
-            <a href="systems.html" class="btn-nav">Explore Metabolism Systems</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="recommended-stack.html">My Stack</a>
+            <a href="systems.html" class="btn-nav">Join The Protocol</a>
         </div>
     </div>
 </nav>
 
+<!-- Sticky CTA for Mobile -->
+<div class="sticky-cta">
+    <a href="metabolic-quiz.html" class="btn-sticky">Take The Metabolic Quiz →</a>
+</div>
+
 <section class="hero">
     <div class="container">
-        <div class="hero-badge">🏆 Trusted by 50,000+ Health-Conscious Individuals</div>
-        <h1>Support Your Metabolism Naturally With <span>The 5-Pillar Weight Loss Protocol</span></h1>
-        <p class="hero-problem">You’re not lazy. And you’re not broken.
-Most weight loss plans ignore how your body actually burns fat.
-When your system slows down, results slow down too..</p>
+        <div class="hero-badge">🔬 Body Science Approach</div>
+        <h1>Why Your Body Stopped Listening To Your Diet <span>(And How to Rebuild Metabolic Trust)</span></h1>
+        <p class="hero-problem">You're not lazy. You're not broken. Your metabolism has gone into "survival mode" from years of restrictive dieting. Discover the 5-Pillar Protocol that works WITH your biology, not against it.</p>
         
+        <!-- Lead Magnet CTA -->
+        <div class="lead-magnet-box">
+            <h3>🎁 FREE DOWNLOAD: The Metabolic Cheat Sheet</h3>
+            <p>Discover the 7 hidden signs your metabolism is in "survival mode" — and the 3-step reset to wake it up.</p>
+            <a href="#email-capture" class="btn-lead">Get My Free Cheat Sheet →</a>
+        </div>
+
         <!-- Value Proposition Bullets -->
         <div class="value-props">
             <div class="value-prop">
                 <div class="value-prop-icon">🎯</div>
                 <h3>Who It's For</h3>
-                <p>Men and women 25+ experiencing slowed metabolism, low energy, and stubborn weight that won't budge with traditional methods.</p>
+                <p>Men and women 30+ experiencing slowed metabolism, low energy, and stubborn weight that won't budge with traditional methods.</p>
             </div>
             <div class="value-prop">
                 <div class="value-prop-icon">✨</div>
                 <h3>What Makes It Different</h3>
-                <p>Unlike one-size-fits-all diets, we combine 5 pillars—Nutrition, Exercise, Mindset, Sleep, and Targeted Supplementation—for comprehensive metabolic support.</p>
+                <p>NO calorie counting. NO soul-crushing cardio. Just 5 science-backed pillars that rebuild metabolic trust naturally.</p>
             </div>
             <div class="value-prop">
                 <div class="value-prop-icon">📈</div>
                 <h3>Results It Supports</h3>
-                <p>Natural energy improvement, better digestion, reduced cravings, healthy weight management, and sustainable lifestyle transformation.</p>
+                <p>Natural energy improvement, reduced cravings, healthy weight management, and sustainable lifestyle transformation.</p>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="hero-image-box">
-            <div class="hero-image">
-                <div class="veg-icons">
-                    <div class="veg-item">🥑</div>
-                    <div class="veg-item">🥦</div>
-                    <div class="veg-item">🥬</div>
-                    <div class="veg-item">🍎</div>
-                    <div class="veg-item">🥕</div>
-                    <div class="veg-item">🥗</div>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<!-- Customer Transformations Section -->
+<section class="transformations-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Real People. Real Results.</h2>
+            <p>See how everyday people transformed their bodies using the 5-Pillar Protocol</p>
+        </div>
+        
+        <div class="transformation-grid">
+            <div class="transformation-card">
+                <div class="image-container">
+                    <img src="images/transformation1.jpg" alt="Weight Loss Transformation">
+                    <span class="result-badge">-47 lbs</span>
+                </div>
+                <div class="content">
+                    <h4>Sarah M., 34</h4>
+                    <p>Lost 47 lbs in 8 months using the 5-Pillar Protocol + CitrusBurn</p>
+                    <div class="testimonial">"I finally understand WHY I was struggling. This isn't a diet—it's a complete reset."</div>
                 </div>
             </div>
-            <div class="hero-cta">
-                <h2>Your journey to better metabolic health starts with choosing the right path</h2>
-                <p>We understand that everyone's body is unique. That's why we've curated two distinct approaches to help you support your weight loss goals—naturally or with modern scientific support.</p>
-                <a href="systems.html" class="btn-main">Find What’s Slowing Me Down →</a>
+            
+            <div class="transformation-card">
+                <div class="image-container">
+                    <img src="images/transformation2.jpg" alt="Weight Loss Transformation">
+                    <span class="result-badge">-40 lbs</span>
+                </div>
+                <div class="content">
+                    <h4>Katie G., 29</h4>
+                    <p>Lost 40 lbs and transformed her relationship with food</p>
+                    <div class="testimonial">"The mindset pillar changed everything. No more guilt, no more shame—just results."</div>
+                </div>
+            </div>
+            
+            <div class="transformation-card">
+                <div class="image-container">
+                    <img src="images/transformation3.jpg" alt="Weight Loss Transformation">
+                    <span class="result-badge">-86 lbs</span>
+                </div>
+                <div class="content">
+                    <h4>David R., 52</h4>
+                    <p>Lost 86 lbs and reversed his prediabetes diagnosis</p>
+                    <div class="testimonial">"At my age, I thought it was too late. The 5-Pillar Protocol proved me wrong."</div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section style="padding: 40px 20px; background: linear-gradient(135deg, #FFF5F0 0%, #ffffff 100%);">
-    <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
-        <div style="background: white; border-radius: 25px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 2px solid #FF6B00;">
-            <div style="display: inline-block; background: rgba(255,107,0,0.1); color: #FF6B00; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 15px;">✨ Real Results</div>
-            <h2 style="font-size: 2rem; color: #1A1A2E; margin-bottom: 15px;">Read My Personal 47-Pound Transformation Story</h2>
-            <p style="color: #64748b; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">From 198 lbs to 151 lbs. See exactly how I did it using the 5-Pillar Protocol and CitrusBurn. Real photos, real timeline, real results.</p>
-            <a href="my-weight-loss-journey.html" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #FF6B00 0%, #FF8C42 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(255,107,0,0.4);">Read My Story →</a>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="customer-transformations.html" class="btn-main">See More Transformations →</a>
         </div>
     </div>
 </section>
 
-<style>
-.metabolism-section {
-  padding: 70px 20px;
-  background: #f8f9fa;
-  font-family: Arial, sans-serif;
-}
-
-.metabolism-section .container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.metabolism-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-.meta-intro {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 40px auto;
-  color: #555;
-}
-
-.meta-points {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 60px;
-}
-
-.meta-box {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.category-title {
-  margin-bottom: 30px;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.category-card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.category-card h3 {
-  margin-bottom: 10px;
-}
-
-.category-card ul {
-  padding-left: 20px;
-}
-
-.category-card li {
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-</style>
-
-<section class="metabolism-section">
-  <div class="container">
-    <h2>Understanding Metabolism & Weight Loss</h2>
-    <p class="meta-intro">
-      Weight loss is not about starving yourself. It is about how your metabolism uses energy.
-      Your metabolism controls how your body burns calories, stores fat, and produces energy.
-    </p>
-
-    <div class="meta-points">
-      <div class="meta-box">
-        <h3>1️⃣ Basal Metabolic Rate (BMR)</h3>
-        <p>Your body burns calories even at rest. Higher muscle mass increases this number.</p>
-      </div>
-
-      <div class="meta-box">
-        <h3>2️⃣ Thermogenesis</h3>
-        <p>This is calorie burning through digestion and movement. Some supplements aim to support this process.</p>
-      </div>
-
-      <div class="meta-box">
-        <h3>3️⃣ Insulin & Fat Storage</h3>
-        <p>When insulin is high, fat storage increases. Structured diets help control this.</p>
-      </div>
+<!-- Email Capture Section -->
+<section class="email-capture-section" id="email-capture">
+    <div class="container">
+        <h2>Get Your FREE Metabolic Cheat Sheet</h2>
+        <p>Join 50,000+ people who have started their metabolic reset journey. Get instant access to the 7 signs of metabolic slowdown and the 3-step protocol to fix it.</p>
+        
+        <form class="email-form" onsubmit="handleEmailSubmit(event)">
+            <input type="email" placeholder="Enter your best email address" required>
+            <button type="submit">Send Me The Cheat Sheet →</button>
+        </form>
+        
+        <p class="privacy-note">🔒 We respect your privacy. Unsubscribe anytime. No spam, ever.</p>
     </div>
-
-    <h2 class="category-title">Weight Loss Categories</h2>
-
-    <div class="category-grid">
-
-      <div class="category-card">
-        <h3>🔥 Metabolism Boosters</h3>
-        <p>Designed to support thermogenesis and energy production.</p>
-        <ul>
-          <li>Citrus Burn</li>
-          <li>Java Burn</li>
-          <li>Mitolyn</li>
-        </ul>
-      </div>
-
-      <div class="category-card">
-        <h3>🥤 Meal Replacement</h3>
-        <p>Helps reduce calorie intake by replacing high-calorie meals.</p>
-        <ul>
-          <li>Lean Belly Shake</li>
-        </ul>
-      </div>
-
-      <div class="category-card">
-        <h3>🥗 Structured Diet System</h3>
-        <p>Personalized meal planning to control calories and carbs.</p>
-        <ul>
-          <li>Kito Flow AI</li>
-        </ul>
-      </div>
-
-      <div class="category-card">
-        <h3>💧 Hydration Support</h3>
-        <p>Encourages water intake as part of a healthy lifestyle.</p>
-        <ul>
-          <li>Slim Crystal</li>
-        </ul>
-      </div>
-
-    </div>
-
-  </div>
 </section>
-
-
 
 <!-- Trust Section -->
 <section class="trust-section">
@@ -384,59 +444,40 @@ When your system slows down, results slow down too..</p>
         
         <div class="trust-badges">
             <div class="trust-badge"><span>🛡️</span> Science-Informed Approach</div>
-            <div class="trust-badge"><span>📚</span> Educational Resources</div>
+            <div class="trust-badge"><span>📚</span> 50,000+ Success Stories</div>
             <div class="trust-badge"><span>🔍</span> Transparent Information</div>
             <div class="trust-badge"><span>💬</span> Community Support</div>
         </div>
         
-        <div class="disclaimer-box">
-            <h4>📋 Important Educational Notice</h4>
-            <p><strong>Educational Purpose Only:</strong> The 5-Pillar Protocol is an educational resource designed to help you understand metabolism and weight management. Individual results may vary. This website does not provide medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider before starting any new diet, exercise program, or supplement regimen, especially if you have pre-existing health conditions or are taking medications.</p>
+        <div class="guarantee-box">
+            <span class="icon">✓</span>
+            <div>
+                <h4>30-Day Metabolic Satisfaction Guarantee</h4>
+                <p>If you don't feel more energized, less bloated, and in better control of your cravings within 30 days, we'll refund every penny. No questions asked.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Social Proof Block -->
-<section class="social-proof">
+<!-- Science Citations Section -->
+<section class="science-section">
     <div class="container">
-        <h2>What Our Community Members Say</h2>
-        <p>Real feedback from individuals who have implemented the 5-Pillar approach</p>
-        
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Finally, a program that doesn't promise overnight miracles. The 5-Pillar approach helped me understand my metabolism better. After 3 months, I've lost 18 pounds gradually and feel more energetic than I have in years."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MK</div>
-                    <div class="author-info">
-                        <strong>Maria K.</strong>
-                        <span>Austin, TX | Member since 2025</span>
-                    </div>
-                </div>
+        <h3>🔬 The Science Behind The 5-Pillar Protocol</h3>
+        <div class="citations-grid">
+            <div class="citation-card">
+                <h4>Cortisol & Weight Gain</h4>
+                <p>Chronic stress elevates cortisol, which promotes abdominal fat storage and metabolic slowdown.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/15883543/" target="_blank">View Study →</a>
             </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"At 52, I thought my slow metabolism was permanent. The Systems page helped me find the right supplement support combined with the nutrition guide. Down 24 pounds in 4 months—sustainable and healthy."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JR</div>
-                    <div class="author-info">
-                        <strong>James R.</strong>
-                        <span>Denver, CO | Member since 2024</span>
-                    </div>
-                </div>
+            <div class="citation-card">
+                <h4>Metabolic Adaptation</h4>
+                <p>Restrictive dieting triggers adaptive thermogenesis, making weight loss progressively harder.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20935641/" target="_blank">View Study →</a>
             </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"I appreciate the honesty here. No 'magic pill' promises—just solid information about supporting your metabolism. The meal plans are practical, and the supplement recommendations actually work."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SL</div>
-                    <div class="author-info">
-                        <strong>Sarah L.</strong>
-                        <span>Miami, FL | Member since 2025</span>
-                    </div>
-                </div>
+            <div class="citation-card">
+                <h4>Mineral Deficiencies</h4>
+                <p>Magnesium and potassium deficiencies are linked to insulin resistance and metabolic dysfunction.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/22364157/" target="_blank">View Study →</a>
             </div>
         </div>
     </div>
@@ -453,16 +494,16 @@ When your system slows down, results slow down too..</p>
             <div class="method-card natural">
                 <div class="method-icon">🌿</div>
                 <h3>1. Build Fat Loss the Natural Way</h3>
-                <p>The traditional, time-tested approach to weight management through disciplined lifestyle changes and natural methods. Perfect for those who prefer a holistic, supplement-free journey focused on whole foods and movement.</p>
+                <p>The traditional, time-tested approach to weight management through disciplined lifestyle changes and natural methods. Perfect for those who prefer a holistic, supplement-free journey.</p>
 
                 <div class="method-types">
                     <div class="type-item">
                         <h4>🎯 Comprehensive Exercise Programs</h4>
-                        <p>Complete lifestyle overhaul with 90 to 120 minutes of dedicated daily workout routines designed for both men and women, focusing on metabolic conditioning.</p>
+                        <p>Complete lifestyle overhaul with dedicated daily workout routines focusing on metabolic conditioning.</p>
                     </div>
                     <div class="type-item">
                         <h4>⏰ Time-Efficient Options</h4>
-                        <p>Condensed, high-intensity 10 to 20 minute workouts that fit into your hectic schedule without compromising metabolic benefits.</p>
+                        <p>Condensed, high-intensity workouts that fit into your hectic schedule without compromising benefits.</p>
                     </div>
                 </div>
             </div>
@@ -470,28 +511,20 @@ When your system slows down, results slow down too..</p>
             <div class="method-card modern">
                 <div class="method-icon">🚀</div>
                 <h3>2. Smarter, Guided Fat Loss Support</h3>
-                <p>Leverage cutting-edge nutritional science and research-backed formulations to support your metabolism. Our modern system features 6 specialized categories of solutions.</p>
+                <p>Leverage cutting-edge nutritional science and research-backed formulations to support your metabolism. Features specialized categories of solutions.</p>
 
                 <div class="method-types">
                     <div class="type-item">
                         <h4>💊 Medical & Supplement Systems</h4>
-                        <p>Research-backed supplements and formulations designed to support metabolic health and natural fat oxidation processes.</p>
+                        <p>Research-backed supplements designed to support metabolic health and natural fat oxidation.</p>
                     </div>
                     <div class="type-item">
                         <h4>⚡ Metabolism & Hormone Support</h4>
-                        <p>Advanced protocols to support your metabolic engine and hormone balance for optimal energy production.</p>
+                        <p>Advanced protocols to support your metabolic engine and hormone balance.</p>
                     </div>
                     <div class="type-item">
                         <h4>🤖 AI-Powered Personalization</h4>
-                        <p>Personalized daily meal and workout plans generated by artificial intelligence based on your unique body composition and goals.</p>
-                    </div>
-                    <div class="type-item">
-                        <h4>🔬 Exotic Research Formulations</h4>
-                        <p>Breakthrough formulations backed by cutting-edge scientific research from traditional medicine systems around the globe.</p>
-                    </div>
-                    <div class="type-item">
-                        <h4>☕ Lifestyle Integration Systems</h4>
-                        <p>Revolutionary morning rituals that integrate seamlessly into your daily routine for metabolic support.</p>
+                        <p>Personalized daily meal and workout plans based on your unique body composition.</p>
                     </div>
                 </div>
             </div>
@@ -499,23 +532,23 @@ When your system slows down, results slow down too..</p>
     </div>
 </section>
 
-
 <section class="cta-section" id="products">
     <div class="container">
         <div class="section-header">
-            <h2>Ready to Stop Starting Over?</h2>
-            <p>Choose a path that works with your body — not against it..</p>
+            <h2>Ready to Rebuild Your Metabolic Trust?</h2>
+            <p>Take the 4-question quiz to discover if your metabolism is in "Survival" or "Burn" mode</p>
         </div>
-        <a href="systems.html" class="btn-main" style="font-size: 1.3rem; padding: 25px 60px;">Explore Metabolism Systems →</a>
-        <p style="margin-top: 20px; color: #64748b; font-size: 0.95rem;">Browse supplements, meal plans, and personalized programs</p>
+        <a href="metabolic-quiz.html" class="btn-main" style="font-size: 1.3rem; padding: 25px 60px;">Take The Metabolic Quiz →</a>
+        <p style="margin-top: 20px; color: #64748b; font-size: 0.95rem;">Takes 60 seconds • Get personalized recommendations</p>
     </div>
 </section>
 
 <div class="container">
     <div class="page-nav">
-        <a href="index.html" class="page-btn active">Page 1: Overview</a>
-        <a href="systems.html" class="page-btn">Page 2: Metabolism Systems</a>
-        <a href="solutions.html" class="page-btn">Page 3: Advanced Solutions</a>
+        <a href="index.html" class="page-btn active">Home</a>
+        <a href="systems.html" class="page-btn">Systems</a>
+        <a href="solutions.html" class="page-btn">Solutions</a>
+        <a href="customer-transformations.html" class="page-btn">Results</a>
     </div>
 </div>
 
@@ -527,16 +560,16 @@ When your system slows down, results slow down too..</p>
                     <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
                     The 5-Pillar Protocol
                 </div>
-                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management through our proven 5-pillar approach. Results vary. This site shares educational information and system options. Always consult a professional before starting any health program.</p>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management through our proven 5-pillar approach.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
-                <a href="systems.html">Medical Systems</a>
-                <a href="solutions.html">Exotic Solutions</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="customer-transformations.html">Success Stories</a>
+                <a href="recommended-stack.html">My Recommended Stack</a>
                 <a href="privacy-policy.html">Privacy Policy</a>
-<a href="my-weight-loss-journey.html">My Transformation Story</a>
-
             </div>
             <div class="footer-links">
                 <h4>Our Systems</h4>
@@ -544,19 +577,22 @@ When your system slows down, results slow down too..</p>
                 <a href="mitolyn.html">Mitolyn</a>
                 <a href="java-burn.html">Java Burn</a>
                 <a href="kito.html">Kito Flow AI</a>
+                <a href="slim-crystal.html">Slim Crystal</a>
+                <a href="lanta-flat-belly-shake.html">Lanta Shake</a>
             </div>
             <div class="footer-links">
                 <h4>Support</h4>
                 <a href="contact.html">Contact Us</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="faq.html">FAQ</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="disclaimer.html">Full Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
             </div>
         </div>
         
         <div class="footer-bottom">
             <p class="footer-disclaimer">
-                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website. Individual results may vary.
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Individual results may vary.
             </p>
             <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
             <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
@@ -566,6 +602,38 @@ When your system slows down, results slow down too..</p>
     </div>
 </footer>
 
-</body>
-</html>'''
+<script>
+function handleEmailSubmit(e) {
+    e.preventDefault();
+    // Placeholder for email capture logic
+    // TODO: Add your Brevo email capture form here
+    alert('Thank you! Check your email for the Metabolic Cheat Sheet.');
+    
+    // Track conversion
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'event_category': 'lead_magnet',
+            'event_label': 'metabolic_cheat_sheet',
+            'value': 1.0
+        });
+    }
+}
 
+// Track button clicks
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButtons = document.querySelectorAll('.btn-main, .btn-lead');
+    ctaButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    'event_category': 'cta',
+                    'event_label': button.textContent.trim()
+                });
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
