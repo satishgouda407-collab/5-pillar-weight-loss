@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The 5-Pillar Weight Loss Protocol - A scientifically-backed, holistic approach to sustainable weight loss through Nutrition, Exercise, Mindset, Sleep, and Supplementation.">
-    <title>Why Your Body Stopped Listening To Your Diet | The 5-Pillar Protocol</title>
+    <meta name="description" content="Discover the 5 pillars that control metabolism, fat burning, and appetite. Learn how to support healthy weight loss naturally. Fix slow metabolism and hormonal weight gain.">
+    <meta name="keywords" content="metabolism weight loss, belly fat solution, slow metabolism fix, appetite control, hormonal weight gain, fat burning pillars, metabolic health">
+    <title>Why Your Body Refuses To Burn Fat | The 5 Fat-Burning Pillars</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Brevo Form Font Dependencies -->
+    <style>
+        @font-face {
+            font-display: block;
+            font-family: Roboto;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 600;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 700;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+        }
+    </style>
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    
     <style>
         :root {
             --primary: #10b981;
             --primary-dark: #059669;
             --primary-light: #34d399;
             --secondary: #0f172a;
-            --accent: #f59e0b;
+            --accent: #f59e0b;        
             --accent-light: #fbbf24;
             --danger: #ef4444;
             --success: #22c55e;
@@ -33,6 +57,7 @@
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
         @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
         /* Navigation */
         nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
@@ -71,235 +96,424 @@
             animation: pulse 2s infinite;
         }
 
-        /* Hero Section - Enhanced with Emotional Hook */
-        .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        /* ===== HERO SECTION - IMPROVED WITH STRONG HOOK ===== */
+        .hero { 
+            padding: 100px 0 80px; 
+            text-align: center; 
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            right: -10%; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 6s ease-in-out infinite; 
+        }
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -30%; 
+            left: -10%; 
+            width: 400px; 
+            height: 400px; 
+            background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 8s ease-in-out infinite reverse;
+        }
         
-        .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: #b45309; padding: 10px 25px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; margin-bottom: 25px; border: 1px solid rgba(245,158,11,0.3); }
+        .hero-badge { 
+            display: inline-block; 
+            background: linear-gradient(135deg, rgba(239,68,68,0.15) 0%, rgba(239,68,68,0.05) 100%); 
+            color: #dc2626; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            margin-bottom: 30px; 
+            border: 2px solid rgba(239,68,68,0.3);
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease;
+        }
         
-        .hero h1 { font-size: 2.8rem; color: var(--secondary); line-height: 1.15; margin-bottom: 25px; font-weight: 800; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero h1 span { color: var(--primary); }
+        .hero h1 { 
+            font-size: 3.2rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            font-weight: 800; 
+            max-width: 900px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease 0.1s both;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         
-        .hero-problem { font-size: 1.3rem; color: #475569; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 500; }
+        .hero-subheadline {
+            font-size: 1.4rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease 0.2s both;
+        }
         
-        /* Lead Magnet CTA Box */
-        .lead-magnet-box {
+        .hero-curiosity {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 2px solid var(--accent);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 16px;
+            padding: 20px 30px;
             max-width: 600px;
             margin: 30px auto;
-            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease 0.3s both;
         }
-        .lead-magnet-box h3 {
+        .hero-curiosity p {
             color: #92400e;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
         }
-        .lead-magnet-box p {
-            color: #78350f;
-            font-size: 1rem;
-            margin-bottom: 20px;
+        .hero-curiosity strong {
+            color: #dc2626;
         }
-        .btn-lead {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--accent);
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 22px 50px;
+            background: var(--gradient-primary);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(16,185,129,0.4);
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease 0.4s both, pulse 2s infinite;
         }
-        .btn-lead:hover {
+        .hero-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(245,158,11,0.6);
+            box-shadow: 0 12px 35px rgba(16,185,129,0.5);
         }
-
-        /* Value Proposition Bullets */
-        .value-props { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; max-width: 1000px; margin-left: auto; margin-right: auto; }
-        .value-prop { background: white; padding: 25px 30px; border-radius: 20px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; flex: 1; min-width: 280px; max-width: 320px; text-align: left; transition: all 0.3s ease; }
-        .value-prop:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-glow); }
-        .value-prop-icon { width: 50px; height: 50px; background: var(--gradient-hero); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 15px; }
-        .value-prop h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px; }
-        .value-prop p { font-size: 0.95rem; color: #64748b; margin: 0; line-height: 1.5; }
-
-        /* Customer Transformations Section */
-        .transformations-section { padding: 80px 0; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); }
-        .transformations-section .section-header { text-align: center; margin-bottom: 50px; }
-        .transformations-section h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
-        .transformations-section > .container > p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; text-align: center; }
         
-        .transformation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
-        .transformation-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.3s ease; }
-        .transformation-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .transformation-card .image-container { position: relative; height: 250px; overflow: hidden; }
-        .transformation-card img { width: 100%; height: 100%; object-fit: cover; }
-        .transformation-card .result-badge {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
+        .hero-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            animation: slideInUp 0.6s ease 0.5s both;
         }
-        .transformation-card .content { padding: 25px; }
-        .transformation-card h4 { color: var(--secondary); font-size: 1.1rem; margin-bottom: 8px; }
-        .transformation-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
-        .transformation-card .testimonial { 
-            background: #f8fafc; 
-            padding: 15px; 
-            border-radius: 12px; 
-            margin-top: 15px;
-            font-style: italic;
-            color: #475569;
-            font-size: 0.9rem;
-        }
-
-        /* Trust Section */
-        .trust-section { padding: 60px 0; background: #f8fafc; text-align: center; }
-        .trust-badges { display: flex; justify-content: center; gap: 40px; margin: 30px 0; flex-wrap: wrap; }
-        .trust-badge { display: flex; align-items: center; gap: 10px; color: #475569; font-weight: 600; font-size: 0.95rem; }
-        .trust-badge span { font-size: 1.5rem; }
-        
-        .guarantee-box {
-            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-            border: 2px solid var(--success);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 700px;
-            margin: 30px auto;
+        .hero-trust-badge {
             display: flex;
             align-items: center;
-            gap: 25px;
-            text-align: left;
+            gap: 8px;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
-        .guarantee-box .icon { font-size: 3rem; }
-        .guarantee-box h4 { color: #166534; margin-bottom: 8px; }
-        .guarantee-box p { color: #15803d; font-size: 0.95rem; margin: 0; }
+        .hero-trust-badge span {
+            font-size: 1.2rem;
+        }
 
-        /* Email Capture Section */
-        .email-capture-section {
+        /* ===== PROBLEM SECTION ===== */
+        .problem-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
-            color: white;
-            text-align: center;
+            background: linear-gradient(135deg, #fef2f2 0%, #fff5f5 50%, #ffffff 100%);
+            position: relative;
         }
-        .email-capture-section h2 { font-size: 2.2rem; margin-bottom: 15px; }
-        .email-capture-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
-        .email-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 15px;
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--danger), var(--accent), var(--primary));
         }
-        .email-form input {
-            flex: 1;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            outline: none;
-        }
-        .email-form button {
-            padding: 15px 30px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .email-form button:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-        }
-        .privacy-note { font-size: 0.85rem; opacity: 0.7; margin-top: 20px; }
-
-        /* Methods Section */
-        .methods-section { padding: 80px 0; background: white; }
-        .section-header { text-align: center; margin-bottom: 60px; }
+        
+        .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
         .section-header p { color: #64748b; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .problem-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--danger);
+            box-shadow: 0 15px 40px rgba(239,68,68,0.15);
+        }
+        .problem-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            border: 3px solid #fecaca;
+        }
+        .problem-card h3 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .problem-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
 
-        .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .method-card { background: white; border-radius: 25px; padding: 40px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; transition: all 0.4s ease; position: relative; }
-        .method-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: var(--shadow-glow); }
-        .method-card.natural { border-top: 5px solid var(--primary); }
-        .method-card.modern { border-top: 5px solid var(--accent); }
-        .method-icon { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 20px; }
-        .natural .method-icon { background: #dcfce7; color: var(--primary); }
-        .modern .method-icon { background: #fef3c7; color: var(--accent); }
-        .method-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--secondary); }
-        .method-card > p { color: #64748b; margin-bottom: 25px; line-height: 1.7; }
+        /* ===== WHY DIETS FAIL SECTION ===== */
+        .why-diets-fail {
+            padding: 80px 0;
+            background: white;
+        }
+        .comparison-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid #e2e8f0;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .comparison-column {
+            padding: 30px;
+            border-radius: 16px;
+        }
+        .comparison-column.traditional {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border: 2px solid #fecaca;
+        }
+        .comparison-column.protocol {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #bbf7d0;
+        }
+        .comparison-column h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        .comparison-column.traditional h3 { color: #dc2626; }
+        .comparison-column.protocol h3 { color: var(--primary-dark); }
+        .comparison-column ul {
+            list-style: none;
+        }
+        .comparison-column li {
+            padding: 12px 0;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .comparison-column li:last-child { border-bottom: none; }
+        .comparison-column li::before {
+            content: '✗';
+            color: #dc2626;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .comparison-column.protocol li::before {
+            content: '✓';
+            color: var(--success);
+        }
 
-        .method-types { display: flex; flex-direction: column; gap: 15px; }
-        .type-item { background: #f8fafc; padding: 20px; border-radius: 15px; border-left: 4px solid var(--primary); }
-        .modern .type-item { border-left-color: var(--accent); }
-        .type-item h4 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
-        .type-item p { font-size: 0.95rem; color: #64748b; margin: 0; }
-
-        /* CTA Section */
-        .cta-section { padding: 80px 0; background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); text-align: center; }
-        .btn-main { display: inline-block; padding: 20px 50px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); transition: all 0.3s ease; border: none; cursor: pointer; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16,185,129,0.6); }
-
-        /* Page Navigation */
-        .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
-        .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
-        .page-btn:hover { border-color: var(--primary); color: var(--primary); }
-        .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
-
-        /* Footer */
-        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-desc { line-height: 1.8; max-width: 300px; }
-        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
-        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
-        .footer-links a:hover { color: var(--primary-light); }
-        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; }
-        .footer-disclaimer { font-size: 0.85rem; opacity: 0.8; max-width: 900px; margin: 0 auto 20px; line-height: 1.6; }
-
-        /* Science Citations Section */
-        .science-section { padding: 60px 0; background: #f8fafc; }
-        .science-section h3 { text-align: center; color: var(--secondary); margin-bottom: 30px; }
-        .citations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1000px; margin: 0 auto; }
-        .citation-card { background: white; padding: 25px; border-radius: 15px; border-left: 4px solid var(--primary); }
-        .citation-card h4 { color: var(--secondary); font-size: 1rem; margin-bottom: 10px; }
-        .citation-card p { color: #64748b; font-size: 0.9rem; margin-bottom: 10px; }
-        .citation-card a { color: var(--primary); font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+        /* ===== 5 PILLAR FRAMEWORK SECTION ===== */
+        .pillars-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .pillars-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        .pillars-intro h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .pillars-intro p {
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pillar-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        .pillar-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+        .pillar-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+        .pillar-card h3 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .pillar-problem {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+        .pillar-problem strong {
+            color: #dc2626;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .pillar-problem p {
+            color: #7f1d1d;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+        .pillar-explanation {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .pillar-solution {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .pillar-solution strong {
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .pillar-solution p {
+            color: #166534;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
 
         @media (max-width: 768px) {
+            .hero { padding: 60px 0 50px; }
             .hero h1 { font-size: 2rem; }
-            .value-props { flex-direction: column; align-items: center; }
-            .methods-grid { grid-template-columns: 1fr; }
-            .transformation-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-subheadline { font-size: 1.1rem; }
+            .hero-curiosity { padding: 15px 20px; margin: 20px; }
+            .hero-curiosity p { font-size: 1rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .comparison-box { padding: 25px; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .pillar-card { padding: 30px 25px; }
+            .section-header h2 { font-size: 1.8rem; }
             .nav-links { display: none; }
-            .trust-badges { flex-direction: column; gap: 20px; }
-            .email-form { flex-direction: column; }
             .sticky-cta { display: block; }
-            .citations-grid { grid-template-columns: 1fr; }
-            .guarantee-box { flex-direction: column; text-align: center; }
             body { padding-bottom: 80px; }
         }
     </style>
+    
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+        gtag('config', 'G-E486X8NQSZ');
     </script>
 </head>
 <body>
@@ -316,324 +530,1796 @@
             <a href="solutions.html">Solutions</a>
             <a href="customer-transformations.html">Results</a>
             <a href="recommended-stack.html">My Stack</a>
-            <a href="systems.html" class="btn-nav">Join The Protocol</a>
+            <a href="#pillars" class="btn-nav">Discover The 5 Pillars</a>
         </div>
     </div>
 </nav>
 
 <!-- Sticky CTA for Mobile -->
 <div class="sticky-cta">
-    <a href="metabolic-quiz.html" class="btn-sticky">Take The Metabolic Quiz →</a>
+    <a href="#pillars" class="btn-sticky">Discover The 5 Fat-Burning Pillars</a>
 </div>
 
+<!-- ===== HERO SECTION ===== -->
 <section class="hero">
     <div class="container">
-        <div class="hero-badge">🔬 Body Science Approach</div>
-        <h1>Why Your Body Stopped Listening To Your Diet <span>(And How to Rebuild Metabolic Trust)</span></h1>
-        <p class="hero-problem">You're not lazy. You're not broken. Your metabolism has gone into "survival mode" from years of restrictive dieting. Discover the 5-Pillar Protocol that works WITH your biology, not against it.</p>
+        <div class="hero-badge">⚠️ The Truth About Weight Loss</div>
+        <h1>Why Your Body <span>Refuses To Burn Fat</span></h1>
+        <p class="hero-subheadline">Most diets fail because they ignore the 5 biological pillars that control metabolism, hunger, and fat storage.</p>
         
-        <!-- Lead Magnet CTA -->
-        <div class="lead-magnet-box">
-            <h3>🎁 FREE DOWNLOAD: The Metabolic Cheat Sheet</h3>
-            <p>Discover the 7 hidden signs your metabolism is in "survival mode" — and the 3-step reset to wake it up.</p>
-            <a href="#email-capture" class="btn-lead">Get My Free Cheat Sheet →</a>
+        <div class="hero-curiosity">
+            <p><strong>If even ONE pillar collapses,</strong> your body stores fat even while dieting.</p>
         </div>
+        
+        <a href="#pillars" class="hero-cta">
+            Discover The 5 Fat-Burning Pillars
+            <span>→</span>
+        </a>
+        
+        <div class="hero-trust-badges">
+            <div class="hero-trust-badge"><span>🔬</span> Science-Backed Approach</div>
+            <div class="hero-trust-badge"><span>👥</span> 50,000+ Success Stories</div>
+            <div class="hero-trust-badge"><span>✓</span> 180-Day Guarantee</div>
+            <div class="hero-trust-badge"><span>🛡️</span> FDA-Registered Facility</div>
+        </div>
+    </div>
+</section>
 
-        <!-- Value Proposition Bullets -->
-        <div class="value-props">
-            <div class="value-prop">
-                <div class="value-prop-icon">🎯</div>
-                <h3>Who It's For</h3>
-                <p>Men and women 30+ experiencing slowed metabolism, low energy, and stubborn weight that won't budge with traditional methods.</p>
+<!-- ===== PROBLEM SECTION ===== -->
+<section class="problem-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Weight Loss Feels Impossible</h2>
+            <p>If you've struggled to lose weight, it's not your fault. These biological challenges are working against you:</p>
+        </div>
+        
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="problem-icon">🍎</div>
+                <h3>Belly Fat After 30</h3>
+                <p>As you age, hormonal shifts make fat accumulate around your midsection. Traditional diets don't address the root hormonal causes.</p>
             </div>
-            <div class="value-prop">
-                <div class="value-prop-icon">✨</div>
-                <h3>What Makes It Different</h3>
-                <p>NO calorie counting. NO soul-crushing cardio. Just 5 science-backed pillars that rebuild metabolic trust naturally.</p>
+            <div class="problem-card">
+                <div class="problem-icon">😫</div>
+                <h3>Constant Hunger While Dieting</h3>
+                <p>Calorie restriction triggers survival hormones that increase cravings and make you obsessed with food. Your body thinks it's starving.</p>
             </div>
-            <div class="value-prop">
-                <div class="value-prop-icon">📈</div>
-                <h3>Results It Supports</h3>
-                <p>Natural energy improvement, reduced cravings, healthy weight management, and sustainable lifestyle transformation.</p>
+            <div class="problem-card">
+                <div class="problem-icon">🐌</div>
+                <h3>Slow Metabolism</h3>
+                <p>Years of yo-yo dieting have trained your body to burn fewer calories. Your metabolism has adapted to store fat, not burn it.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">⚖️</div>
+                <h3>Hormonal Fat Storage</h3>
+                <p>Cortisol, insulin, and leptin imbalances signal your body to store fat instead of burning it — regardless of how little you eat.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🔋</div>
+                <h3>Low Energy</h3>
+                <p>When your cells aren't producing energy efficiently, you feel tired all day and too exhausted to exercise or make healthy choices.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E486X8NQSZ');
-</script>
-
-<!-- Customer Transformations Section -->
-<section class="transformations-section">
+<!-- ===== WHY DIETS FAIL SECTION ===== -->
+<section class="why-diets-fail">
     <div class="container">
         <div class="section-header">
+            <h2>Why Traditional Diets Keep Failing You</h2>
+            <p>The diet industry doesn't want you to know this truth:</p>
+        </div>
+        
+        <div class="comparison-box">
+            <div class="comparison-grid">
+                <div class="comparison-column traditional">
+                    <h3><span>❌</span> Traditional Diets</h3>
+                    <ul>
+                        <li>Focus only on calorie counting</li>
+                        <li>Ignore your hormones and metabolism</li>
+                        <li>Create intense cravings and hunger</li>
+                        <li>Slow down your metabolism over time</li>
+                        <li>Lead to yo-yo weight gain</li>
+                        <li>Require willpower you don't have</li>
+                        <li>Make you feel like a failure</li>
+                    </ul>
+                </div>
+                <div class="comparison-column protocol">
+                    <h3><span>✓</span> The 5-Pillar Approach</h3>
+                    <ul>
+                        <li>Works WITH your biology, not against it</li>
+                        <li>Balances hormones naturally</li>
+                        <li>Reduces cravings and hunger</li>
+                        <li>Supports healthy metabolism</li>
+                        <li>Creates sustainable results</li>
+                        <li>Builds on small, easy changes</li>
+                        <li>Makes fat loss feel effortless</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== 5 PILLAR FRAMEWORK SECTION ===== -->
+<section class="pillars-section" id="pillars">
+    <div class="container">
+        <div class="pillars-intro">
+            <h2>The 5 Fat-Burning Pillars</h2>
+            <p>Your body has 5 biological systems that control whether you burn fat or store it. When all 5 pillars are working together, weight loss becomes natural and sustainable.</p>
+        </div>
+        
+        <div class="pillars-grid">
+            <!-- Pillar 1: Metabolism -->
+            <div class="pillar-card">
+                <div class="pillar-number">1</div>
+                <div class="pillar-icon">⚡</div>
+                <h3>Metabolism</h3>
+                <div class="pillar-problem">
+                    <strong>The Problem:</strong>
+                    <p>Slow metabolism makes fat loss difficult. Your body burns fewer calories at rest, making weight gain inevitable.</p>
+                </div>
+                <div class="pillar-explanation">
+                    Your metabolism is how your body converts food into energy. When it's working properly, you burn calories efficiently even while resting.
+                </div>
+                <div class="pillar-solution">
+                    <strong>The Solution:</strong>
+                    <p>Support metabolic enzyme function with targeted nutrients that help your body burn fuel more efficiently.</p>
+                </div>
+            </div>
+            
+            <!-- Pillar 2: Fat Burning Hormones -->
+            <div class="pillar-card">
+                <div class="pillar-number">2</div>
+                <div class="pillar-icon">⚖️</div>
+                <h3>Fat Burning Hormones</h3>
+                <div class="pillar-problem">
+                    <strong>The Problem:</strong>
+                    <p>Hormonal imbalances signal your body to store fat instead of burning it, especially around the belly.</p>
+                </div>
+                <div class="pillar-explanation">
+                    Cortisol, insulin, and leptin control fat storage. When these hormones are out of balance, your body holds onto fat as a protective mechanism.
+                </div>
+                <div class="pillar-solution">
+                    <strong>The Solution:</strong>
+                    <p>Balance hormones naturally with adaptogenic herbs and nutrients that support healthy cortisol and insulin levels.</p>
+                </div>
+            </div>
+            
+            <!-- Pillar 3: Appetite Control -->
+            <div class="pillar-card">
+                <div class="pillar-number">3</div>
+                <div class="pillar-icon">🍽️</div>
+                <h3>Appetite Control</h3>
+                <div class="pillar-problem">
+                    <strong>The Problem:</strong>
+                    <p>Constant hunger signals make you overeat, even when your body has enough stored energy.</p>
+                </div>
+                <div class="pillar-explanation">
+                    Hunger hormones like ghrelin and satiety signals from leptin determine how much you eat. When these signals are broken, you never feel full.
+                </div>
+                <div class="pillar-solution">
+                    <strong>The Solution:</strong>
+                    <p>Support healthy hunger signals with fiber, protein, and nutrients that help you feel satisfied with less food.</p>
+                </div>
+            </div>
+            
+            <!-- Pillar 4: Energy & Activity -->
+            <div class="pillar-card">
+                <div class="pillar-number">4</div>
+                <div class="pillar-icon">🔋</div>
+                <h3>Energy & Activity</h3>
+                <div class="pillar-problem">
+                    <strong>The Problem:</strong>
+                    <p>Low energy reduces calorie burn and makes exercise feel impossible. You feel too tired to move.</p>
+                </div>
+                <div class="pillar-explanation">
+                    When your cells aren't producing energy efficiently, you feel fatigued all day. Low energy means fewer calories burned and less motivation to be active.
+                </div>
+                <div class="pillar-solution">
+                    <strong>The Solution:</strong>
+                    <p>Support cellular energy production with nutrients that help your mitochondria create more ATP — natural energy without stimulants.</p>
+                </div>
+            </div>
+            
+            <!-- Pillar 5: Cellular Fat Processing -->
+            <div class="pillar-card">
+                <div class="pillar-number">5</div>
+                <div class="pillar-icon">🧬</div>
+                <h3>Cellular Fat Processing</h3>
+                <div class="pillar-problem">
+                    <strong>The Problem:</strong>
+                    <p>Your body struggles to break down stored fat and convert it into usable energy.</p>
+                </div>
+                <div class="pillar-explanation">
+                    Fat burning happens at the cellular level. Your cells need the right nutrients to access stored fat and convert it into fuel.
+                </div>
+                <div class="pillar-solution">
+                    <strong>The Solution:</strong>
+                    <p>Support cellular fat oxidation with amino acids and compounds that help transport fatty acids into your cells' power plants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCT RECOMMENDATIONS SECTION ===== -->
+<!-- Each Pillar has a recommended product with affiliate link -->
+
+<style>
+    /* Product Recommendations Styles */
+    .products-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+    .products-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+    }
+    .products-intro h2 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 20px;
+    }
+    .products-intro p {
+        color: #64748b;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .product-pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .product-pillar-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        border: 2px solid #e2e8f0;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-pillar-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary);
+        box-shadow: 0 20px 50px rgba(16,185,129,0.2);
+    }
+    .product-pillar-card.featured {
+        border-color: var(--accent);
+        position: relative;
+    }
+    .product-pillar-card.featured::before {
+        content: '⭐ BEST SELLER';
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--accent);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        z-index: 10;
+    }
+    
+    .product-image-area {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        position: relative;
+    }
+    .product-pillar-card:nth-child(1) .product-image-area { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+    .product-pillar-card:nth-child(2) .product-image-area { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); }
+    .product-pillar-card:nth-child(3) .product-image-area { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+    .product-pillar-card:nth-child(4) .product-image-area { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
+    .product-pillar-card:nth-child(5) .product-image-area { background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); }
+    
+    .pillar-tag {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .product-content {
+        padding: 30px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-content h3 {
+        color: var(--secondary);
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .product-benefit {
+        color: var(--primary-dark);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .product-content > p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        flex: 1;
+    }
+    
+    .product-features {
+        list-style: none;
+        margin-bottom: 25px;
+    }
+    .product-features li {
+        padding: 8px 0;
+        color: #475569;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    .product-features li:last-child { border-bottom: none; }
+    .product-features li::before {
+        content: '✓';
+        color: var(--success);
+        font-weight: 700;
+    }
+    
+    .product-price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f8fafc;
+        border-radius: 12px;
+    }
+    .price-display {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+    .current-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--primary);
+    }
+    .original-price {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        text-decoration: line-through;
+    }
+    .guarantee-tag {
+        font-size: 0.8rem;
+        color: #64748b;
+    }
+    
+    .btn-product-cta {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        background: var(--gradient-primary);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-product-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+    }
+    .product-pillar-card.featured .btn-product-cta {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+    .product-pillar-card.featured .btn-product-cta:hover {
+        box-shadow: 0 8px 25px rgba(245,158,11,0.4);
+    }
+    
+    /* Ebook Download Section */
+    .ebook-banner {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 60px auto 0;
+        max-width: 900px;
+        text-align: center;
+        color: white;
+    }
+    .ebook-banner h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .ebook-banner p {
+        opacity: 0.9;
+        margin-bottom: 25px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ebook-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .ebook-link {
+        background: rgba(255,255,255,0.1);
+        padding: 15px 20px;
+        border-radius: 12px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .ebook-link:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-2px);
+    }
+    
+    /* Bundle Section */
+    .bundle-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    }
+    .bundle-box {
+        background: white;
+        border-radius: 24px;
+        padding: 50px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        border: 3px solid var(--accent);
+    }
+    .bundle-box h2 {
+        font-size: 2rem;
+        color: var(--secondary);
+        margin-bottom: 15px;
+    }
+    .bundle-box > p {
+        color: #64748b;
+        margin-bottom: 30px;
+    }
+    .bundle-price {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+    .bundle-savings {
+        display: inline-block;
+        background: #dcfce7;
+        color: #166534;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    .bundle-features {
+        list-style: none;
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+    .bundle-features li {
+        padding: 12px 0;
+        color: #475569;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    .bundle-features li::before {
+        content: '✓';
+        color: var(--success);
+        font-weight: 700;
+    }
+    .btn-bundle {
+        display: inline-block;
+        padding: 20px 50px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        box-shadow: 0 8px 25px rgba(245,158,11,0.4);
+        transition: all 0.3s ease;
+    }
+    .btn-bundle:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(245,158,11,0.5);
+    }
+    
+    @media (max-width: 768px) {
+        .product-pillar-grid { grid-template-columns: 1fr; }
+        .product-pillar-card { margin: 0 10px; }
+        .bundle-box { padding: 30px 20px; }
+        .ebook-banner { padding: 30px 20px; }
+        .ebook-grid { grid-template-columns: 1fr; }
+    }
+</style>
+
+<!-- ===== PRODUCT RECOMMENDATIONS BY PILLAR ===== -->
+<section class="products-section">
+    <div class="container">
+        <div class="products-intro">
+            <h2>Support Each Pillar With The Right Solution</h2>
+            <p>Each pillar has a specific product designed to support that biological system. Choose the one that addresses your biggest challenge, or combine them for maximum results.</p>
+        </div>
+        
+        <div class="product-pillar-grid">
+            <!-- Pillar 1: Metabolism - Citrus Burn -->
+            <div class="product-pillar-card featured">
+                <div class="product-image-area">
+                    🍊
+                    <span class="pillar-tag">Pillar 1: Metabolism</span>
+                </div>
+                <div class="product-content">
+                    <h3>Citrus Burn</h3>
+                    <div class="product-benefit">
+                        <span>⚡</span> Supports Metabolic Enzyme Function
+                    </div>
+                    <p>Advanced metabolic support with citrus bioflavonoids. Helps your body convert food into energy more efficiently.</p>
+                    <ul class="product-features">
+                        <li>Natural energy without jitters</li>
+                        <li>Helps reduce sugar cravings</li>
+                        <li>Supports healthy blood sugar</li>
+                        <li>180-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                            <span class="original-price">$99</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 180-Day Guarantee</span>
+                    </div>
+                    <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-product-cta" target="_blank">
+                        Support My Metabolism →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pillar 2: Fat Burning Hormones - Mitolyn -->
+            <div class="product-pillar-card">
+                <div class="product-image-area">
+                    💎
+                    <span class="pillar-tag">Pillar 2: Hormones</span>
+                </div>
+                <div class="product-content">
+                    <h3>Mitolyn</h3>
+                    <div class="product-benefit">
+                        <span>⚖️</span> Supports Hormonal Balance
+                    </div>
+                    <p>Cellular energy support with powerful antioxidants. Helps balance cortisol and support mitochondrial health.</p>
+                    <ul class="product-features">
+                        <li>Supports mitochondrial function</li>
+                        <li>Sustained natural energy</li>
+                        <li>Antioxidant cellular protection</li>
+                        <li>90-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$59</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 90-Day Guarantee</span>
+                    </div>
+                    <a href="https://4cf61jtef401oq3hwopedh6ndw.hop.clickbank.net" class="btn-product-cta" target="_blank">
+                        Balance My Hormones →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pillar 3: Appetite Control - Lanta Flat Belly Shake -->
+            <div class="product-pillar-card">
+                <div class="product-image-area">
+                    🥤
+                    <span class="pillar-tag">Pillar 3: Appetite</span>
+                </div>
+                <div class="product-content">
+                    <h3>Lanta Flat Belly Shake</h3>
+                    <div class="product-benefit">
+                        <span>🍽️</span> Supports Appetite Control
+                    </div>
+                    <p>Complete meal replacement with plant-based protein and fiber. Keeps you full and satisfied for hours.</p>
+                    <ul class="product-features">
+                        <li>25g plant-based protein per serving</li>
+                        <li>High fiber for satiety</li>
+                        <li>Complete vitamin & mineral profile</li>
+                        <li>Quick 30-second preparation</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://theflatbellyshake.com/discovery/#aff=Honeybunny4k" class="btn-product-cta" target="_blank">
+                        Control My Appetite →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pillar 4: Energy & Activity - Java Burn -->
+            <div class="product-pillar-card">
+                <div class="product-image-area">
+                    ☕
+                    <span class="pillar-tag">Pillar 4: Energy</span>
+                </div>
+                <div class="product-content">
+                    <h3>Java Burn</h3>
+                    <div class="product-benefit">
+                        <span>🔋</span> Supports Natural Energy
+                    </div>
+                    <p>Tasteless powder that supercharges your morning coffee. Supports cellular energy production all day long.</p>
+                    <ul class="product-features">
+                        <li>Tasteless — won't change your coffee</li>
+                        <li>Works with caffeine synergistically</li>
+                        <li>Supports morning metabolic activity</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$49</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net" class="btn-product-cta" target="_blank">
+                        Boost My Energy →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pillar 5: Cellular Fat Processing - Kito Flow AI -->
+            <div class="product-pillar-card">
+                <div class="product-image-area">
+                    🤖
+                    <span class="pillar-tag">Pillar 5: Fat Processing</span>
+                </div>
+                <div class="product-content">
+                    <h3>Kito Flow AI</h3>
+                    <div class="product-benefit">
+                        <span>🧬</span> Supports Cellular Fat Burning
+                    </div>
+                    <p>AI-powered personalized keto meal planning. Optimizes your nutrition for maximum fat oxidation.</p>
+                    <ul class="product-features">
+                        <li>Personalized daily meal plans</li>
+                        <li>AI-optimized macro ratios</li>
+                        <li>Shopping lists included</li>
+                        <li>Adapts to your progress</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">Custom</span>
+                        </div>
+                        <span class="guarantee-tag">📋 Personalized</span>
+                    </div>
+                    <a href="http://www.KetoFlow.app/d#aff=Honeybunny4k" class="btn-product-cta" target="_blank">
+                        Get My Custom Plan →
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ebook Downloads Banner -->
+        <div class="ebook-banner">
+            <h3>📚 Get FREE Guides With Every Product</h3>
+            <p>Each product comes with a comprehensive ebook to help you maximize your results. Learn the science, get meal plans, and follow proven protocols.</p>
+            <div class="ebook-grid">
+                <a href="https://nutristructure.gumroad.com/l/mfmje" class="ebook-link" target="_blank">
+                    📘 Citrus Burn Guide
+                </a>
+                <a href="https://nutristructure.gumroad.com/l/pdxqan" class="ebook-link" target="_blank">
+                    📘 Mitolyn Guide
+                </a>
+                <a href="https://nutristructure.gumroad.com/l/nrczhv" class="ebook-link" target="_blank">
+                    📘 Java Burn Guide
+                </a>
+                <a href="https://nutristructure.gumroad.com/l/zfnkru" class="ebook-link" target="_blank">
+                    📘 Lanta Shake Guide
+                </a>
+                <a href="https://nutristructure.gumroad.com/l/bzciyt" class="ebook-link" target="_blank">
+                    📘 Slim Crystal Guide
+                </a>
+                <a href="https://nutristructure.gumroad.com/l/jrrea" class="ebook-link" target="_blank">
+                    📘 Complete Protocol
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BUNDLE SECTION ===== -->
+<section class="bundle-section">
+    <div class="container">
+        <div class="bundle-box">
+            <h2>🔥 Get The Complete 5-Pillar Stack</h2>
+            <p>Support all 5 pillars together for maximum fat-burning results. Save big when you bundle!</p>
+            <div class="bundle-price">$441</div>
+            <div class="bundle-savings">💰 Save $126 vs. buying separately</div>
+            <ul class="bundle-features">
+                <li>Citrus Burn (3 months supply)</li>
+                <li>Mitolyn (3 months supply)</li>
+                <li>Java Burn (3 months supply)</li>
+                <li>All 5 FREE ebooks included</li>
+                <li>VIP email support</li>
+                <li>180-day money-back guarantee</li>
+            </ul>
+            <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-bundle" target="_blank">
+                Get The Complete Stack →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BUILDING SECTION ===== -->
+<!-- Testimonials, Statistics, and Research -->
+
+<style>
+    /* Statistics Section */
+    .stats-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%);
+        color: white;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .stat-item {
+        padding: 20px;
+    }
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--primary-light);
+        display: block;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    .stat-label {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+    
+    /* Testimonials Section */
+    .testimonials-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+    .testimonials-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+    }
+    .testimonials-intro h2 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 20px;
+    }
+    .testimonials-intro p {
+        color: #64748b;
+        font-size: 1.1rem;
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .testimonial-card {
+        background: white;
+        border-radius: 24px;
+        padding: 35px;
+        box-shadow: var(--shadow-soft);
+        border: 2px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+    }
+    .testimonial-stars {
+        color: var(--accent);
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    .testimonial-card > p {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        font-style: italic;
+    }
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .author-avatar {
+        width: 55px;
+        height: 55px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .author-info h4 {
+        color: var(--secondary);
+        font-size: 1.05rem;
+        margin-bottom: 3px;
+    }
+    .author-info span {
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+    .testimonial-result {
+        display: inline-block;
+        background: #dcfce7;
+        color: #166534;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+    
+    /* Research Section */
+    .research-section {
+        padding: 80px 0;
+        background: white;
+    }
+    .research-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+    }
+    .research-intro h2 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 20px;
+    }
+    .research-intro p {
+        color: #64748b;
+        font-size: 1.1rem;
+    }
+    
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .research-card {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 30px;
+        border-left: 5px solid var(--primary);
+        transition: all 0.3s ease;
+    }
+    .research-card:hover {
+        background: white;
+        box-shadow: var(--shadow-soft);
+        transform: translateX(5px);
+    }
+    .research-card h3 {
+        color: var(--secondary);
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .research-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    .research-card a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .research-card a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Trust Badges Section */
+    .trust-badges-section {
+        padding: 60px 0;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    }
+    .trust-badges-grid {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .trust-badge-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: white;
+        padding: 20px 30px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+    }
+    .trust-badge-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    .trust-badge-text h4 {
+        color: var(--secondary);
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    .trust-badge-text p {
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+    
+    /* Guarantee Section */
+    .guarantee-section {
+        padding: 80px 0;
+        background: white;
+    }
+    .guarantee-box {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border: 3px solid var(--success);
+        border-radius: 24px;
+        padding: 50px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .guarantee-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--success);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin: 0 auto 25px;
+    }
+    .guarantee-box h2 {
+        font-size: 2rem;
+        color: var(--secondary);
+        margin-bottom: 15px;
+    }
+    .guarantee-box > p {
+        color: #475569;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+    .guarantee-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .guarantee-feature {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .guarantee-feature span {
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 8px;
+    }
+    .guarantee-feature h4 {
+        color: var(--secondary);
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .guarantee-feature p {
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+    
+    @media (max-width: 768px) {
+        .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .stat-number { font-size: 2.5rem; }
+        .testimonials-grid { grid-template-columns: 1fr; }
+        .testimonial-card { margin: 0 10px; }
+        .research-grid { grid-template-columns: 1fr; }
+        .trust-badges-grid { gap: 20px; }
+        .trust-badge-item { padding: 15px 20px; }
+        .guarantee-box { padding: 30px 20px; }
+        .guarantee-features { grid-template-columns: 1fr; }
+    }
+</style>
+
+<!-- ===== STATISTICS SECTION ===== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">50,000+</span>
+                <span class="stat-label">Success Stories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.2M</span>
+                <span class="stat-label">Pounds Lost</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">94%</span>
+                <span class="stat-label">Would Recommend</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">180</span>
+                <span class="stat-label">Day Guarantee</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="testimonials-intro">
             <h2>Real People. Real Results.</h2>
-            <p>See how everyday people transformed their bodies using the 5-Pillar Protocol</p>
+            <p>See how everyday people transformed their bodies by supporting the 5 fat-burning pillars.</p>
         </div>
         
-        <div class="transformation-grid">
-            <div class="transformation-card">
-                <div class="image-container">
-                    <img src="images/transformation1.jpg" alt="Weight Loss Transformation">
-                    <span class="result-badge">-47 lbs</span>
-                </div>
-                <div class="content">
-                    <h4>Sarah M., 34</h4>
-                    <p>Lost 47 lbs in 8 months using the 5-Pillar Protocol + CitrusBurn</p>
-                    <div class="testimonial">"I finally understand WHY I was struggling. This isn't a diet—it's a complete reset."</div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"I struggled with belly fat for years. Understanding metabolism and hormones helped me finally lose weight. The 5-Pillar approach changed everything — no more yo-yo dieting!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <span>Austin, TX • Age 34</span>
+                        <div class="testimonial-result">-47 lbs in 8 months</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="transformation-card">
-                <div class="image-container">
-                    <img src="images/transformation2.jpg" alt="Weight Loss Transformation">
-                    <span class="result-badge">-40 lbs</span>
-                </div>
-                <div class="content">
-                    <h4>Katie G., 29</h4>
-                    <p>Lost 40 lbs and transformed her relationship with food</p>
-                    <div class="testimonial">"The mindset pillar changed everything. No more guilt, no more shame—just results."</div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The constant hunger while dieting was my biggest struggle. Once I started supporting my appetite control pillar, I could finally stick to a plan without feeling deprived."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">KG</div>
+                    <div class="author-info">
+                        <h4>Katie G.</h4>
+                        <span>San Diego, CA • Age 29</span>
+                        <div class="testimonial-result">-40 lbs in 6 months</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="transformation-card">
-                <div class="image-container">
-                    <img src="images/transformation3.jpg" alt="Weight Loss Transformation">
-                    <span class="result-badge">-86 lbs</span>
-                </div>
-                <div class="content">
-                    <h4>David R., 52</h4>
-                    <p>Lost 86 lbs and reversed his prediabetes diagnosis</p>
-                    <div class="testimonial">"At my age, I thought it was too late. The 5-Pillar Protocol proved me wrong."</div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"At my age, I thought it was too late. My doctor told me I was prediabetic. Supporting all 5 pillars helped me lose 86 pounds and my blood work is now perfect!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DR</div>
+                    <div class="author-info">
+                        <h4>David R.</h4>
+                        <span>Denver, CO • Age 52</span>
+                        <div class="testimonial-result">-86 lbs in 12 months</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="customer-transformations.html" class="btn-main">See More Transformations →</a>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Being a busy mom, I never had energy to exercise. Once I fixed my cellular energy production, I had the motivation to move more and the weight started melting off."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JR</div>
+                    <div class="author-info">
+                        <h4>Jennifer R.</h4>
+                        <span>Miami, FL • Age 38</span>
+                        <div class="testimonial-result">-76 lbs in 10 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"My slow metabolism made every diet fail. Supporting my metabolic enzymes with the right nutrients was the missing piece. I finally feel like my body is working WITH me."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ML</div>
+                    <div class="author-info">
+                        <h4>Michael L.</h4>
+                        <span>Chicago, IL • Age 45</span>
+                        <div class="testimonial-result">-52 lbs in 7 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Hormonal weight gain after 40 was my nightmare. Balancing my cortisol and insulin changed everything. I'm down 3 dress sizes and feel 20 years younger!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LP</div>
+                    <div class="author-info">
+                        <h4>Lisa P.</h4>
+                        <span>Seattle, WA • Age 43</span>
+                        <div class="testimonial-result">-38 lbs in 5 months</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Email Capture Section -->
-<section class="email-capture-section" id="email-capture">
+<!-- ===== RESEARCH SECTION ===== -->
+<section class="research-section">
     <div class="container">
-        <h2>Get Your FREE Metabolic Cheat Sheet</h2>
-        <p>Join 50,000+ people who have started their metabolic reset journey. Get instant access to the 7 signs of metabolic slowdown and the 3-step protocol to fix it.</p>
+        <div class="research-intro">
+            <h2>🔬 Backed By Science</h2>
+            <p>Modern weight management focuses on multiple metabolic factors, not just calories. Here's what the research shows:</p>
+        </div>
         
-        <form class="email-form" onsubmit="handleEmailSubmit(event)">
-            <input type="email" placeholder="Enter your best email address" required>
-            <button type="submit">Send Me The Cheat Sheet →</button>
-        </form>
-        
-        <p class="privacy-note">🔒 We respect your privacy. Unsubscribe anytime. No spam, ever.</p>
+        <div class="research-grid">
+            <div class="research-card">
+                <h3><span>📊</span> Cortisol & Weight Gain</h3>
+                <p>Chronic stress elevates cortisol, which promotes abdominal fat storage and metabolic slowdown. Studies show cortisol is directly linked to metabolic syndrome.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/15883543/" target="_blank">View Study on PubMed →</a>
+            </div>
+            
+            <div class="research-card">
+                <h3><span>📊</span> Metabolic Adaptation</h3>
+                <p>Restrictive calorie diets trigger adaptive thermogenesis — your body compensates for calorie reduction by burning fewer calories. This is why weight loss plateaus occur.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20935641/" target="_blank">View Study on PubMed →</a>
+            </div>
+            
+            <div class="research-card">
+                <h3><span>📊</span> Mineral Deficiencies</h3>
+                <p>Magnesium and potassium deficiencies are strongly linked to insulin resistance and metabolic dysfunction. Supplementing these minerals supports healthy glucose metabolism.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/22364157/" target="_blank">View Study on PubMed →</a>
+            </div>
+            
+            <div class="research-card">
+                <h3><span>📊</span> Sleep & Metabolic Health</h3>
+                <p>Poor sleep disrupts leptin and ghrelin hormones, increasing hunger and reducing satiety signals. Quality sleep is essential for maintaining a healthy metabolism.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/20357041/" target="_blank">View Study on PubMed →</a>
+            </div>
+            
+            <div class="research-card">
+                <h3><span>📊</span> Protein & Satiety</h3>
+                <p>Higher protein intake increases satiety hormones and reduces overall calorie consumption. Protein also has the highest thermic effect of all macronutrients.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/18469287/" target="_blank">View Study on PubMed →</a>
+            </div>
+            
+            <div class="research-card">
+                <h3><span>📊</span> Gut Microbiome & Weight</h3>
+                <p>Gut bacteria composition influences nutrient absorption, inflammation, and metabolic rate. A healthy microbiome supports healthy weight management.</p>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/26810064/" target="_blank">View Study on PubMed →</a>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Trust Section -->
-<section class="trust-section">
+<!-- ===== TRUST BADGES SECTION ===== -->
+<section class="trust-badges-section">
     <div class="container">
-        <h2 style="font-size: 2rem; color: var(--secondary); margin-bottom: 30px;">Why Trust The 5-Pillar Protocol?</h2>
-        
-        <div class="trust-badges">
-            <div class="trust-badge"><span>🛡️</span> Science-Informed Approach</div>
-            <div class="trust-badge"><span>📚</span> 50,000+ Success Stories</div>
-            <div class="trust-badge"><span>🔍</span> Transparent Information</div>
-            <div class="trust-badge"><span>💬</span> Community Support</div>
+        <div class="trust-badges-grid">
+            <div class="trust-badge-item">
+                <div class="trust-badge-icon">🛡️</div>
+                <div class="trust-badge-text">
+                    <h4>Science-Informed</h4>
+                    <p>Based on peer-reviewed research</p>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-badge-icon">🏭</div>
+                <div class="trust-badge-text">
+                    <h4>FDA-Registered</h4>
+                    <p>Made in certified facilities</p>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-badge-icon">🌿</div>
+                <div class="trust-badge-text">
+                    <h4>Natural Ingredients</h4>
+                    <p>Plant-based formulas</p>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <div class="trust-badge-icon">💬</div>
+                <div class="trust-badge-text">
+                    <h4>24/7 Support</h4>
+                    <p>We're here to help</p>
+                </div>
+            </div>
         </div>
-        
+    </div>
+</section>
+
+<!-- ===== GUARANTEE SECTION ===== -->
+<section class="guarantee-section">
+    <div class="container">
         <div class="guarantee-box">
-            <span class="icon">✓</span>
-            <div>
-                <h4>30-Day Metabolic Satisfaction Guarantee</h4>
-                <p>If you don't feel more energized, less bloated, and in better control of your cravings within 30 days, we'll refund every penny. No questions asked.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Science Citations Section -->
-<section class="science-section">
-    <div class="container">
-        <h3>🔬 The Science Behind The 5-Pillar Protocol</h3>
-        <div class="citations-grid">
-            <div class="citation-card">
-                <h4>Cortisol & Weight Gain</h4>
-                <p>Chronic stress elevates cortisol, which promotes abdominal fat storage and metabolic slowdown.</p>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/15883543/" target="_blank">View Study →</a>
-            </div>
-            <div class="citation-card">
-                <h4>Metabolic Adaptation</h4>
-                <p>Restrictive dieting triggers adaptive thermogenesis, making weight loss progressively harder.</p>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/20935641/" target="_blank">View Study →</a>
-            </div>
-            <div class="citation-card">
-                <h4>Mineral Deficiencies</h4>
-                <p>Magnesium and potassium deficiencies are linked to insulin resistance and metabolic dysfunction.</p>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/22364157/" target="_blank">View Study →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="methods-section" id="methods">
-    <div class="container">
-        <div class="section-header">
-            <h2>Two Proven Pathways to Metabolic Support</h2>
-            <p>Choose the approach that best fits your lifestyle and preferences</p>
-        </div>
-
-        <div class="methods-grid">
-            <div class="method-card natural">
-                <div class="method-icon">🌿</div>
-                <h3>1. Build Fat Loss the Natural Way</h3>
-                <p>The traditional, time-tested approach to weight management through disciplined lifestyle changes and natural methods. Perfect for those who prefer a holistic, supplement-free journey.</p>
-
-                <div class="method-types">
-                    <div class="type-item">
-                        <h4>🎯 Comprehensive Exercise Programs</h4>
-                        <p>Complete lifestyle overhaul with dedicated daily workout routines focusing on metabolic conditioning.</p>
-                    </div>
-                    <div class="type-item">
-                        <h4>⏰ Time-Efficient Options</h4>
-                        <p>Condensed, high-intensity workouts that fit into your hectic schedule without compromising benefits.</p>
-                    </div>
+            <div class="guarantee-icon">✓</div>
+            <h2>180-Day "Metabolic Reset" Guarantee</h2>
+            <p>We're so confident in the 5-Pillar approach that we offer an industry-leading 180-day guarantee. If you don't feel more energized, less bloated, and in better control of your cravings within 6 months, we'll refund every penny. No questions asked.</p>
+            <div class="guarantee-features">
+                <div class="guarantee-feature">
+                    <span>💰</span>
+                    <h4>Full Refund</h4>
+                    <p>100% money back</p>
+                </div>
+                <div class="guarantee-feature">
+                    <span>📞</span>
+                    <h4>No Hassle</h4>
+                    <p>Easy returns process</p>
+                </div>
+                <div class="guarantee-feature">
+                    <span>⏰</span>
+                    <h4>180 Days</h4>
+                    <p>6 full months to try</p>
                 </div>
             </div>
+            <p style="color: #64748b; font-size: 0.9rem;"><strong>Losing just 5–10% of body weight</strong> can significantly improve health markers including blood pressure, cholesterol, and blood sugar levels.</p>
+        </div>
+    </div>
+</section>
 
-            <div class="method-card modern">
-                <div class="method-icon">🚀</div>
-                <h3>2. Smarter, Guided Fat Loss Support</h3>
-                <p>Leverage cutting-edge nutritional science and research-backed formulations to support your metabolism. Features specialized categories of solutions.</p>
+<!-- ===== EMAIL CAPTURE SECTION (BREVO) ===== -->
+<!-- Find Your Weak Fat-Burning Pillar Quiz -->
 
-                <div class="method-types">
-                    <div class="type-item">
-                        <h4>💊 Medical & Supplement Systems</h4>
-                        <p>Research-backed supplements designed to support metabolic health and natural fat oxidation.</p>
-                    </div>
-                    <div class="type-item">
-                        <h4>⚡ Metabolism & Hormone Support</h4>
-                        <p>Advanced protocols to support your metabolic engine and hormone balance.</p>
-                    </div>
-                    <div class="type-item">
-                        <h4>🤖 AI-Powered Personalization</h4>
-                        <p>Personalized daily meal and workout plans based on your unique body composition.</p>
+<style>
+    /* Email Capture Section */
+    .email-capture-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    .email-capture-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+    
+    .email-capture-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .email-capture-text {
+        color: white;
+    }
+    .email-capture-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    .email-capture-text h2 span {
+        color: var(--primary-light);
+    }
+    .email-capture-text > p {
+        opacity: 0.9;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+    
+    .email-benefits {
+        list-style: none;
+    }
+    .email-benefits li {
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+    }
+    .email-benefits li::before {
+        content: '✓';
+        width: 25px;
+        height: 25px;
+        background: var(--success);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+    
+    .email-form-box {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .email-form-box h3 {
+        color: var(--secondary);
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    .email-form-box > p {
+        color: #64748b;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    /* Brevo Form Styles */
+    .sib-form {
+        padding: 0 !important;
+    }
+    .sib-form-block {
+        padding: 0 !important;
+    }
+    .sib-form .entry__field {
+        border-radius: 12px !important;
+        border: 2px solid #e2e8f0 !important;
+        padding: 15px !important;
+        font-size: 1rem !important;
+    }
+    .sib-form .entry__field:focus {
+        border-color: var(--primary) !important;
+        outline: none !important;
+    }
+    .sib-form .sib-form-block__button {
+        background: var(--gradient-primary) !important;
+        border-radius: 12px !important;
+        padding: 18px !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        width: 100% !important;
+        border: none !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+    .sib-form .sib-form-block__button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(16,185,129,0.4) !important;
+    }
+    .sib-form .sib-alert-message {
+        border-radius: 12px !important;
+    }
+    
+    .form-privacy {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.8rem;
+        margin-top: 20px;
+    }
+    .form-privacy a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    /* Final CTA Section */
+    .final-cta-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+        text-align: center;
+    }
+    .final-cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .final-cta-content h2 {
+        font-size: 2.8rem;
+        color: var(--secondary);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    .final-cta-content h2 span {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .final-cta-content > p {
+        color: #475569;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+    .final-cta-box {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: var(--shadow-soft);
+        border: 2px solid #e2e8f0;
+        margin-bottom: 30px;
+    }
+    .final-cta-box p {
+        color: #64748b;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+    .final-cta-box p strong {
+        color: var(--secondary);
+    }
+    
+    .btn-final-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 22px 50px;
+        background: var(--gradient-primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.2rem;
+        box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+    }
+    .btn-final-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(16,185,129,0.5);
+    }
+    
+    .final-trust {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    .final-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+        background: #0f172a;
+        color: white;
+        padding: 60px 0 30px;
+    }
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    .footer-brand .logo {
+        margin-bottom: 20px;
+        color: white;
+    }
+    .footer-brand p {
+        opacity: 0.8;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    .footer-social {
+        display: flex;
+        gap: 15px;
+    }
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .footer-social a:hover {
+        background: var(--primary);
+    }
+    
+    .footer-column h4 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: white;
+    }
+    .footer-column ul {
+        list-style: none;
+    }
+    .footer-column li {
+        margin-bottom: 12px;
+    }
+    .footer-column a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+    .footer-column a:hover {
+        color: var(--primary-light);
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 30px;
+        text-align: center;
+    }
+    .footer-bottom p {
+        opacity: 0.6;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    .footer-bottom a {
+        color: rgba(255,255,255,0.6);
+        text-decoration: none;
+    }
+    .footer-disclaimer {
+        opacity: 0.5;
+        font-size: 0.75rem;
+        max-width: 800px;
+        margin: 20px auto 0;
+        line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+        .email-capture-content { grid-template-columns: 1fr; gap: 40px; }
+        .email-capture-text h2 { font-size: 2rem; }
+        .email-form-box { padding: 30px 20px; }
+        .final-cta-content h2 { font-size: 2rem; }
+        .footer-content { grid-template-columns: 1fr; text-align: center; }
+        .footer-social { justify-content: center; }
+    }
+</style>
+
+<!-- ===== EMAIL CAPTURE SECTION ===== -->
+<section class="email-capture-section">
+    <div class="container">
+        <div class="email-capture-content">
+            <div class="email-capture-text">
+                <h2>Find Your <span>Weak Fat-Burning Pillar</span></h2>
+                <p>Enter your email to discover which pillar might be slowing your weight loss. Get a personalized assessment and targeted recommendations.</p>
+                <ul class="email-benefits">
+                    <li>Discover which of the 5 pillars needs your attention</li>
+                    <li>Get personalized product recommendations</li>
+                    <li>Receive exclusive tips and meal plans</li>
+                    <li>Be the first to know about new products and discounts</li>
+                    <li>Join 50,000+ people on their transformation journey</li>
+                </ul>
+            </div>
+            
+            <div class="email-form-box">
+                <h3>📧 Get Your Free Assessment</h3>
+                <p>Join our newsletter and get instant access to your personalized pillar analysis.</p>
+                
+                <!-- Brevo Email Form -->
+                <div class="sib-form">
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:540px;">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+                            </div>
+                        </div>
+                        <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:540px;">
+                            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                    <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+                                </svg>
+                                <span class="sib-form-message-panel__inner-text">Thank you! Check your email for your personalized pillar assessment.</span>
+                            </div>
+                        </div>
+                        <form id="sib-form" method="POST" action="https://4c5c0931.sibforms.com/serve/MUIFALu4wS7sQ2r5B3iDTaQhW1JhNGD0hU9q3E3z8x1hQ2r5B3iDTaQhW1JhNGD0hU9q3E3z8x1h" data-type="subscription">
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row ">
+                                            <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3c4858;" for="FIRSTNAME" data-required="*">First Name</label>
+                                            <div class="entry__field">
+                                                <input class="input " type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off" placeholder="Your first name" data-required="true" required />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row ">
+                                            <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3c4858;" for="EMAIL" data-required="*">Email Address</label>
+                                            <div class="entry__field">
+                                                <input class="input " type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block" style="text-align: left">
+                                    <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#10b981; border-radius:3px; border-width:0px;" form="sib-form" type="submit">
+                                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                                            <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                        </svg>
+                                        Get My Free Assessment →
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="text" name="email_address_check" value="" class="input--hidden">
+                            <input type="hidden" name="locale" value="en">
+                        </form>
                     </div>
                 </div>
+                
+                <p class="form-privacy">🔒 We respect your privacy. Unsubscribe anytime. <a href="#">Privacy Policy</a></p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="cta-section" id="products">
+<!-- ===== FINAL CTA SECTION ===== -->
+<section class="final-cta-section">
     <div class="container">
-        <div class="section-header">
-            <h2>Ready to Rebuild Your Metabolic Trust?</h2>
-            <p>Take the 4-question quiz to discover if your metabolism is in "Survival" or "Burn" mode</p>
+        <div class="final-cta-content">
+            <h2>Your Body Already Knows <span>How To Burn Fat</span></h2>
+            
+            <div class="final-cta-box">
+                <p><strong>The problem is not effort.</strong> It is the biological systems behind fat storage.</p>
+                <p>When you support the 5 pillars — metabolism, hormones, appetite, energy, and cellular fat processing — weight loss becomes easier, more sustainable, and actually enjoyable.</p>
+                <p>No more extreme diets. No more feeling like a failure. Just working WITH your body's natural systems.</p>
+            </div>
+            
+            <a href="recommended-stack.html" class="btn-final-cta">
+                See Recommended Solution
+                <span>→</span>
+            </a>
+            
+            <div class="final-trust">
+                <div class="final-trust-item"><span>🛡️</span> 180-Day Guarantee</div>
+                <div class="final-trust-item"><span>🚚</span> Free Shipping Available</div>
+                <div class="final-trust-item"><span>💬</span> 24/7 Support</div>
+            </div>
         </div>
-        <a href="metabolic-quiz.html" class="btn-main" style="font-size: 1.3rem; padding: 25px 60px;">Take The Metabolic Quiz →</a>
-        <p style="margin-top: 20px; color: #64748b; font-size: 0.95rem;">Takes 60 seconds • Get personalized recommendations</p>
     </div>
 </section>
 
-<div class="container">
-    <div class="page-nav">
-        <a href="index.html" class="page-btn active">Home</a>
-        <a href="systems.html" class="page-btn">Systems</a>
-        <a href="solutions.html" class="page-btn">Solutions</a>
-        <a href="customer-transformations.html" class="page-btn">Results</a>
-    </div>
-</div>
-
+<!-- ===== FOOTER ===== -->
 <footer>
     <div class="container">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-brand">
-                    <div class="logo-icon" style="width: 35px; height: 35px; font-size: 1rem;">5</div>
-                    The 5-Pillar Protocol
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">5</div>
+                    <span>The 5-Pillar Protocol</span>
+                </a>
+                <p>A science-informed approach to weight management that works WITH your biology, not against it. Support the 5 pillars and transform your body naturally.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                    <a href="#" aria-label="Pinterest">P</a>
                 </div>
-                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management through our proven 5-pillar approach.</p>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="systems.html">Systems</a>
-                <a href="solutions.html">Solutions</a>
-                <a href="customer-transformations.html">Success Stories</a>
-                <a href="recommended-stack.html">My Recommended Stack</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
+            
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="citrus-burn.html">Citrus Burn</a></li>
+                    <li><a href="mitolyn.html">Mitolyn</a></li>
+                    <li><a href="java-burn.html">Java Burn</a></li>
+                    <li><a href="lanta-flat-belly-shake.html">Lanta Shake</a></li>
+                    <li><a href="kito.html">Kito Flow AI</a></li>
+                    <li><a href="slim-crystal.html">Slim Crystal</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
-                <h4>Our Systems</h4>
-                <a href="citrus-burn.html">Citrus Burn</a>
-                <a href="mitolyn.html">Mitolyn</a>
-                <a href="java-burn.html">Java Burn</a>
-                <a href="kito.html">Kito Flow AI</a>
-                <a href="slim-crystal.html">Slim Crystal</a>
-                <a href="lanta-flat-belly-shake.html">Lanta Shake</a>
+            
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="systems.html">Systems</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="customer-transformations.html">Success Stories</a></li>
+                    <li><a href="recommended-stack.html">My Stack</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="metabolic-quiz.html">Metabolic Quiz</a></li>
+                </ul>
             </div>
-            <div class="footer-links">
+            
+            <div class="footer-column">
                 <h4>Support</h4>
-                <a href="contact.html">Contact Us</a>
-                <a href="faq.html">FAQ</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="disclaimer.html">Full Disclaimer</a>
-                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Affiliate Disclosure</a></li>
+                </ul>
             </div>
         </div>
         
-        <div class="footer-bottom">
+         <div class="footer-bottom">
+            <p>&copy; 2025 The 5-Pillar Protocol. All rights reserved.</p>
             <p class="footer-disclaimer">
-                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Individual results may vary.
-            </p>
-            <p>&copy; 2026 The 5-Pillar Weight Loss Protocol. All Rights Reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
-                These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.
+                <strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may receive a commission if you purchase through our links at no additional cost to you. 
+                <strong>Medical Disclaimer:</strong> The information on this website is for educational purposes only and is not intended as medical advice. Always consult with a healthcare provider before starting any supplement regimen or weight loss program. Individual results may vary.
             </p>
         </div>
     </div>
 </footer>
 
+<!-- Brevo Form Script -->
 <script>
-function handleEmailSubmit(e) {
-    e.preventDefault();
-    // Placeholder for email capture logic
-    // TODO: Add your Brevo email capture form here
-    alert('Thank you! Check your email for the Metabolic Cheat Sheet.');
-    
-    // Track conversion
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'conversion', {
-            'event_category': 'lead_magnet',
-            'event_label': 'metabolic_cheat_sheet',
-            'value': 1.0
-        });
-    }
-}
-
-// Track button clicks
-document.addEventListener('DOMContentLoaded', function() {
-    const ctaButtons = document.querySelectorAll('.btn-main, .btn-lead');
-    ctaButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'click', {
-                    'event_category': 'cta',
-                    'event_label': button.textContent.trim()
-                });
-            }
-        });
-    });
-});
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.translation = {
+        common: {
+            selectedList: '{quantity} list selected',
+            selectedLists: '{quantity} lists selected'
+        }
+    };
+    var AUTOHIDE = Boolean(0);
 </script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
+
